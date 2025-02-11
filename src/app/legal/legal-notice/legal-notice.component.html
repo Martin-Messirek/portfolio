@@ -1,11 +1,57 @@
-<p>legal-notice works!</p>
 <div class="legal-page">
+	<h2>{{ 'legal.LEGAL.HEADER' | translate }}</h2>
+	<h4>{{ 'legal.LEGAL.SUBHEADER' | translate }}</h4>
+
+	<div>
+		<strong>{{ 'legal.LEGAL.OPERATOR.TITLE' | translate }}</strong>
+		{{ 'legal.LEGAL.OPERATOR.TEXT' | translate }}
+	</div>
+
+	<div>
+		<strong>{{ 'legal.LEGAL.ADDRESS.TITLE' | translate }}</strong>
+		{{ 'legal.LEGAL.ADDRESS.TEXT' | translate }}
+	</div>
+
+	<div>
+		<strong>{{ 'legal.LEGAL.CONTACT.TITLE' | translate }}</strong>
+		<a [href]="'mailto:' + ('legal.LEGAL.CONTACT.TEXT' | translate)">
+			{{ 'legal.LEGAL.CONTACT.TEXT' | translate }}
+		</a>
+	</div>
+
+	<div>
+		<strong>{{ 'legal.LEGAL.LAW.TITLE' | translate }}</strong>
+		{{ 'legal.LEGAL.LAW.TEXT' | translate }}
+	</div>
+
+	<div>
+		<strong>{{ 'legal.LEGAL.COPYRIGHT.TITLE' | translate }}</strong>
+		<p>{{ 'legal.LEGAL.COPYRIGHT.TEXT' | translate }}</p>
+	</div>
+
+	<div>
+		<strong>{{ 'legal.LEGAL.DISCLAIMER.TITLE' | translate }}</strong>
+		<p>{{ 'legal.LEGAL.DISCLAIMER.EXTERNAL_LINKS' | translate }}</p>
+		<p>{{ 'legal.LEGAL.DISCLAIMER.THIRD_PARTIES' | translate }}</p>
+	</div>
+
+	<div>
+		<strong>{{ 'legal.LEGAL.SOURCE.TITLE' | translate }}</strong>
+		<a [href]="'legal.LEGAL.SOURCE.LINK' | translate" target="_blank">
+			{{ 'legal.LEGAL.SOURCE.TEXT' | translate }}
+		</a>
+	</div>
+</div>
+
+<!-- <div class="legal-page">
 	<h2>{{ 'legal.LEGAL.LEGAL_1' | translate }}</h2>
 	<div [innerHTML]="'legal.LEGAL.LEGAL_2' | translate"></div>
 	<div [innerHTML]="'legal.LEGAL.LEGAL_3' | translate"></div>
 	<div [innerHTML]="'legal.LEGAL.LEGAL_4' | translate"></div>
 	<div [innerHTML]="'legal.LEGAL.LEGAL_5' | translate"></div>
 </div>
+
+<a href="legal.LEGAL.SOURCE.LINK ">Imprint Generator Austria</a>
 
 <h4>Impressum</h4>
 <p><b>Informationen und Offenlegung gemäß &sect;5 (1) ECG, &sect; 25 MedienG, &sect; 63 GewO und &sect; 14 UGB</b></p>
@@ -58,9 +104,7 @@
 </p>
 
 <h4>Imprint</h4>
-<p>
-	<b>Information and Disclosure according to &sect;5 (1) ECG, &sect; 25 MedienG, &sect; 63 GewO und &sect; 14 UGB</b>
-</p>
+<p>Information and Disclosure according to &sect;5 (1) ECG, &sect; 25 MedienG, &sect; 63 GewO und &sect; 14 UGB</p>
 <p>
 	<b>Website Operator:</b>
 	Martin Messirek
@@ -104,4 +148,4 @@
 	<b>
 		<a href="https://www.fairesrecht.at/kostenlos-impressum-erstellen-generator.php">Imprint Generator Austria</a>
 	</b>
-</p>
+</p> -->
