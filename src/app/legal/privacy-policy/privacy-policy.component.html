@@ -1,23 +1,71 @@
 <div class="privacy-policy">
-	<h3>{{ 'legal.PRIVACY.HEADER' | translate }}</h3>
+	<!-- Überschriften -->
 	<h4>{{ 'legal.PRIVACY.TITLE' | translate }}</h4>
-	<div [innerHTML]="'legal.PRIVACY.PARA1' | translate"></div>
-	<div [innerHTML]="'legal.PRIVACY.PARA2' | translate"></div>
-	<h5>{{ 'legal.PRIVACY.CONTACT_HEADER' | translate }}</h5>
-	<div [innerHTML]="'legal.PRIVACY.PARA3' | translate"></div>
-	<h5>{{ 'legal.PRIVACY.SERVER_LOGS_HEADER' | translate }}</h5>
-	<div [innerHTML]="'legal.PRIVACY.PARA4' | translate"></div>
-	<div [innerHTML]="'legal.PRIVACY.PARA5' | translate"></div>
-	<h5>{{ 'legal.PRIVACY.RIGHTS_HEADER' | translate }}</h5>
-	<div [innerHTML]="'legal.PRIVACY.RIGHTS_LIST' | translate"></div>
-	<div [innerHTML]="'legal.PRIVACY.PARA7' | translate"></div>
-	<h5>{{ 'legal.PRIVACY.CONTACT_INFO_HEADER' | translate }}</h5>
-	<div [innerHTML]="'legal.PRIVACY.CONTACT_INFO' | translate"></div>
-	<h5>{{ 'legal.PRIVACY.SOURCE_HEADER' | translate }}</h5>
-	<div>
-		<a [href]="'legal.PRIVACY.SOURCE_LINK' | translate" target="_blank">
-			{{ 'legal.PRIVACY.SOURCE_TEXT' | translate }}
-		</a>
+	<h3>{{ 'legal.PRIVACY.CENTER_TITLE' | translate }}</h3>
+
+	<!-- Intro-Abschnitt -->
+	<div class="privacy-intro">
+		<p>{{ 'legal.PRIVACY.INTRO.DATA_COLLECTION' | translate }}</p>
+		<p>{{ 'legal.PRIVACY.INTRO.IP' | translate }}</p>
+	</div>
+
+	<!-- Datenaufbewahrung -->
+	<div class="privacy-data-storage">
+		<h5>{{ 'legal.PRIVACY.DATA_STORAGE.HEADER' | translate }}</h5>
+		<p>{{ 'legal.PRIVACY.DATA_STORAGE.TEXT' | translate }}</p>
+	</div>
+
+	<!-- Server-Log Files -->
+	<div class="privacy-server-logs">
+		<h5>{{ 'legal.PRIVACY.SERVER_LOGS.HEADER' | translate }}</h5>
+		<p>{{ 'legal.PRIVACY.SERVER_LOGS.INTRO' | translate }}</p>
+		<ul>
+			<!-- Hier wird angenommen, dass der Translate-Pipe ein Array zurückgibt -->
+			<li *ngFor="let item of 'legal.PRIVACY.SERVER_LOGS.LIST' | translate">
+				{{ item }}
+			</li>
+		</ul>
+		<p>{{ 'legal.PRIVACY.SERVER_LOGS.COLLECTION' | translate }}</p>
+		<p>{{ 'legal.PRIVACY.SERVER_LOGS.CHECK' | translate }}</p>
+	</div>
+
+	<!-- Rechte der Betroffenen -->
+	<div class="privacy-rights">
+		<h5>{{ 'legal.PRIVACY.RIGHTS.HEADER' | translate }}</h5>
+		<p>{{ 'legal.PRIVACY.RIGHTS.INTRO' | translate }}</p>
+		<ul>
+			<!-- Hier wird angenommen, dass der Translate-Pipe ein Array zurückgibt -->
+			<li *ngFor="let right of 'legal.PRIVACY.RIGHTS.LIST' | translate">
+				{{ right }}
+			</li>
+		</ul>
+		<p>{{ 'legal.PRIVACY.RIGHTS.TEXT' | translate }}</p>
+	</div>
+
+	<!-- Kontakt -->
+	<div class="privacy-contact">
+		<h5>{{ 'legal.PRIVACY.CONTACT.HEADER' | translate }}</h5>
+		<p>
+			<strong>{{ 'legal.PRIVACY.CONTACT.OPERATOR.HEADER' | translate }}</strong>
+			{{ 'legal.PRIVACY.CONTACT.OPERATOR.TEXT' | translate }}
+		</p>
+		<p>
+			<strong>{{ 'legal.PRIVACY.CONTACT.EMAIL.HEADER' | translate }}</strong>
+			<a [href]="'mailto:' + ('legal.PRIVACY.CONTACT.EMAIL.TEXT' | translate)">
+				{{ 'legal.PRIVACY.CONTACT.EMAIL.TEXT' | translate }}
+			</a>
+		</p>
+	</div>
+
+	<!-- Quellenangabe -->
+	<div class="privacy-source">
+		<p>
+			{{ 'legal.PRIVACY.SOURCE.HEADER' | translate }}
+
+			<a [href]="'legal.PRIVACY.SOURCE.LINK' | translate" target="_blank">
+				{{ 'legal.PRIVACY.SOURCE.TEXT' | translate }}
+			</a>
+		</p>
 	</div>
 </div>
 
