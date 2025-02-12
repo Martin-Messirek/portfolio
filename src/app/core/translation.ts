@@ -37,8 +37,8 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				SUBHEADER: 'Got a problem to solve?',
 				TEXT: 'Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work. ',
 				CONTACT_ME: 'Need a Frontend developer? Contact me!',
-				MY_EMAIL: '@',
-				MY_PHONE: '00',
+				MY_EMAIL: { TITLE: 'Email:', ADDRESS: 'martinmessirek@hotmail.com' },
+				MY_PHONE: { TITLE: 'Tel:', NUMBER: '0670 607 4886' },
 				NAME: 'Your name…',
 				MAIL: 'Your email…',
 				MSG: 'Your message…',
@@ -59,8 +59,8 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				{ NAME: 'Bob Johnson', TEXT: 'Bob provided excellent feedback on my projects.' },
 			],
 		},
-		projects: {
-			EL_POLLO_LOCO: {
+		projects: [
+			{
 				TITLE: 'El Pollo Loco',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS',
 				DESCRIPTION:
@@ -69,7 +69,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/el-pollo-loco',
 				imageSrc: 'assets/images/el-pollo-loco.png',
 			},
-			JOIN: {
+			{
 				TITLE: 'Join',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS | Firebase',
 				DESCRIPTION:
@@ -78,7 +78,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/join',
 				imageSrc: 'assets/images/join.png',
 			},
-			POKEMON: {
+			{
 				TITLE: 'Pokemon',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS  | API',
 				DESCRIPTION: 'A Pokedex application that fetches real-time Pokemon data from an API.',
@@ -86,7 +86,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/pokemon',
 				imageSrc: 'assets/images/pokemon.png',
 			},
-			DA_BUBBLE: {
+			{
 				TITLE: 'DA Bubble – Current Project',
 				TECHNOLOGIES: 'Angular | Typescript | HTML | CSS | Firebase',
 				DESCRIPTION: 'A bubble shooter game with interactive mechanics and engaging animations.',
@@ -94,7 +94,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/da-bubble',
 				imageSrc: 'assets/images/da-bubble.png',
 			},
-		},
+		],
 		shared: {
 			HEADER: {
 				LOGO: 'MM',
@@ -121,19 +121,12 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				LAW: { TITLE: 'Applicable Legal Provisions:', TEXT: 'www.ris.bka.gv.at' },
 				COPYRIGHT: {
 					TITLE: 'Copyright:',
-					TEXT: `The content of this website is, as far as legally possible, subject to various protections (e.g., copyright). Any
-	use/distribution of provided material that is prohibited by copyright requires written permission from the website
-	operator.`,
+					TEXT: `The content of this website is, as far as legally possible, subject to various protections (e.g., copyright). Any use/distribution of provided material that is prohibited by copyright requires written permission from the website operator.`,
 				},
 				DISCLAIMER: {
 					TITLE: 'Disclaimer:',
-					EXTERNAL_LINKS: `Despite careful content control, the website operator assumes no liability for the content of external links. The
-	content of the linked pages is solely the responsibility of their operators. If you come across outgoing links
-	pointing to websites with illegal activity/information, we kindly ask you to inform us, so that we can promptly
-	remove them according to § 17 Abs. 2 ECG.`,
-					THIRD_PARTIES: `The copyright of third parties is strictly observed by the operator of this website. If you still notice a copyright
-	infringement, please inform us accordingly. Upon becoming aware of such legal violations, we will promptly remove
-	the affected content.`,
+					EXTERNAL_LINKS: `Despite careful content control, the website operator assumes no liability for the content of external links. The content of the linked pages is solely the responsibility of their operators. If you come across outgoing links pointing to websites with illegal activity/information, we kindly ask you to inform us, so that we can promptly remove them according to § 17 Abs. 2 ECG.`,
+					THIRD_PARTIES: `The copyright of third parties is strictly observed by the operator of this website. If you still notice a copyright infringement, please inform us accordingly. Upon becoming aware of such legal violations, we will promptly remove the affected content.`,
 				},
 				SOURCE: {
 					TITLE: 'Source:',
@@ -232,8 +225,8 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				SUBHEADER: 'Haben Sie ein Problem zu lösen?',
 				TEXT: 'Kontaktieren Sie mich über dieses Formular, ich freue mich darauf von Ihnen zu hören, Ihre Ideen zu kennen zu lernen und mit meiner Arbeit zu Ihren Projekten beizutragen.',
 				CONTACT_ME: ' Frontend Entwickler gesucht? Kontaktieren Sie mich! ',
-				MY_EMAIL: '@',
-				MY_PHONE: '00',
+				MY_EMAIL: { TITLE: 'E-mail:', ADDRESS: 'martinmessirek@hotmail.com' },
+				MY_PHONE: { TITLE: 'Tel:', NUMBER: '0670 607 4886' },
 				NAME: 'Name eingeben…',
 				MAIL: 'Email eingeben…',
 				MSG: 'Nachricht…',
@@ -255,8 +248,8 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				{ NAME: 'Bob Johnson', TEXT: 'Bob provided excellent feedback on my projects.' },
 			],
 		},
-		projects: {
-			EL_POLLO_LOCO: {
+		projects: [
+			{
 				TITLE: 'El Pollo Loco',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS',
 				DESCRIPTION:
@@ -265,7 +258,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/el-pollo-loco',
 				imageSrc: 'assets/images/el-pollo-loco.png',
 			},
-			JOIN: {
+			{
 				TITLE: 'Join',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS | Firebase',
 				DESCRIPTION:
@@ -274,7 +267,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/join',
 				imageSrc: 'assets/images/join.png',
 			},
-			POKEMON: {
+			{
 				TITLE: 'Pokemon',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS  | API',
 				DESCRIPTION: ' Eine Pokedex-Anwendung, die Pokemon-Daten in Echtzeit von einer API abruft.',
@@ -282,7 +275,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/pokemon',
 				imageSrc: 'assets/images/pokemon.png',
 			},
-			DA_BUBBLE: {
+			{
 				TITLE: 'DA Bubble – Current Project',
 				TECHNOLOGIES: 'Angular | Typescript | HTML | CSS | Firebase',
 				DESCRIPTION:
@@ -291,7 +284,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/yourrepo/da-bubble',
 				imageSrc: 'assets/images/da-bubble.png',
 			},
-		},
+		],
 		shared: {
 			HEADER: {
 				LOGO: 'MM',
@@ -319,20 +312,13 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				LAW: { TITLE: 'Anwendbare Rechtsvorschrift:', TEXT: 'www.ris.bka.gv.at' },
 				COPYRIGHT: {
 					TITLE: 'Urheberrecht:',
-					TEXT: `Die Inhalte dieser Webseite unterliegen, soweit dies rechtlich möglich ist, diversen Schutzrechten (z.B dem
-	Urheberrecht). Jegliche Verwendung/Verbreitung von bereitgestelltem Material, welche urheberrechtlich untersagt ist,
-	bedarf schriftlicher Zustimmung des Webseitenbetreibers.`,
+					TEXT: `Die Inhalte dieser Webseite unterliegen, soweit dies rechtlich möglich ist, diversen Schutzrechten (z.B dem Urheberrecht). Jegliche Verwendung/Verbreitung von bereitgestelltem Material, welche urheberrechtlich untersagt ist, bedarf schriftlicher Zustimmung des Webseitenbetreibers.`,
 				},
 				DISCLAIMER: {
 					TITLE: 'Haftungsausschluss:',
-					EXTERNAL_LINKS: `Trotz sorgfältiger inhaltlicher Kontrolle übernimmt der Webseitenbetreiber dieser Webseite keine Haftung für die
-	Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
-	Sollten Sie dennoch auf ausgehende Links aufmerksam werden, welche auf eine Webseite mit rechtswidriger
-	Tätigkeit/Information verweisen, ersuchen wir um dementsprechenden Hinweis, um diese nach § 17 Abs. 2 ECG umgehend
-	zu entfernen.`,
-					THIRD_PARTIES: `Die Urheberrechte Dritter werden vom Betreiber dieser Webseite mit größter Sorgfalt beachtet. Sollten Sie trotzdem
-	auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden
-	derartiger Rechtsverletzungen werden wir den betroffenen Inhalt umgehend entfernen.`,
+					EXTERNAL_LINKS: `Trotz sorgfältiger inhaltlicher Kontrolle übernimmt der Webseitenbetreiber dieser Webseite keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+					Sollten Sie dennoch auf ausgehende Links aufmerksam werden, welche auf eine Webseite mit rechtswidriger Tätigkeit/Information verweisen, ersuchen wir um dementsprechenden Hinweis, um diese nach § 17 Abs. 2 ECG umgehend zu entfernen.`,
+					THIRD_PARTIES: `Die Urheberrechte Dritter werden vom Betreiber dieser Webseite mit größter Sorgfalt beachtet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden derartiger Rechtsverletzungen werden wir den betroffenen Inhalt umgehend entfernen.`,
 				},
 				SOURCE: {
 					TITLE: 'Quelle:',

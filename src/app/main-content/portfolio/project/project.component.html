@@ -1,1 +1,14 @@
-<p>project works!</p>
+<div class="project">
+	<div class="project-text">
+		<h2>{{ TITLE }}</h2>
+		<h3>{{ TECHNOLOGIES }}</h3>
+		<p>{{ DESCRIPTION | translate }}</p>
+		<div class="project-buttons">
+			<a [href]="liveLink" target="_blank" class="btn">Live Test</a>
+			<a [href]="githubLink" target="_blank" class="btn">GitHub</a>
+		</div>
+	</div>
+	<div class="project-image">
+		<img [src]="imageSrc" alt="{{ TITLE }} Screenshot" />
+	</div>
+</div>

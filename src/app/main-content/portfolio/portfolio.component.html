@@ -1,1 +1,12 @@
 <p>portfolio works!</p>
+
+<div *ngFor="let project of projects" class="project">
+	<app-project
+		[TITLE]="project.TITLE"
+		[TECHNOLOGIES]="project.TECHNOLOGIES"
+		[DESCRIPTION]="project.DESCRIPTION"
+		[liveLink]="project.liveLink"
+		[githubLink]="project.githubLink"
+		[imageSrc]="project.imageSrc"
+	></app-project>
+</div>

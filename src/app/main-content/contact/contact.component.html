@@ -3,10 +3,19 @@
 	<p>{{ 'main.CONTACT.TEXT' | translate }}</p>
 	<p>{{ 'main.CONTACT.CONTACT_ME' | translate }}</p>
 	<p>
-		{{ 'main.CONTACT.MY_EMAIL' | translate }}:
-		<a href="mailto:your-email@example.com">your-email&#64;example.com</a>
+		<span>{{ 'main.CONTACT.MY_EMAIL.TITLE' | translate }}</span>
+		:
+		<a href="mailto:{{ 'main.CONTACT.MY_EMAIL.ADDRESS' | translate }}">
+			{{ 'main.CONTACT.MY_EMAIL.ADDRESS' | translate }}
+		</a>
 	</p>
-	<p>{{ 'main.CONTACT.MY_PHONE' | translate }}: 00</p>
+	<p>
+		<span>{{ 'main.CONTACT.MY_PHONE.TITLE' | translate }}</span>
+		:
+		<a href="tel:{{ 'main.CONTACT.MY_PHONE.NUMBER' | translate }}">
+			{{ 'main.CONTACT.MY_PHONE.NUMBER' | translate }}
+		</a>
+	</p>
 	<input type="text" placeholder="{{ 'main.CONTACT.NAME' | translate }}" />
 	<input type="email" placeholder="{{ 'main.CONTACT.MAIL' | translate }}" />
 	<textarea placeholder="{{ 'main.CONTACT.MSG' | translate }}"></textarea>
