@@ -1,3 +1,12 @@
-.main-content {
-	padding-top: 96px;
+// .main-content {
+// 	padding-top: 112px;
+// }
+.app-container {
+	display: flex;
+	justify-content: center;
+}
+
+.content-wrapper {
+	max-width: 1600px;
+	padding: 0px 105px 65px;
 }

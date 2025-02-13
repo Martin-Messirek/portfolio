@@ -1,10 +1,20 @@
 @import '../../../assets/css/variables.scss';
 
+// .app-container {
+// 	display: flex;
+// 	justify-content: center;
+// }
+
+// .content-wrapper {
+// 	max-width: 1600px;
+// 	padding: 0px 105px 65px;
+// }
+
 header {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	position: fixed;
-	max-width: 1600px;
+	width: 100%;
 }
 
 .menu-container {
@@ -13,8 +23,8 @@ header {
 	justify-content: space-between;
 	color: $red-color;
 	padding: 24px 35px;
-	width: calc(100vw - 210px);
-	max-width: 1390px;
+	width: calc(100vw - 280px);
+	max-width: 1320px;
 }
 .menu {
 	display: flex;

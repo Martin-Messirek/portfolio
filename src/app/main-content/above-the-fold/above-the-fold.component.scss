@@ -1,9 +1,46 @@
+@import './../../../assets/css/variables.scss';
+
+.vertical-text {
+	transform: rotate(270deg); /* Dreht den Text um 90 Grad */
+	transform-origin: top left; /* Setzt den Ursprung der Drehung */
+	white-space: nowrap; /* Verhindert Zeilenumbruch */
+	display: block; /* Macht den <p>-Tag zu einem Block-Element, um die Drehung zu ermöglichen */
+	color: $red-color;
+	border: 1px solid $green-color;
+	padding: 15px 30px;
+	font-weight: 500;
+	font-size: 18px;
+
+	// align-self: center;
+}
+
 .atf-container {
 	min-height: 100vh;
 	display: flex;
+	flex-flow: column;
+	justify-content: flex-end;
+	padding-bottom: 112px;
+}
+
+.links {
+	width: calc(1390px / 2);
+	max-width: calc((100vw - 210px) / 2);
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	position: relative; /* Ermöglicht die Verwendung von top/left/right/bottom */
+	top: 100px; /* Verschiebt das Element 100px nach unten */
+
+	img {
+		padding-bottom: 51px;
+	}
+}
+
+.atf-content {
+	display: flex;
 	justify-content: space-between;
 	align-items: end;
-	padding-bottom: 112px;
+	// padding-bottom: 112px;
 }
 
 .atf-img img {
@@ -12,5 +49,17 @@
 }
 
 .atf-text {
-	align-self: flex-end;
+	color: $green-color;
+
+	p {
+		&:first-child {
+			font-weight: 500;
+			font-size: 54px;
+		}
+
+		&:last-child {
+			font-weight: 700;
+			font-size: 82px;
+		}
+	}
 }

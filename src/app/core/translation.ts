@@ -5,7 +5,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TITLE: 'Frontend Developer',
 				NAME: 'Martin Messirek',
 				CONTACT: 'Contact me',
-				LINK: 'kkk',
+				// LINK: 'kkk',
 			},
 			ABOUT_ME: {
 				TITLE: 'About me',
@@ -193,7 +193,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TITLE: 'Frontend-Entwickler',
 				NAME: 'Martin Messirek',
 				CONTACT: 'Kontakt',
-				LINK: 'kk',
+				// LINK: 'kk',
 			},
 			ABOUT_ME: {
 				TITLE: 'Über mich',
