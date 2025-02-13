@@ -1,0 +1,16 @@
+.atf-container {
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	padding-bottom: 112px;
+}
+
+.atf-img img {
+	width: 340px;
+	height: auto;
+}
+
+.atf-text {
+	align-self: flex-end;
+}

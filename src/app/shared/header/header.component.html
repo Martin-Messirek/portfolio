@@ -1,14 +1,22 @@
 <header>
-	<h1>{{ 'shared.HEADER.LOGO' | translate }}</h1>
-	<nav>
-		<ul>
-			<li>{{ 'shared.HEADER.NAV.ABOUT' | translate }}</li>
-			<li>{{ 'shared.HEADER.NAV.SKILLS' | translate }}</li>
-			<li>{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</li>
-			<li>{{ 'shared.HEADER.NAV.CONTACT' | translate }}</li>
-		</ul>
-	</nav>
-</header>
+	<div class="menu-container">
+		<div class="menu">
+			<p class="logo">
+				<span>{{ 'shared.HEADER.LOGO' | translate }}</span>
+			</p>
+			<nav>
+				<ul>
+					<li>{{ 'shared.HEADER.NAV.ABOUT' | translate }}</li>
+					<li>{{ 'shared.HEADER.NAV.SKILLS' | translate }}</li>
+					<li>{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</li>
+					<li>{{ 'shared.HEADER.NAV.CONTACT' | translate }}</li>
+				</ul>
+			</nav>
+		</div>
 
-<button (click)="toggleLanguage()">EN</button>
-<button (click)="toggleLanguage()">DE</button>
+		<div class="btn-container">
+			<button (click)="toggleLanguage()">EN</button>
+			<button (click)="toggleLanguage()">DE</button>
+		</div>
+	</div>
+</header>

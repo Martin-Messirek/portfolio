@@ -1,0 +1,50 @@
+@import '../../../assets/css/variables.scss';
+
+header {
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	max-width: 1600px;
+}
+
+.menu-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: $red-color;
+	padding: 24px 35px;
+	width: calc(100vw - 210px);
+	max-width: 1390px;
+}
+.menu {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	line-height: 64px;
+	width: 64px;
+	font-size: 48px;
+	border-radius: 50%;
+	background: radial-gradient(at 35% 25%, white, $bg-color, black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	span {
+		text-shadow: 1px 1px 1px black;
+	}
+}
+
+nav {
+}
+ul {
+	display: flex;
+	gap: 32px;
+	font-weight: 500;
+	font-size: 22px;
+	list-style: none;
+}
+
+li {
+	width: 100px;
+}
