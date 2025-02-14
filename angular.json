@@ -76,7 +76,12 @@
 						"tsConfig": "tsconfig.spec.json",
 						"inlineStyleLanguage": "scss",
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["src/assets/css/fonts.css", "src/styles.scss", "src/assets/css/variables.scss"],
+						"styles": [
+							"src/assets/css/fonts.css",
+							"src/styles.scss",
+							"src/assets/css/variables.scss",
+							"src/assets/css/mixins.scss"
+						],
 						"scripts": []
 					}
 				}

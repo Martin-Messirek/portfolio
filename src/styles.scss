@@ -1,7 +1,98 @@
 @import './assets/css/variables.scss';
+@import './assets/css/mixins.scss';
 
 body {
-	background: linear-gradient(135deg, $bg-color, $bg-color, $bg-color, #1f1780, #0e0539, #1e1371);
+	background: linear-gradient(150deg, $bg-color 25%, $bg-color-light 50%, $bg-color 75%, $bg-color-light 100%);
+	// height: 5000px;
+}
+
+h1 {
+	color: $green-color;
+	font-weight: 700;
+	font-size: 82px;
+}
+
+.job-title {
+	color: $green-color;
+	font-weight: 500;
+	font-size: 54px;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-weight: 500;
+	font-size: 54px;
+	color: $red-color;
+}
+
+h3 {
+}
+
+h4 {
+}
+
+p {
+}
+
+.red-48 {
+	font-weight: 700;
+	font-size: 48px;
+	color: $red-color;
+}
+
+.red-22 {
+	font-weight: 500;
+	font-size: 22px;
+	color: $red-color;
+}
+
+.red-18 {
+	font-weight: 700;
+	font-size: 18px;
+	color: $red-color;
+}
+
+.red-18-light {
+	font-weight: 500;
+	font-size: 18px;
+	color: $red-color;
+}
+
+.red-22 {
+	font-weight: 500;
+	font-size: 22px;
+	font-weight: 500;
+	color: $red-color;
+}
+
+.red-22 {
+	font-weight: 500;
+	font-size: 22px;
+	color: $red-color;
+}
+
+.green-18 {
+	font-weight: 700;
+	font-size: 18px;
+	color: $green-color;
+}
+
+.green-18-light {
+	font-weight: 400;
+	font-size: 18px;
+	color: $green-color;
+}
+
+.green-16 {
+	font-weight: 400;
+	font-size: 16px;
+	color: $green-color;
+}
+
+.purple-18 {
+	font-weight: 500;
+	font-size: 18px;
+	color: $bg-color;
 }
 
 * {

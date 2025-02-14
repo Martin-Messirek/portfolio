@@ -1,0 +1,11 @@
+@mixin flex($jc: center, $ai: center, $dir: row, $gap: 0px) {
+	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+	flex-direction: $dir;
+	gap: $gap;
+}
+
+@mixin transition {
+	transition: all 125ms ease-in-out;
+}

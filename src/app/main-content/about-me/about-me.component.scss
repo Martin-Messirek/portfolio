@@ -1,0 +1,69 @@
+@import '../../../assets/css/variables.scss';
+@import '../../../assets/css/mixins.scss';
+
+.about-me {
+	@include flex($gap: 6vw);
+}
+
+.portrait {
+	width: 300px;
+	height: auto;
+}
+
+.grid-container {
+	max-width: 640px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	padding: 48px 0 36px;
+}
+
+.grid-item {
+	@include flex($jc: normal, $ai: normal, $dir: column, $gap: 24px);
+}
+
+.grid-item:last-child {
+	justify-content: flex-end;
+}
+
+.flex-container {
+	@include flex($gap: 16px, $ai: flex-end);
+}
+
+.align-right {
+	text-align: right;
+}
+
+.arrow {
+	&-down {
+		width: 23px;
+		height: 56px;
+	}
+	&-up {
+		width: 35px;
+		height: 44px;
+	}
+	&-twisted {
+		width: 36px;
+		height: 60px;
+	}
+}
+
+.text {
+}
+
+.arrow-container {
+	width: 100%;
+	@include flex($jc: space-between);
+}
+
+.flex-end {
+	@include flex($jc: flex-end);
+}
+button {
+	cursor: pointer;
+	background-color: $green-color;
+	min-width: 169px;
+	height: 52px;
+	padding: 15px 30px;
+}

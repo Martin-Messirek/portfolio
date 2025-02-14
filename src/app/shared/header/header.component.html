@@ -5,7 +5,7 @@
 				<span>{{ 'shared.HEADER.LOGO' | translate }}</span>
 			</p>
 			<nav>
-				<ul>
+				<ul class="red-22">
 					<li>{{ 'shared.HEADER.NAV.ABOUT' | translate }}</li>
 					<li>{{ 'shared.HEADER.NAV.SKILLS' | translate }}</li>
 					<li>{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</li>
@@ -15,8 +15,18 @@
 		</div>
 
 		<div class="btn-container">
-			<button (click)="toggleLanguage()">EN</button>
-			<button (click)="toggleLanguage()">DE</button>
+			<button
+				(click)="toggleLanguage('en')"
+				[ngClass]="{ 'green-18': currentLang == 'en', 'red-18': currentLang !== 'en' }"
+			>
+				EN
+			</button>
+			<button
+				(click)="toggleLanguage('de')"
+				[ngClass]="{ 'green-18': currentLang == 'de', 'red-18': currentLang !== 'de' }"
+			>
+				DE
+			</button>
 		</div>
 	</div>
 </header>

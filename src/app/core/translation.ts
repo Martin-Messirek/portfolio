@@ -12,9 +12,9 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				DESCRIPTION:
 					" I'm a Frontend Developer based in Vienna, dedicated to building web applications that balance usability with a clean, appealing design. My focus is on solving technical challenges by developing thoughtfully crafted solutions.",
 				INTRO: 'I am',
-				LOCATION: 'located in Vienna',
-				REMOTE: 'open to work remote',
-				RELOCATE: 'open to relocate',
+				LOCATION: { 1: 'located', 2: 'in Vienna' },
+				REMOTE: { 1: 'open to', 2: 'work remote' },
+				RELOCATE: { 1: 'open to', 2: 'relocate' },
 				CONTACT: 'Let’s talk',
 			},
 			SKILLS: {
@@ -199,10 +199,10 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TITLE: 'Über mich',
 				DESCRIPTION:
 					'Als Frontend-Entwickler aus Wien widme ich mich der Gestaltung von Webanwendungen, die sowohl durch ihre Benutzerfreundlichkeit als auch durch ihre visuelle Anziehungskraft überzeugen. Mein Ziel ist es, technische Herausforderungen zu meistern und dabei Lösungen zu schaffen, die einfach zu bedienen und zugleich kreativ und funktional sind. ',
-				INTRO: 'I bin',
-				LOCATION: 'aktuell in Wien',
-				REMOTE: 'offen für Remote-Arbeit',
-				RELOCATE: 'offen für einen Wohnortwechsel',
+				INTRO: 'Ich bin',
+				LOCATION: { 1: 'aktuell', 2: 'in Wien' },
+				REMOTE: { 1: 'offen für', 2: 'Remote-Arbeit' },
+				RELOCATE: { 1: 'offen für einen', 2: 'Wohnortwechsel' },
 				CONTACT: 'Jetzt kontaktieren!',
 			},
 			SKILLS: {
