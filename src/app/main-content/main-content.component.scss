@@ -1,9 +1,8 @@
-// .main-content {
+@import '../../assets/css/mixins.scss'; // .main-content {
 // 	padding-top: 112px;
 // }
 .app-container {
-	display: flex;
-	justify-content: center;
+	@include flex(center, normal, row, 0px);
 }
 
 .content-wrapper {

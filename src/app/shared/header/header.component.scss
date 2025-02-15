@@ -1,4 +1,5 @@
 @import '../../../assets/css/variables.scss';
+@import '../../../assets/css/mixins.scss';
 
 // .app-container {
 // 	display: flex;
@@ -16,6 +17,7 @@ header {
 	position: fixed;
 	width: 100%;
 	background-color: $bg-color;
+	z-index: 8;
 }
 
 .menu-container {
@@ -44,6 +46,8 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
+	@include transition();
 	span {
 		text-shadow: 1px 0px 1px black;
 	}
@@ -51,6 +55,7 @@ header {
 
 nav {
 }
+
 ul {
 	display: flex;
 	gap: 32px;
@@ -61,11 +66,34 @@ ul {
 li {
 	width: 110px;
 	text-align: center;
+	@include text-style(500, 22px, $red-color);
+	cursor: pointer;
+	@include transition();
+	&:hover {
+		color: $green-color;
+	}
 }
 
 .btn-container button {
 	background: none;
 	outline: none;
 	border: none;
+}
+
+.language-button {
 	cursor: pointer;
+	@include transition();
+
+	&.active {
+		@include text-style(700, 18px, $green-color);
+		cursor: default; // Kein Pointer für aktive Sprache
+	}
+
+	&:not(.active) {
+		@include text-style(700, 18px, $red-color);
+
+		&:hover {
+			color: $green-color; // Beim Hover grün färben
+		}
+	}
 }

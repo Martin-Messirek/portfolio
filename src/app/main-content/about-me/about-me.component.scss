@@ -2,12 +2,15 @@
 @import '../../../assets/css/mixins.scss';
 
 .about-me {
-	@include flex($gap: 6vw);
+	@include flex(normal, normal, row, 6vw);
 }
 
 .portrait {
 	width: 300px;
 	height: auto;
+}
+.description {
+	min-height: 112px;
 }
 
 .grid-container {
@@ -15,19 +18,19 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
-	padding: 48px 0 36px;
+	padding: 48px 0 36px; //################################################################################################## padding top verringern bei großem Bildschirm
 }
 
 .grid-item {
-	@include flex($jc: normal, $ai: normal, $dir: column, $gap: 24px);
+	@include flex(normal, normal, column, 24px);
 }
 
 .grid-item:last-child {
-	justify-content: flex-end;
+	@include flex(flex-end, normal, row, 0px);
 }
 
 .flex-container {
-	@include flex($gap: 16px, $ai: flex-end);
+	@include flex(normal, flex-end, row, 16px);
 }
 
 .align-right {
@@ -54,11 +57,11 @@
 
 .arrow-container {
 	width: 100%;
-	@include flex($jc: space-between);
+	@include flex(space-between, normal, row, 0px);
 }
 
 .flex-end {
-	@include flex($jc: flex-end);
+	@include flex(flex-end, normal, row, 0px);
 }
 button {
 	cursor: pointer;

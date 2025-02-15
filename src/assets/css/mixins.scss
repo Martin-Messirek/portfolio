@@ -1,4 +1,12 @@
-@mixin flex($jc: center, $ai: center, $dir: row, $gap: 0px) {
+// @mixin flex($jc: center, $ai: center, $dir: row, $gap: 0px) {
+// 	display: flex;
+// 	justify-content: $jc;
+// 	align-items: $ai;
+// 	flex-direction: $dir;
+// 	gap: $gap;
+// }
+
+@mixin flex($jc, $ai, $dir, $gap) {
 	display: flex;
 	justify-content: $jc;
 	align-items: $ai;
@@ -6,6 +14,12 @@
 	gap: $gap;
 }
 
-@mixin transition {
-	transition: all 125ms ease-in-out;
+@mixin transition() {
+	transition: all 85ms ease-out;
+}
+
+@mixin text-style($weight, $size, $color) {
+	font-weight: $weight;
+	font-size: $size;
+	color: $color;
 }

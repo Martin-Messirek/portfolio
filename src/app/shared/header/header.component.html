@@ -5,26 +5,21 @@
 				<span>{{ 'shared.HEADER.LOGO' | translate }}</span>
 			</p>
 			<nav>
-				<ul class="red-22">
+				<ul>
 					<li>{{ 'shared.HEADER.NAV.ABOUT' | translate }}</li>
 					<li>{{ 'shared.HEADER.NAV.SKILLS' | translate }}</li>
 					<li>{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</li>
 					<li>{{ 'shared.HEADER.NAV.CONTACT' | translate }}</li>
+					<li>{{ '' | translate }}</li>
 				</ul>
 			</nav>
 		</div>
 
 		<div class="btn-container">
-			<button
-				(click)="toggleLanguage('en')"
-				[ngClass]="{ 'green-18': currentLang == 'en', 'red-18': currentLang !== 'en' }"
-			>
+			<button class="language-button" [ngClass]="{ active: currentLang === 'en' }" (click)="toggleLanguage('en')">
 				EN
 			</button>
-			<button
-				(click)="toggleLanguage('de')"
-				[ngClass]="{ 'green-18': currentLang == 'de', 'red-18': currentLang !== 'de' }"
-			>
+			<button class="language-button" [ngClass]="{ active: currentLang === 'de' }" (click)="toggleLanguage('de')">
 				DE
 			</button>
 		</div>
