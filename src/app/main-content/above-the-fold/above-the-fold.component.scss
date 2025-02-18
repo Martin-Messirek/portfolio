@@ -6,14 +6,14 @@
 	transform-origin: top left; /* Setzt den Ursprung der Drehung */
 	white-space: nowrap; /* Verhindert Zeilenumbruch */
 	display: block; /* Macht den <p>-Tag zu einem Block-Element, um die Drehung zu ermöglichen */
-	border: 1px solid $green-color;
-	padding: 15px 30px;
-	@include text-style(500, 18px, $red-color); // -----
-	cursor: pointer;
-	@include transition();
-	&:hover {
-		color: $green-color;
-	}
+	// border: 1px solid $green-color;
+	// padding: 15px 30px;
+	// @include text-style(500, 18px, $red-color); // -----
+	// cursor: pointer;
+	// @include transition();
+	// &:hover {
+	// 	color: $green-color;
+	// }
 }
 
 .atf-container {
@@ -68,10 +68,10 @@
 }
 
 .atf-img img {
-	width: 720px;
-	height: 792px;
-	// width: 640px;
-	// height: 660px;
+	// width: 720px;
+	// height: 792px;
+	width: 660px;
+	height: 690px;
 	object-fit: cover;
 }
 
@@ -82,9 +82,14 @@
 	}
 
 	// .atf-img img {
+	// 	width: 720px;
+	// 	height: 792px;
+	// }
+	// .atf-img img {
 	// 	width: 40vw;
 	// 	height: 42vw;
 	// }
+
 	.links {
 		justify-content: start;
 		top: 20vw;
@@ -96,8 +101,8 @@
 		padding-bottom: 112px;
 	}
 	.atf-content {
-		@include flex($jc: center, $ai: center, $gap: 48px);
-		flex-flow: column-reverse;
+		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 48px);
+		// flex-flow: column-reverse;
 	}
 
 	.atf-text {

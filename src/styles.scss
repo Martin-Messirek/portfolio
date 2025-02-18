@@ -61,6 +61,46 @@ h3 {
 	color: $green-color;
 }
 
+a {
+	text-decoration: none;
+}
+.btn {
+	border: 1px solid $green-color;
+	padding: 15px 30px;
+	// text-decoration: none;
+	cursor: pointer;
+	@include transition();
+}
+
+.btn-green {
+	background-color: $green-color;
+	@include text-style(500, 18px, $bg-color);
+	&:hover {
+		color: $red-color;
+	}
+	&:active {
+		color: $bg-color;
+		font-weight: 700;
+		filter: brightness(1.2);
+	}
+}
+
+.btn-purple {
+	background-color: $bg-color;
+	@include text-style(500, 18px, $red-color);
+	&:hover {
+		color: $green-color;
+	}
+	&:active {
+		border-color: $red-color;
+		color: $red-color;
+	}
+}
+
+.align-right {
+	text-align: right;
+}
+
 @media (max-width: 768px) {
 	h1 {
 		font-size: 40px;
@@ -89,4 +129,40 @@ h3 {
 	.green-regular-text {
 		font-size: 16px;
 	}
+
+	.btn {
+		padding: 12px 20px;
+	}
+
+	.btn-green {
+		font-size: 16px;
+	}
+
+	.btn-purple {
+		font-weight: 500;
+		font-size: 16px;
+	}
 }
+
+// @media (hover: none) {
+// 	.btn-green {
+// 		&:hover {
+// 			color: inherit; // Hover entfernen
+// 		}
+// 		&:active {
+// 			color: $red-color;
+// 			font-weight: 700;
+// 			filter: brightness(1.15);
+// 		}
+// 	}
+
+// 	.btn-purple {
+// 		&:hover {
+// 			color: inherit; // Hover entfernen
+// 		}
+// 		&:active {
+// 			border-color: $red-color;
+// 			color: $red-color;
+// 		}
+// 	}
+// }

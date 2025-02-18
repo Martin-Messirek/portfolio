@@ -17,8 +17,6 @@
 // 	@include text-style(700, 18px, $green-color); // logo and pop up text 400 16
 // }
 
-//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
-
 @media (max-width: 768px) {
 	.skill-logo-title {
 		display: none;

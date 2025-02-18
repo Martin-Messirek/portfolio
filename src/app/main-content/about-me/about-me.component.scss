@@ -48,10 +48,6 @@
 	@include flex($ai: flex-end, $gap: 16px);
 }
 
-.align-right {
-	text-align: right;
-}
-
 .arrow {
 	&-down {
 		width: 23px;
@@ -77,15 +73,15 @@
 }
 
 button {
-	min-width: 169px;
-	height: 52px;
-	padding: 15px 30px;
-	@include text-style(500, 18px, $bg-color);
-	background-color: $green-color;
-	cursor: pointer;
-	&:hover {
-		color: $red-color;
-	}
+	// min-width: 169px;
+	// height: 52px;
+	// padding: 15px 30px;
+	// @include text-style(500, 18px, $bg-color);
+	// background-color: $green-color;
+	// cursor: pointer;
+	// &:hover {
+	// 	color: $red-color;
+	// }
 }
 
 @media (max-width: 768px) {
