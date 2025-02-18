@@ -1,7 +1,9 @@
+@import '../../../assets/css/mixins.scss';
+@import '../../../assets/css/variables.scss';
+
 .legal-page {
-	display: flex;
-	justify-content: center;
-	color: white;
+	@include flex(center, normal, row, 0);
+	color: $white-color;
 }
 
 .content-wrapper {

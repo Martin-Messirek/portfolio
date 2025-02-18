@@ -1,0 +1,31 @@
+@import '../../../assets/css/variables.scss';
+@import '../../../assets/css/mixins.scss';
+
+.skill-logo-title,
+.continuous-learning {
+	@include text-style(700, 18px, $green-color); // --
+	@include transition();
+}
+
+.pop-up {
+	visibility: hidden;
+	opacity: 0;
+	@include transition();
+}
+
+// p {
+// 	@include text-style(700, 18px, $green-color); // logo and pop up text 400 16
+// }
+
+//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
+
+@media (max-width: 768px) {
+	.skill-logo-title {
+		display: none;
+	}
+
+	.continuous-learning {
+		font-size: 16px;
+		font-weight: 400;
+	}
+}

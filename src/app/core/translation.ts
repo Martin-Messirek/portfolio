@@ -18,7 +18,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				CONTACT: 'Let’s talk',
 			},
 			SKILLS: {
-				HEADER: 'Skill Set',
+				HEADER: 'Skills', //Skill Set
 				ANGULAR: 'Angular',
 				TYPESCRIPT: 'Typescript',
 				JAVASCRIPT: 'JavaScript',

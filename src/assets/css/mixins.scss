@@ -6,7 +6,7 @@
 // 	gap: $gap;
 // }
 
-@mixin flex($jc, $ai, $dir, $gap) {
+@mixin flex($jc: normal, $ai: normal, $dir: row, $gap: 0) {
 	display: flex;
 	justify-content: $jc;
 	align-items: $ai;

@@ -7,6 +7,8 @@ import { Directive, ElementRef, Renderer2, HostListener, Input } from '@angular/
 export class HoverImageDirective {
 	private defaultImage: HTMLElement | null = null;
 	private hoverImage: HTMLElement | null = null;
+	private hoverText: HTMLElement | null = null;
+
 	constructor(private el: ElementRef, private renderer: Renderer2) {}
 
 	ngOnInit() {
@@ -16,16 +18,35 @@ export class HoverImageDirective {
 			this.hoverImage = images[1];
 			this.renderer.setStyle(this.hoverImage, 'opacity', '0'); // Hover-Bild ausblenden
 		}
+
+		// Überprüfen, ob ein Text zum Hovern vorhanden ist
+		const textElements = this.el.nativeElement.querySelectorAll('p.pop-up');
+		if (textElements.length === 1) {
+			this.hoverText = textElements[0];
+			this.renderer.setStyle(this.hoverText, 'visibility', 'hidden'); // Text ausblenden
+		}
 	}
 	@HostListener('mouseenter') onHover() {
-		if (!this.defaultImage || !this.hoverImage) return;
-		this.renderer.setStyle(this.defaultImage, 'opacity', '0');
-		this.renderer.setStyle(this.hoverImage, 'opacity', '1');
+		// Überprüfen, ob der Mauszeiger das .continuous-learning-Element berührt
+		if (this.el.nativeElement.querySelector('.continuous-learning')) {
+			if (this.hoverText) {
+				this.renderer.setStyle(this.hoverText, 'visibility', 'visible'); // Text einblenden
+				this.renderer.setStyle(this.hoverText, 'opacity', '1');
+			}
+		}
+		if (this.defaultImage && this.hoverImage) {
+			this.renderer.setStyle(this.defaultImage, 'opacity', '0');
+			this.renderer.setStyle(this.hoverImage, 'opacity', '1');
+		}
 	}
-
 	@HostListener('mouseleave') onLeave() {
-		if (!this.defaultImage || !this.hoverImage) return;
-		this.renderer.setStyle(this.defaultImage, 'opacity', '1');
-		this.renderer.setStyle(this.hoverImage, 'opacity', '0');
+		if (this.hoverText) {
+			this.renderer.setStyle(this.hoverText, 'visibility', 'hidden'); // Text ausblenden
+			this.renderer.setStyle(this.hoverText, 'opacity', '0');
+		}
+		if (this.defaultImage && this.hoverImage) {
+			this.renderer.setStyle(this.defaultImage, 'opacity', '1');
+			this.renderer.setStyle(this.hoverImage, 'opacity', '0');
+		}
 	}
 }

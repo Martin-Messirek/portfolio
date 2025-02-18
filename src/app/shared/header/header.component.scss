@@ -1,37 +1,33 @@
 @import '../../../assets/css/variables.scss';
 @import '../../../assets/css/mixins.scss';
 
-// .app-container {
-// 	display: flex;
-// 	justify-content: center;
-// }
-
-// .content-wrapper {
-// 	max-width: 1600px;
-// 	padding: 0px 105px 65px;
-// }
-
 header {
-	display: flex;
-	justify-content: center;
+	@include flex($jc: center);
 	position: fixed;
 	width: 100%;
-	background-color: $bg-color;
+	background: linear-gradient(
+		to bottom,
+		$bg-color 40%,
+		rgba($bg-color, 0.9) 60%,
+		rgba($bg-color, 0.8) 70%,
+		rgba($bg-color, 0.7) 80%,
+		rgba($bg-color, 0.6) 85%,
+		rgba($bg-color, 0.5) 90%,
+		rgba($bg-color, 0.4) 95%,
+		rgba($bg-color, 0.3) 100%
+	);
 	z-index: 8;
 }
 
 .menu-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
+	@include flex($jc: space-between, $ai: center);
 	padding: 24px 35px;
 	width: calc(100vw - 280px);
 	max-width: 1320px;
 }
+
 .menu {
-	display: flex;
-	align-items: center;
+	@include flex($ai: center);
 }
 
 .logo {
@@ -41,11 +37,7 @@ header {
 	font-size: 48px;
 	border-radius: 50%;
 	background: radial-gradient(at 35% 25%, white, $bg-color, $bg-color-light);
-	// background: radial-gradient(at 35% 25%, white, $bg-color-light, $bg-color, black);
-	// background: radial-gradient(at 35% 25%, white, $bg-color, black);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex($jc: center, $ai: center);
 	cursor: pointer;
 	@include transition();
 	span {
@@ -53,20 +45,17 @@ header {
 	}
 }
 
-nav {
-}
-
 ul {
 	display: flex;
 	gap: 32px;
-
+	@include flex($gap: 32px);
 	list-style: none;
 }
 
 li {
 	width: 110px;
 	text-align: center;
-	@include text-style(500, 22px, $red-color);
+	@include text-style(500, 22px, $red-color); // 500 18
 	cursor: pointer;
 	@include transition();
 	&:hover {

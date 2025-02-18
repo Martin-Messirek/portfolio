@@ -8,25 +8,24 @@
 	display: block; /* Macht den <p>-Tag zu einem Block-Element, um die Drehung zu ermöglichen */
 	border: 1px solid $green-color;
 	padding: 15px 30px;
-	@include text-style(500, 18px, $red-color);
+	@include text-style(500, 18px, $red-color); // -----
 	cursor: pointer;
 	@include transition();
 	&:hover {
 		color: $green-color;
 	}
-	// align-self: center;
 }
 
 .atf-container {
 	min-height: 100vh;
-	@include flex(flex-end, normal, column, 0px);
+	@include flex($jc: flex-end, $dir: column);
 	padding-bottom: 112px;
 }
 
 .links {
 	width: calc(1390px / 2);
 	max-width: calc((100vw - 210px) / 2);
-	@include flex(space-between, flex-end, row, 0px);
+	@include flex($jc: space-between, $ai: flex-end);
 	position: relative; /* Ermöglicht die Verwendung von top/left/right/bottom */
 	top: 100px; /* Verschiebt das Element 100px nach unten */
 
@@ -34,39 +33,17 @@
 		position: relative;
 		width: 38px;
 		height: 122px;
-		// padding-bottom: 64px;
-		// @include flex($jc: center, $ai: center, $dir: row, $gap: 0px);
 		img {
 			position: absolute;
-			// top: 0;
-			// left: 0;
-			// width: 100%;
-			// height: auto;
-			// transition: opacity 2.3s ease-in-out;
-			// position: absolute;
-			// width: 122px;
-			// height: auto;
-
-			// margin-bottom: 51px;
-			// left: 7px;
-			// bottom: 2px;
-			// border: none;
 			cursor: pointer;
 			@include transition();
-			// &.hovered {
-			// 	opacity: 0; /* Versteckt das Bild */
-			// }
-			// &:hover {
-			// 	margin-bottom: 46px;
-			// }
 		}
+
 		.default-image {
 			top: 10px;
 			left: 8px;
 			width: 22px;
 			height: 50px;
-			// 	opacity: 1; /* Standardbild ist sichtbar */
-			// 	@include transition();
 		}
 
 		.hover-image {
@@ -74,18 +51,7 @@
 			height: 68px;
 			top: 0;
 			left: 0;
-			// 	opacity: 0; /* Hover-Bild ist anfangs unsichtbar */
-			// 	@include transition();
 		}
-		// > img:nth-of-type(1) {
-		// 	// left: 17px;
-		// 	// bottom: 2px;
-		// }
-		// > img:nth-of-type(2) {
-		// 	margin-left: -22px;
-		// 	// 	mlleft: 17px;
-		// 	// 	bottom: 2px;
-		// }
 	}
 }
 
@@ -96,38 +62,12 @@
 .img:hover .hover-image {
 	opacity: 1; /* Beim Hover wird das Hover-Bild sichtbar */
 }
-// .image-container {
-// position: relative;
-// width: 40px;
-// height: 70px;
-// img {
-// 	position: absolute;
-// 	// width: 122px;
-// 	// height: auto;
-
-// 	margin-bottom: 51px;
-
-// 	border: none;
-// 	cursor: pointer;
-// 	@include transition();
-// 	&.hovered {
-// 		opacity: 0; /* Versteckt das Bild */
-// 	}
-// 	&:hover {
-// 		margin-bottom: 46px;
-// 	}
-// }
-// }
 
 .atf-content {
-	@include flex(space-between, end, row, 0px);
-	// padding-bottom: 112px;
+	@include flex($jc: space-between, $ai: flex-end);
 }
 
 .atf-img img {
 	width: 340px;
 	height: auto;
-}
-
-.atf-text {
 }

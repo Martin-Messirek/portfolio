@@ -2,15 +2,18 @@
 @import '../../../assets/css/mixins.scss';
 
 .about-me {
-	@include flex(normal, normal, row, 6vw);
+	@include flex($gap: 6vw);
 }
 
 .portrait {
 	width: 300px;
 	height: auto;
 }
+
 .description {
 	min-height: 112px;
+	padding-top: 16px;
+	@include text-style(400, 16px, $green-color);
 }
 
 .grid-container {
@@ -18,19 +21,27 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
-	padding: 48px 0 36px; //################################################################################################## padding top verringern bei großem Bildschirm
+	padding: 48px 0 36px; //##################################################################################################
+	// padding top verringern bei großem Bildschirm
+}
+
+.intro {
+	@include text-style(700, 48px, $red-color);
 }
 
 .grid-item {
-	@include flex(normal, normal, column, 24px);
+	@include flex($dir: column, $gap: 24px);
+	img {
+		cursor: pointer;
+	}
 }
 
 .grid-item:last-child {
-	@include flex(flex-end, normal, row, 0px);
+	@include flex($jc: flex-end, $dir: column, $gap: 24px);
 }
 
 .flex-container {
-	@include flex(normal, flex-end, row, 16px);
+	@include flex($ai: flex-end, $gap: 16px);
 }
 
 .align-right {
@@ -52,21 +63,34 @@
 	}
 }
 
-.text {
-}
-
 .arrow-container {
 	width: 100%;
-	@include flex(space-between, normal, row, 0px);
+	@include flex($jc: space-between);
 }
 
 .flex-end {
-	@include flex(flex-end, normal, row, 0px);
+	@include flex($jc: flex-end);
 }
+
 button {
-	cursor: pointer;
-	background-color: $green-color;
 	min-width: 169px;
 	height: 52px;
 	padding: 15px 30px;
+	@include text-style(500, 18px, $bg-color);
+	background-color: $green-color;
+	cursor: pointer;
+	&:hover {
+		color: $red-color;
+	}
+}
+
+@media (max-width: 768px) {
+	.intro {
+		font-size: 18px;
+	}
+
+	button {
+		font-size: 16px;
+		font-weight: 400;
+	}
 }
