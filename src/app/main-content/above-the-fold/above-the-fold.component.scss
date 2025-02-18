@@ -17,9 +17,9 @@
 }
 
 .atf-container {
-	min-height: 100vh;
+	// m*in-height: 100vh;
 	@include flex($jc: flex-end, $dir: column);
-	padding-bottom: 112px;
+	padding: 150px 0 300px;
 }
 
 .links {
@@ -27,7 +27,7 @@
 	max-width: calc((100vw - 210px) / 2);
 	@include flex($jc: space-between, $ai: flex-end);
 	position: relative; /* Ermöglicht die Verwendung von top/left/right/bottom */
-	top: 100px; /* Verschiebt das Element 100px nach unten */
+	top: 300px; /* Verschiebt das Element 100px nach unten */
 
 	.arrow-container {
 		position: relative;
@@ -64,10 +64,74 @@
 }
 
 .atf-content {
-	@include flex($jc: space-between, $ai: flex-end);
+	@include flex($jc: space-between, $ai: flex-end, $gap: 48px);
 }
 
 .atf-img img {
-	width: 340px;
-	height: auto;
+	width: 720px;
+	height: 792px;
+	// width: 640px;
+	// height: 660px;
+	object-fit: cover;
+}
+
+@media (max-width: 2000px) {
+	.atf-container {
+		padding-top: 0;
+		min-height: 100vh;
+	}
+
+	// .atf-img img {
+	// 	width: 40vw;
+	// 	height: 42vw;
+	// }
+	.links {
+		justify-content: start;
+		top: 20vw;
+	}
+}
+
+@media (max-width: 1600px) {
+	.atf-container {
+		padding-bottom: 112px;
+	}
+	.atf-content {
+		@include flex($jc: center, $ai: center, $gap: 48px);
+		flex-flow: column-reverse;
+	}
+
+	.atf-text {
+		text-align: center;
+	}
+	// .atf-img img {
+	// 	width: 40vw;
+	// 	height: 42vw;
+	// }
+
+	.arrow-container {
+		display: none;
+	}
+}
+
+@media (max-width: 1200px) {
+	.atf-container {
+		// m*in-height: 100vh;
+		justify-content: flex-start;
+		padding-top: 21vw;
+	}
+
+	.atf-img img {
+		width: 60vw;
+		height: 66vw;
+	}
+
+	.links {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.atf-container {
+		padding-top: 160px;
+	}
 }

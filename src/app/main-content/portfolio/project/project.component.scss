@@ -1,0 +1,76 @@
+@import '../../../../assets/css/variables.scss';
+@import '../../../../assets/css/mixins.scss';
+
+div {
+	& > div {
+		.image {
+		}
+
+		.technologies {
+			@include text-style(400, 18px, $green-color);
+		}
+
+		p {
+		}
+		//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
+		.buttons {
+			@include flex($gap: 24px);
+			.btn {
+				border: 1px solid $green-color;
+				text-decoration: none;
+			}
+			.btn:first-child {
+				@include text-style(500, 18px, $red-color); // Stil für den ersten Button (Live Test)
+				&:hover {
+					color: $green-color;
+				}
+			}
+
+			.btn:last-child {
+				@include text-style(500, 18px, $bg-color); // Stil für den zweiten Button (GitHub)
+				background-color: $green-color;
+				&:hover {
+					color: $red-color;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	div {
+		& > div {
+			.image {
+				// Styles für das Bild im mobilen Layout
+			}
+
+			h3 {
+				// Styles für den Titel im mobilen Layout
+			}
+
+			.technologies {
+				// Styles für den Technologien-Text im mobilen Layout
+			}
+
+			p {
+				// Styles für den Beschreibungstext im mobilen Layout
+			}
+
+			.buttons {
+				// Styles für die Buttons im mobilen Layout
+
+				.btn {
+					// Allgemeine Styles für Buttons im mobilen Layout
+				}
+
+				.live-test {
+					// Spezifische Styles für den Live Test Button im mobilen Layout
+				}
+
+				.github {
+					// Spezifische Styles für den GitHub Button im mobilen Layout
+				}
+			}
+		}
+	}
+}

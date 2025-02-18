@@ -40,7 +40,13 @@ h1 {
 }
 
 h2 {
+	padding-bottom: 36px;
 	@include text-style(500, 54px, $red-color);
+}
+
+h3 {
+	padding-bottom: 24px;
+	@include text-style(700, 48px, $green-color);
 }
 
 .red-regular-text {
@@ -66,8 +72,14 @@ h2 {
 	}
 
 	h2 {
+		// padding-bottom: 124px;
 		font-size: 32px;
 		font-weight: 700;
+	}
+
+	h3 {
+		// padding-bottom: 124px;
+		font-size: 24px;
 	}
 
 	.red-regular-text {

@@ -32,6 +32,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				LEARNING: 'Continuous Learning',
 				POP_UP: 'I am always eager to learn new technologies. Just let me know what you are looking for',
 			},
+			PORTFOLIO: 'My Projects',
 			CONTACT: {
 				HEADER: 'Contact',
 				SUBHEADER: 'Got a problem to solve?',
@@ -220,6 +221,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				LEARNING: 'Ständige Weiterbildung',
 				POP_UP: 'Ich freue mich immer, neue Technologien zu lernen. Lassen Sie mich wissen, was Sie suchen.',
 			},
+			PORTFOLIO: 'Meine Projekte',
 			CONTACT: {
 				HEADER: 'Kontakt',
 				SUBHEADER: 'Haben Sie ein Problem zu lösen?',

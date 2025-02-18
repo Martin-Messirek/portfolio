@@ -2,17 +2,21 @@
 @import '../../../assets/css/mixins.scss';
 
 .about-me {
-	@include flex($gap: 6vw);
+	@include flex($ai: center, $gap: 6vw);
+	padding-bottom: 112px;
 }
 
 .portrait {
-	width: 300px;
-	height: auto;
+	// width: 400px;
+	// width: 300px;
+	height: 40vw;
+	max-height: 600px;
+	width: auto;
 }
 
 .description {
 	min-height: 112px;
-	padding-top: 16px;
+	// padding-top: 16px;
 	@include text-style(400, 16px, $green-color);
 }
 
@@ -85,6 +89,10 @@ button {
 }
 
 @media (max-width: 768px) {
+	.portrait {
+		display: none;
+	}
+
 	.intro {
 		font-size: 18px;
 	}
