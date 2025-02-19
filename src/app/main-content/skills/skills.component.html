@@ -1,5 +1,5 @@
+<h2>{{ 'main.SKILLS.HEADER' | translate }}</h2>
 <div class="skills">
-	<h2>{{ 'main.SKILLS.HEADER' | translate }}</h2>
 	<!-- <p class="skill-logo-title">{{ 'main.SKILLS.ANGULAR' | translate }}</p>
 	<p class="skill-logo-title">{{ 'main.SKILLS.TYPESCRIPT' | translate }}</p>
 	<p class="skill-logo-title">{{ 'main.SKILLS.JAVASCRIPT' | translate }}</p>
@@ -61,9 +61,12 @@
 		<p class="skill-logo-title">{{ 'main.SKILLS.MATERIAL' | translate }}</p>
 	</div>
 
-	<div class="skill-logo" appHoverImage>
-		<img src="path/to/continuous-logo.png" alt="Continuous Learning" />
-		<p class="continuous-learning">{{ 'main.SKILLS.LEARNING' | translate }}</p>
+	<div class="appHoverImage" appHoverImage>
+		<div class="skill-logo hover">
+			<img src="path/to/continuous-logo.png" alt="Continuous Learning" />
+			<p class="continuous-learning">{{ 'main.SKILLS.LEARNING' | translate }}</p>
+		</div>
+
 		<p class="pop-up green-regular-text">{{ 'main.SKILLS.POP_UP' | translate }}</p>
 	</div>
 </div>

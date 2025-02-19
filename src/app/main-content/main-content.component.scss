@@ -9,3 +9,10 @@
 	max-width: 1600px;
 	padding: 0px 105px 65px;
 }
+
+@media (max-width: 1400px) {
+	.content-wrapper {
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+}

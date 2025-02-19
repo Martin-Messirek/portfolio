@@ -18,7 +18,6 @@
 	padding: 48px 0;
 }
 
-//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
 .buttons {
 	@include flex($gap: 24px);
 	// button {
