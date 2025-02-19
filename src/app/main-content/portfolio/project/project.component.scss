@@ -51,9 +51,12 @@
 }
 
 @media (max-width: 1600px) {
+	.text-container {
+		max-width: 420px;
+	}
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
 	.project-container {
 		flex-direction: column;
 	}

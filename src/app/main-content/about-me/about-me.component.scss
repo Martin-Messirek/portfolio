@@ -90,11 +90,17 @@ button {
 	}
 
 	.intro {
-		font-size: 18px;
+		font-size: 28px;
 	}
 
-	button {
-		font-size: 16px;
-		font-weight: 400;
+	// button {
+	// 	font-size: 16px;
+	// 	font-weight: 400;
+	// }
+}
+
+@media (max-width: 560px) {
+	.intro {
+		font-size: 18px;
 	}
 }

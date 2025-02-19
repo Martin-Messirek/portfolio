@@ -86,7 +86,7 @@ a {
 }
 
 .btn-purple {
-	background-color: $bg-color;
+	background-color: transparent;
 	@include text-style(500, 18px, $red-color);
 	&:hover {
 		color: $green-color;
@@ -102,6 +102,46 @@ a {
 }
 
 @media (max-width: 768px) {
+	h1 {
+		font-size: 56px;
+	}
+
+	.job-title {
+		font-size: 36px;
+	}
+
+	h2 {
+		// padding-bottom: 124px;
+		font-size: 36px;
+	}
+
+	h3 {
+		// padding-bottom: 124px;
+		font-size: 28px;
+	}
+
+	.red-regular-text {
+		font-size: 17px;
+	}
+
+	.green-regular-text {
+		font-size: 17px;
+	}
+
+	.btn {
+		padding: 12px 24px;
+	}
+
+	.btn-green {
+		font-size: 17px;
+	}
+
+	.btn-purple {
+		font-weight: 500;
+		font-size: 17px;
+	}
+}
+@media (max-width: 560px) {
 	h1 {
 		font-size: 40px;
 	}
@@ -139,7 +179,6 @@ a {
 	}
 
 	.btn-purple {
-		font-weight: 500;
 		font-size: 16px;
 	}
 }
