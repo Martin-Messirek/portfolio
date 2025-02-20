@@ -17,7 +17,7 @@
 }
 
 .atf-container {
-	// m*in-height: 100vh;
+	height: clamp(600px, 100vh, 1800px);
 	@include flex($jc: flex-end, $dir: column);
 	padding: 150px 0 300px;
 }
@@ -78,7 +78,7 @@
 @media (max-width: 2000px) {
 	.atf-container {
 		padding-top: 0;
-		min-height: 100vh;
+		// min-height: 100vh;
 	}
 
 	// .atf-img img {
@@ -122,7 +122,7 @@
 	.atf-container {
 		// m*in-height: 100vh;
 		justify-content: flex-start;
-		padding-top: 21vw;
+		padding-top: 21vw; // Ändern, Fixgröße
 	}
 
 	.atf-img img {
@@ -137,6 +137,7 @@
 
 @media (max-width: 768px) {
 	.atf-container {
+		height: clamp(450px, 100dvh, 1000px);
 		padding-top: 160px;
 	}
 }

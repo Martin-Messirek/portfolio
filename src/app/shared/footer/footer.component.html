@@ -1,7 +1,21 @@
 <footer>
-	<div class="content-wrapper"></div>
-	<p class="logo-text">{{ 'shared.FOOTER.LOGO_TEXT' | translate }}</p>
-	<p class="copyright">{{ 'shared.FOOTER.TEXT' | translate }}</p>
-	<a class="red-small-text" href="/legal">{{ 'shared.FOOTER.LEGAL' | translate }}</a>
-	<a class="red-small-text" href="/privacy">{{ 'shared.FOOTER.PRIVACY' | translate }}</a>
+	<div class="content-wrapper">
+		<div class="footer-personal">
+			<div class="logo-container">
+				<img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" />
+				<p class="logo-text">{{ 'shared.FOOTER.LOGO_TEXT' | translate }}</p>
+			</div>
+
+			<p class="copyright">{{ 'shared.FOOTER.TEXT' | translate }}</p>
+			<div class="social-media-container">
+				<img src="./../../../assets/icons/social-media/email-button.png" alt="Email" />
+				<img src="./../../../assets/icons/social-media/github-button.png" alt="github-button" />
+				<img src="./../../../assets/icons/social-media/linkedin-button.png" alt="Linkedin" />
+			</div>
+		</div>
+		<div class="footer-legal">
+			<a class="red-small-text" href="/legal">{{ 'shared.FOOTER.LEGAL' | translate }}</a>
+			<a class="red-small-text" href="/privacy">{{ 'shared.FOOTER.PRIVACY' | translate }}</a>
+		</div>
+	</div>
 </footer>

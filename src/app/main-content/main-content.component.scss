@@ -2,7 +2,8 @@
 // 	padding-top: 112px;
 // }
 .app-container {
-	@include flex(center, normal, row, 0px);
+	// @include flex(center, normal, row, 0px);
+	@include flex($jc: center);
 }
 
 .content-wrapper {

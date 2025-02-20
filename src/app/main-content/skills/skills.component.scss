@@ -52,7 +52,7 @@ p {
 // 	@include text-style(700, 18px, $green-color); // logo and pop up text 400 16
 // }
 
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
 	h2 {
 		text-align: center;
 	}

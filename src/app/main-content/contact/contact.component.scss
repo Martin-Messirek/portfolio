@@ -166,6 +166,14 @@ input[type='checkbox'] {
 	}
 }
 
+.my-details-mobile {
+	display: none;
+}
+
+.social-media-container-mobile {
+	display: none;
+}
+
 @media (max-width: 1200px) {
 	h2 {
 		text-align: center;
@@ -206,7 +214,16 @@ input[type='checkbox'] {
 @media (max-width: 1200px) {
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 896px) {
+	.my-details-mobile {
+		@include flex($ai: center, $dir: column, $gap: 36px);
+		padding-bottom: 48px;
+		padding-top: 88px;
+	}
+
+	.social-media-container-mobile {
+		@include flex($jc: center, $gap: 36px);
+	}
 }
 
 @media (max-width: 768px) {

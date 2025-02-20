@@ -2,21 +2,96 @@
 @import './../../../assets/css/variables.scss';
 
 footer {
-	display: flex;
-	justify-content: center;
+	@include flex($jc: center);
 }
 
 .content-wrapper {
-	max-width: 1600px;
-	padding: 0px 105px 65px;
+	@include flex($ai: center, $dir: column);
+	width: calc(100vw - 210px);
+	max-width: 1390px;
+	padding-bottom: 104px;
+	padding-top: 80px;
+	// padding: 0px 105px 65px;
 }
 
+.footer-personal {
+	width: 100%;
+	@include flex($jc: space-between, $ai: center, $gap: 38px);
+}
+
+.logo-container {
+	@include flex($ai: center, $dir: column, $gap: 2px);
+}
+.logo {
+	width: 70px;
+	height: 70px;
+	cursor: pointer;
+	@include transition();
+
+	&:hover {
+		filter: brightness(1.1);
+	}
+}
 .logo-text {
 	@include text-style(500, 12px, $red-color);
 }
 
+.social-media-container {
+	@include flex($jc: center, $gap: 36px);
+
+	img {
+		cursor: pointer;
+		@include transition();
+	}
+}
+
+.footer-legal {
+	@include flex($jc: center, $gap: 36px);
+	a {
+		@include transition();
+
+		&:hover {
+			color: $green-color;
+			font-weight: 600;
+		}
+	}
+}
+
 .copyright {
 	@include text-style(400, 23px, $red-color);
+}
+
+.social-media-container {
+	img {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+@media (max-width: 960px) {
+}
+
+@media (max-width: 896px) {
+}
+
+// .content-wrapper {
+// 	max-width: 1600px;
+// 	padding: 0px 105px 65px;
+// }
+
+@media (max-width: 1400px) {
+	.content-wrapper {
+		width: calc(100vw - 14vw);
+		// padding-left: 7vw;
+		// padding-right: 7vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.content-wrapper {
+		padding-left: 6vw;
+		padding-right: 6vw;
+	}
 }
 
 @media (max-width: 1200px) {
@@ -33,5 +108,26 @@ footer {
 @media (max-width: 560px) {
 	.copyright {
 		font-size: 14px;
+	}
+}
+
+@media (max-width: 896px) {
+	.content-wrapper {
+		padding-top: 48px;
+		padding-bottom: 80px;
+	}
+
+	.social-media-container,
+	.logo-text {
+		display: none;
+	}
+
+	.footer-personal {
+		@include flex($jc: center, $ai: center, $dir: column, $gap: 8px);
+		padding-bottom: 36px;
+	}
+
+	.footer-legal {
+		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 16px);
 	}
 }
