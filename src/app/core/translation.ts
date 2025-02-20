@@ -46,12 +46,16 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				NAME_REQ: 'Your name is required',
 				EMAIL_REQ: 'Your email is required ',
 				MSG_REQ: 'Your message is required ',
-				PRIVACY: "I've read the Privacy Policy and agree to the processing of my data as outlined.",
+				PRIVACY: {
+					1: "I've read the",
+					2: 'Privacy Policy',
+					3: 'and agree to the processing of my data as outlined.',
+				},
 				PRIVACY_REQ: 'Please accept the Privacy Policy.',
 				BTN: 'Send Message',
 			},
 			MAIL_RECEIVED: {
-				MSG: '<p>Thank you for your message! We will get back to you soon.</p>',
+				MSG: 'Thank you for your message! We will get back to you soon.',
 				TEXT: '',
 			},
 			REFERENCES: [
@@ -107,7 +111,8 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				},
 			},
 			FOOTER: {
-				TEXT: '© 2024 All rights reserved.',
+				LOGO_TEXT: 'frontend developer',
+				TEXT: '© Martin Messirek 2025',
 				LEGAL: 'Legal Notice',
 				PRIVACY: 'Privacy Policy',
 			},
@@ -235,13 +240,16 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				NAME_REQ: 'Ihr Name ist erforderlich.',
 				EMAIL_REQ: 'Ihre E-Mail ist erforderlich.',
 				MSG_REQ: ' Ihre Nachricht ist leer.',
-				PRIVACY:
-					'Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten wie dort beschrieben zu.',
+				PRIVACY: {
+					1: 'Ich habe die',
+					2: 'Datenschutzerklärung',
+					3: 'gelesen und stimme der Verarbeitung meiner Daten wie dort beschrieben zu.',
+				},
 				PRIVACY_REQ: ' Bitte akzeptieren Sie die Datenschutzerklärung.',
 				BTN: 'Nachricht senden',
 			},
 			MAIL_RECEIVED: {
-				MSG: '<p>Danke für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.</p>',
+				MSG: 'Danke für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.',
 				TEXT: '',
 			},
 			REFERENCES: [
@@ -299,7 +307,8 @@ export const TRANSLATIONS: { [key: string]: any } = {
 			},
 
 			FOOTER: {
-				TEXT: '© 2025 Alle Rechte vorbehalten.',
+				LOGO_TEXT: 'frontend developer',
+				TEXT: '© Martin Messirek 2025',
 				LEGAL: 'Impressum',
 				PRIVACY: 'Datenschutz',
 			},

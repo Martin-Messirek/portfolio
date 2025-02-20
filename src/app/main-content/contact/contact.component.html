@@ -6,16 +6,16 @@
 			<!-- <p>{{ 'main.CONTACT.CONTACT_ME' | translate }}</p> -->
 			<div class="my-details">
 				<p>
-					<span class="green-regular-text">{{ 'main.CONTACT.MY_EMAIL.TITLE' | translate }}</span>
+					<span class="my-details-text">{{ 'main.CONTACT.MY_EMAIL.TITLE' | translate }}</span>
 					:
-					<a class="green-regular-text hover" href="mailto:{{ 'main.CONTACT.MY_EMAIL.ADDRESS' | translate }}">
+					<a class="my-details-text hover" href="mailto:{{ 'main.CONTACT.MY_EMAIL.ADDRESS' | translate }}">
 						{{ 'main.CONTACT.MY_EMAIL.ADDRESS' | translate }}
 					</a>
 				</p>
 				<p>
-					<span class="green-regular-text">{{ 'main.CONTACT.MY_PHONE.TITLE' | translate }}</span>
+					<span class="my-details-text">{{ 'main.CONTACT.MY_PHONE.TITLE' | translate }}</span>
 					:
-					<a class="green-regular-text hover" href="tel:{{ 'main.CONTACT.MY_PHONE.NUMBER' | translate }}">
+					<a class="my-details-text hover" href="tel:{{ 'main.CONTACT.MY_PHONE.NUMBER' | translate }}">
 						{{ 'main.CONTACT.MY_PHONE.NUMBER' | translate }}
 					</a>
 				</p>
@@ -27,28 +27,40 @@
 		<div class="inputs-flex">
 			<div>
 				<label for="name" class="sr-only">{{ 'main.CONTACT.NAME' | translate }}</label>
-				<input type="text" id="name" name="name" placeholder="{{ 'main.CONTACT.NAME' | translate }}" required />
-				<p>{{ 'main.CONTACT.NAME_REQ' | translate }}</p>
+				<input
+					[(ngModel)]="nameValue"
+					[ngClass]="{ 'input-bg': isNameFilled }"
+					type="text"
+					id="name"
+					name="name"
+					placeholder="{{ 'main.CONTACT.NAME' | translate }}"
+					required
+				/>
+				<p class="red-small-text">{{ 'main.CONTACT.NAME_REQ' | translate }}</p>
 
 				<label for="email" class="sr-only">{{ 'main.CONTACT.MAIL' | translate }}</label>
 				<input
+					[(ngModel)]="emailValue"
+					[ngClass]="{ 'input-bg': isEmailFilled }"
 					type="email"
 					id="email"
 					name="email"
 					placeholder="{{ 'main.CONTACT.MAIL' | translate }}"
 					required
 				/>
-				<p>{{ 'main.CONTACT.EMAIL_REQ' | translate }}</p>
+				<p class="red-small-text">{{ 'main.CONTACT.EMAIL_REQ' | translate }}</p>
 			</div>
 			<div>
 				<label for="message" class="sr-only">{{ 'main.CONTACT.MSG' | translate }}</label>
 				<textarea
+					[(ngModel)]="textareaValue"
+					[ngClass]="{ 'textarea-bg': isTextareaFilled }"
 					id="message"
 					name="message"
 					placeholder="{{ 'main.CONTACT.MSG' | translate }}"
 					required
 				></textarea>
-				<p>{{ 'main.CONTACT.MSG_REQ' | translate }}</p>
+				<p class="red-small-text">{{ 'main.CONTACT.MSG_REQ' | translate }}</p>
 			</div>
 		</div>
 
@@ -57,6 +69,13 @@
 				<input type="checkbox" id="privacy" name="privacy" required />
 				<label for="privacy">{{ 'main.CONTACT.PRIVACY' | translate }}</label>
 			</div>
+			<p class="privacy-text">
+				<span>{{ 'main.CONTACT.PRIVACY.1' | translate }}&nbsp;</span>
+				<span>
+					<a href="">{{ 'main.CONTACT.PRIVACY.2' | translate }}&nbsp;</a>
+				</span>
+				<span>{{ 'main.CONTACT.PRIVACY.3' | translate }}</span>
+			</p>
 			<p>{{ 'main.CONTACT.PRIVACY_REQ' | translate }}</p>
 		</div>
 

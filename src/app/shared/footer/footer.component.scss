@@ -1,3 +1,6 @@
+@import './../../../assets/css/mixins.scss';
+@import './../../../assets/css/variables.scss';
+
 footer {
 	display: flex;
 	justify-content: center;
@@ -6,4 +9,29 @@ footer {
 .content-wrapper {
 	max-width: 1600px;
 	padding: 0px 105px 65px;
+}
+
+.logo-text {
+	@include text-style(500, 12px, $red-color);
+}
+
+.copyright {
+	@include text-style(400, 23px, $red-color);
+}
+
+@media (max-width: 1200px) {
+	.copyright {
+		font-size: 18px;
+	}
+}
+@media (max-width: 768px) {
+	.copyright {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 560px) {
+	.copyright {
+		font-size: 14px;
+	}
 }
