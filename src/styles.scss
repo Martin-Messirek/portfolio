@@ -1,6 +1,11 @@
 @import './assets/css/variables.scss';
 @import './assets/css/mixins.scss';
 
+:root {
+	--bg-color: #{$bg-color};
+	--bg-color-bright: #{$bg-color-bright};
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -17,14 +22,15 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: rgba($bg-color-bright, 0.5);
+	background-color: var(--scrollbar-thumb, rgba($bg-color-bright, 0.5));
 	border-radius: 5px;
 	@include transition();
+	cursor: var(--scrollbar-cursor, pointer);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: rgba($bg-color-bright, 0.9);
-	cursor: pointer;
+	background: var(--scrollbar-thumb-hover, rgba($bg-color-bright, 0.9));
+	// cursor: pointer;
 }
 
 ::-webkit-scrollbar-track {

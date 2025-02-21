@@ -3,6 +3,7 @@
 
 header {
 	@include flex($jc: center, $ai: center);
+	// display: none;
 	position: fixed;
 	width: 100%;
 	background: linear-gradient(
@@ -19,17 +20,49 @@ header {
 	z-index: 8;
 }
 
-.menu-btn-container {
-	@include flex($jc: space-between, $ai: center);
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(150deg, $bg-color 25%, $bg-color-mobile);
+	// backdrop-filter: blur(0px); // Anfangszustand (kein Blur)
+	// z-index: 9;
+	@include flex($jc: center, $ai: flex-start);
+	overflow-y: auto;
+	// transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+	@include transition();
+	transform: translateX(100%);
+	opacity: 0; // Unsichtbar beim Start
+}
+
+// body.no-scroll {
+// 	overflow: hidden;
+// 	//   height: 100vh; // Verhindert Sprünge bei mobilem Scrollen
+// }
+
+.overlay.open {
+	// Klasse, die mit Angulars [class.open] verknüpft ist
+	// @include flex($jc: center, $ai: flex-start);
+	z-index: 9;
+	opacity: 1; // Voll sichtbar
+	// backdrop-filter: blur(10px); // Weicher Blur-Effekt
+	transform: translateX(0);
+}
+
+.menu-and-lang-btn-container {
+	//////////////////////////////////
 	padding: 24px 35px;
 	width: calc(100vw - 280px);
 	max-width: 1320px;
 }
+.menu-and-lang-btn-container {
+	@include flex($jc: space-between, $ai: center);
+}
 
 @media (max-width: 1400px) {
-	.menu-btn-container {
-		@include flex($jc: space-between, $ai: center);
-		padding: 24px 35px;
+	.menu-and-lang-btn-container {
 		width: calc(100vw - 14vw);
 	}
 }
@@ -75,16 +108,22 @@ header {
 }
 
 ul {
-	display: flex;
-	gap: 32px;
-	@include flex($gap: 32px);
 	list-style: none;
+}
+
+nav ul {
+	@include flex($gap: 32px);
+
+	li {
+		width: 110px;
+		text-align: center;
+	}
 }
 
 li {
 	// width: clamp(110px, 7vw, 110px);
-	width: 110px;
-	text-align: center;
+
+	// text-align: center;
 	@include text-style(500, 22px, $red-color); // 500 18
 	cursor: pointer;
 	@include transition();
@@ -93,13 +132,16 @@ li {
 	}
 }
 
-.btn-container button {
+// .lang-btn-container button {
+// 	background: none;
+// 	outline: none;
+// 	border: none;
+// }
+
+.language-button {
 	background: none;
 	outline: none;
 	border: none;
-}
-
-.language-button {
 	cursor: pointer;
 	@include transition();
 
@@ -117,36 +159,82 @@ li {
 	}
 }
 
+.close-btn-container {
+	position: absolute;
+	top: 24px;
+	right: calc(35px + 7vw);
+	z-index: 10;
+	height: 64px;
+	@include flex($ai: center);
+}
+
 .mobile-menu-btn {
-	display: none;
-	width: 30px;
+	width: 32px;
 	height: 28px;
+}
+
+.close-btn {
+	width: 35px;
+	height: 32px;
+}
+
+.mobile-menu-btn,
+.close-btn {
+	display: none;
 	cursor: pointer;
+	@include transition();
+
+	&:hover {
+		transform: scale(1.1);
+		filter: brightness(1.1);
+	}
 	// padding-right: 300px;
 }
 
+.mobile-menu {
+	padding-top: 104px;
+
+	ul {
+		padding: 0;
+		@include flex($ai: center, $dir: column, $gap: 48px);
+	}
+
+	li {
+		// padding-bottom: 48px;
+	}
+}
+
+// .mobile-menu ul {
+// 	@include flex($ai: center);
+// }
+
 @media (max-width: 1400px) {
-	.menu-btn-container {
-		// @include flex($jc: space-between, $ai: center);
-		// padding: 24px 35px;
+	.menu-and-lang-btn-container {
 		width: calc(100vw - 14vw);
 	}
 }
 
 @media (max-width: 960px) {
-	li {
+	nav ul li {
 		width: 100px;
-		font-size: 20px;
+		font-size: 19px;
 	}
 }
 
 @media (max-width: 896px) {
 	nav,
-	.btn-container {
+	.lang-btn-container {
 		display: none;
 	}
 
-	.mobile-menu-btn {
+	.mobile-menu-btn,
+	.close-btn {
 		display: block;
+	}
+}
+
+@media (min-width: 897px) {
+	.overlay {
+		display: none;
 	}
 }
