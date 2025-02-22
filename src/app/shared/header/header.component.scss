@@ -178,9 +178,13 @@ li {
 	height: 32px;
 }
 
+.mobile-menu-btn-container {
+	display: none;
+}
+
 .mobile-menu-btn,
 .close-btn {
-	display: none;
+	// display: none;
 	cursor: pointer;
 	@include transition();
 
@@ -227,8 +231,10 @@ li {
 		display: none;
 	}
 
-	.mobile-menu-btn,
-	.close-btn {
+	.mobile-menu-btn-container
+	// .mobile-menu-btn,
+	// .close-btn
+	{
 		display: block;
 	}
 }

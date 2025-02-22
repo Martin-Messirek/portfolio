@@ -59,12 +59,22 @@ footer {
 
 .copyright {
 	@include text-style(400, 23px, $red-color);
+	padding-left: 43px;
 }
 
 .social-media-container {
 	img {
 		width: 30px;
 		height: 30px;
+	}
+}
+
+.signature {
+	padding-top: 36px;
+
+	img {
+		height: 12px;
+		width: 209px;
 	}
 }
 
@@ -115,6 +125,10 @@ footer {
 	.content-wrapper {
 		padding-top: 48px;
 		padding-bottom: 80px;
+	}
+
+	.copyright {
+		padding: 0;
 	}
 
 	.social-media-container,

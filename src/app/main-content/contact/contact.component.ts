@@ -11,23 +11,55 @@ import { TranslatePipe } from '@ngx-translate/core';
 	styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-	nameValue: string = ''; // für das Name-Feld
-	emailValue: string = ''; // für das Email-Feld
+	contactData = {
+		name: '',
+		email: '',
+		message: '',
+	};
 
-	textareaValue: string = ''; // für das Textarea
+	private _isPrivacyChecked: boolean = false;
+
+	// Getter für Privacy-Checkbox
+	get isPrivacyChecked(): boolean {
+		return this._isPrivacyChecked;
+	}
+
+	// Setter für Privacy-Checkbox
+	set isPrivacyChecked(value: boolean) {
+		this._isPrivacyChecked = value;
+	}
+
+	// Der Getter gibt den aktuellen Wert zurück.
+	// Der Setter aktualisiert den Wert, wenn sich der Status der Checkbox ändert.
 
 	// Überprüft, ob das Name-Feld nicht leer ist
 	get isNameFilled(): boolean {
-		return this.nameValue.trim().length > 2 && this.nameValue.trim().length <= 30;
+		return this.contactData.name.trim().length > 2 && this.contactData.name.trim().length <= 30;
 	}
 
 	// Überprüft, ob das Email-Feld nicht leer ist
 	get isEmailFilled(): boolean {
+		const email = this.contactData.email.trim();
+		if (email.length === 0) return false; // Falls leer, direkt false zurückgeben
+
 		const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/;
-		return emailRegEx.test(this.emailValue.trim()) && this.emailValue.trim().length <= 50;
+		return emailRegEx.test(email) && email.length <= 50;
 	}
 
 	get isTextareaFilled(): boolean {
-		return this.textareaValue.trim().length >= 5 && this.textareaValue.trim().length <= 500;
+		const message = this.contactData.message.trim();
+		if (message.length === 0) return false; // Falls leer, direkt false zurückgeben
+
+		return message.length >= 5 && message.length <= 500;
+	}
+
+	get isFormValid(): boolean {
+		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled;
+		// && this.isPrivacyChecked; // SPÄTER !!!
+	}
+
+	onSubmit() {
+		console.log('Angular Form Submit funktioniert');
+		console.log('Formulardaten gesendet:', this.contactData);
 	}
 }

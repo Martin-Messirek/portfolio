@@ -23,12 +23,12 @@
 		</div>
 	</div>
 
-	<form>
+	<form (ngSubmit)="onSubmit()">
 		<div class="inputs-flex">
 			<div>
 				<label for="name" class="sr-only">{{ 'main.CONTACT.NAME' | translate }}</label>
 				<input
-					[(ngModel)]="nameValue"
+					[(ngModel)]="contactData.name"
 					[ngClass]="{ 'input-bg': isNameFilled }"
 					type="text"
 					id="name"
@@ -40,7 +40,7 @@
 
 				<label for="email" class="sr-only">{{ 'main.CONTACT.MAIL' | translate }}</label>
 				<input
-					[(ngModel)]="emailValue"
+					[(ngModel)]="contactData.email"
 					[ngClass]="{ 'input-bg': isEmailFilled }"
 					type="email"
 					id="email"
@@ -53,7 +53,7 @@
 			<div>
 				<label for="message" class="sr-only">{{ 'main.CONTACT.MSG' | translate }}</label>
 				<textarea
-					[(ngModel)]="textareaValue"
+					[(ngModel)]="contactData.message"
 					[ngClass]="{ 'textarea-bg': isTextareaFilled }"
 					id="message"
 					name="message"
@@ -66,9 +66,10 @@
 
 		<div>
 			<div>
-				<input type="checkbox" id="privacy" name="privacy" required />
+				<input type="checkbox" id="privacy" name="privacy" [(ngModel)]="isPrivacyChecked" />
 				<label for="privacy">{{ 'main.CONTACT.PRIVACY' | translate }}</label>
 			</div>
+
 			<p class="privacy-text">
 				<span>{{ 'main.CONTACT.PRIVACY.1' | translate }}&nbsp;</span>
 				<span>
@@ -79,7 +80,9 @@
 			<p>{{ 'main.CONTACT.PRIVACY_REQ' | translate }}</p>
 		</div>
 
-		<button type="submit" class="btn btn-purple">{{ 'main.CONTACT.BTN' | translate }}</button>
+		<button type="submit" [ngClass]="isFormValid ? 'btn btn-purple' : 'btn-grey'" [disabled]="!isFormValid">
+			{{ 'main.CONTACT.BTN' | translate }}
+		</button>
 	</form>
 
 	<div class="my-details-mobile">
