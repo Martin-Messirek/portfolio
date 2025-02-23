@@ -237,9 +237,9 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				NAME: 'Name eingeben…',
 				MAIL: 'Email eingeben…',
 				MSG: 'Nachricht…',
-				NAME_REQ: 'Ihr Name ist erforderlich.',
-				EMAIL_REQ: 'Ihre E-Mail ist erforderlich.',
-				MSG_REQ: ' Ihre Nachricht ist leer.',
+				NAME_REQ: 'Ihr Name ist erforderlich',
+				EMAIL_REQ: 'Ihre E-Mail ist erforderlich',
+				MSG_REQ: ' Ihre Nachricht ist leer',
 				PRIVACY: {
 					1: 'Ich habe die',
 					2: 'Datenschutzerklärung',

@@ -29,38 +29,59 @@
 				<label for="name" class="sr-only">{{ 'main.CONTACT.NAME' | translate }}</label>
 				<input
 					[(ngModel)]="contactData.name"
-					[ngClass]="{ 'input-bg': isNameFilled }"
+					[ngClass]="{
+						'input-bg': isNameFilled,
+						'error-placeholder': wasNameFocused && contactData.name.trim().length === 0
+					}"
 					type="text"
 					id="name"
 					name="name"
-					placeholder="{{ 'main.CONTACT.NAME' | translate }}"
+					(blur)="onBlur('name')"
+					[placeholder]="
+						wasNameFocused && contactData.name.trim().length === 0
+							? ('main.CONTACT.NAME_REQ' | translate)
+							: ('main.CONTACT.NAME' | translate)
+					"
 					required
 				/>
-				<p class="red-small-text">{{ 'main.CONTACT.NAME_REQ' | translate }}</p>
 
 				<label for="email" class="sr-only">{{ 'main.CONTACT.MAIL' | translate }}</label>
 				<input
 					[(ngModel)]="contactData.email"
-					[ngClass]="{ 'input-bg': isEmailFilled }"
+					[ngClass]="{
+						'input-bg': isEmailFilled,
+						'error-placeholder': wasEmailFocused && contactData.email.trim().length === 0
+					}"
 					type="email"
 					id="email"
 					name="email"
-					placeholder="{{ 'main.CONTACT.MAIL' | translate }}"
+					(blur)="onBlur('email')"
+					[placeholder]="
+						wasEmailFocused && contactData.email.trim().length === 0
+							? ('main.CONTACT.EMAIL_REQ' | translate)
+							: ('main.CONTACT.MAIL' | translate)
+					"
 					required
 				/>
-				<p class="red-small-text">{{ 'main.CONTACT.EMAIL_REQ' | translate }}</p>
 			</div>
 			<div>
 				<label for="message" class="sr-only">{{ 'main.CONTACT.MSG' | translate }}</label>
 				<textarea
 					[(ngModel)]="contactData.message"
-					[ngClass]="{ 'textarea-bg': isTextareaFilled }"
+					[ngClass]="{
+						'textarea-bg': isTextareaFilled,
+						'error-placeholder': wasMessageFocused && contactData.message.trim().length === 0
+					}"
 					id="message"
 					name="message"
-					placeholder="{{ 'main.CONTACT.MSG' | translate }}"
+					(blur)="onBlur('message')"
+					[placeholder]="
+						wasMessageFocused && contactData.message.trim().length === 0
+							? ('main.CONTACT.MSG_REQ' | translate)
+							: ('main.CONTACT.MSG' | translate)
+					"
 					required
 				></textarea>
-				<p class="red-small-text">{{ 'main.CONTACT.MSG_REQ' | translate }}</p>
 			</div>
 		</div>
 

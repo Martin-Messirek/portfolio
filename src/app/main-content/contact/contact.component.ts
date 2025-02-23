@@ -11,6 +11,31 @@ import { TranslatePipe } from '@ngx-translate/core';
 	styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+	wasNameFocused: boolean = false;
+	wasEmailFocused: boolean = false;
+	wasMessageFocused: boolean = false;
+
+	onBlur(field: string) {
+		if (field === 'name') this.wasNameFocused = true;
+		if (field === 'email') this.wasEmailFocused = true;
+		if (field === 'message') this.wasMessageFocused = true;
+	}
+
+	// wasFocused: boolean = false;
+
+	// onBlur() {
+	// 	this.wasFocused = true;
+	// }
+	// isFocused: boolean = true;
+
+	// onFocus() {
+	// 	this.isFocused = true;
+	// }
+
+	// onBlur() {
+	// 	this.isFocused = false;
+	// }
+
 	contactData = {
 		name: '',
 		email: '',

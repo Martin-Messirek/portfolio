@@ -39,9 +39,7 @@ input {
 }
 
 textarea {
-	// flex-basis: 50%;
 	width: 100%;
-	// max-width: 637px;
 	height: 144px;
 
 	overflow-wrap: break-word; /* Textumbruch bei langen Wörtern */
@@ -69,6 +67,16 @@ textarea {
 ::placeholder {
 	color: rgba($green-color, 0.6);
 }
+
+.error-placeholder::placeholder {
+	color: $error-color;
+	font-size: 14px;
+}
+
+/* Der zweite Platzhalter (wenn das Feld leer und nicht fokussiert ist) */
+// input:not(:focus):placeholder-shown {
+// 	color: $red-color; /* Rot für den zweiten Platzhalter */
+// }
 
 input:focus::placeholder,
 textarea:focus::placeholder {
