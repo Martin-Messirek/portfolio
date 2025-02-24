@@ -171,6 +171,60 @@ textarea:-webkit-autofill {
 // 	}
 // }
 
+.checkbox-container {
+	display: flex;
+	align-items: center;
+	// justify-content: center;
+	// gap: 8px;
+	width: 18px;
+	height: 18px;
+	// padding-right: 16px;
+
+	input[type='checkbox'] {
+		display: none; // Versteckt die Standard-Checkbox
+	}
+
+	label {
+		position: relative;
+		cursor: pointer;
+		padding-left: 30px;
+		// display: inline-flex; // Verhindert, dass das Label zusammengequetscht wird
+		align-items: center; // Zentriert den Inhalt vertikal
+		height: 18px; // Sorgt dafür, dass das Label eine Mindesthöhe hat
+		width: 18px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			display: inline-block;
+			transform: translateY(-50%);
+			width: 12px;
+			height: 12px;
+			border: 2px solid $red-color;
+			border-radius: 3px;
+			background-color: transparent;
+			@include transition();
+		}
+	}
+
+	&.enabled input[type='checkbox']:checked + label::before {
+		background-color: $green-color; // Ändert die Checkbox-Farbe bei aktivem Zustand
+	}
+
+	input[type='checkbox']:checked + label::after {
+		content: '✔';
+		position: absolute;
+		left: 4px;
+		top: 47%;
+		transform: translateY(-50%);
+		font-size: 10px;
+		color: $red-color;
+		font-weight: bold;
+	}
+}
+
 .privacy-and-btn-container {
 	padding-top: $inputs-gap;
 	@include flex($dir: column);
@@ -178,7 +232,7 @@ textarea:-webkit-autofill {
 	.privacy-checkbox-container
 	// .send-btn-container
 	{
-		@include flex();
+		@include flex($gap: 24px);
 		// width: 100%;
 	}
 
@@ -189,14 +243,14 @@ textarea:-webkit-autofill {
 	}
 }
 
-.checkbox-container {
-	width: 32px;
-	height: 32px;
-}
 .privacy-text-container {
 	p {
 		line-height: 28px;
 	}
+}
+
+.accept-privacy {
+	height: 24px;
 }
 
 .privacy-text {

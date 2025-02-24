@@ -14,6 +14,7 @@ export class ContactComponent {
 	wasNameFocused: boolean = false;
 	wasEmailFocused: boolean = false;
 	wasMessageFocused: boolean = false;
+	isSendBtnHovered: boolean = false;
 
 	onBlur(field: string) {
 		if (field === 'name') this.wasNameFocused = true;
@@ -78,9 +79,12 @@ export class ContactComponent {
 		return message.length >= 5 && message.length <= 500;
 	}
 
-	get isFormValid(): boolean {
+	get isFormPartiallyValid(): boolean {
 		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled;
-		// && this.isPrivacyChecked; // SPÄTER !!!
+	}
+
+	get isFormValid(): boolean {
+		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked; // SPÄTER !!!
 	}
 
 	onSubmit() {

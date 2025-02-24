@@ -91,9 +91,9 @@
 
 		<div class="privacy-and-btn-container">
 			<div class="privacy-checkbox-container">
-				<div class="checkbox-container">
+				<div class="checkbox-container" [ngClass]="{ enabled: isFormPartiallyValid }">
 					<input type="checkbox" id="privacy" name="privacy" [(ngModel)]="isPrivacyChecked" />
-					<label for="privacy" class="sr-only"></label>
+					<label for="privacy" class=""></label>
 				</div>
 				<div class="privacy-text-container">
 					<p class="privacy-text">
@@ -103,7 +103,20 @@
 						</span>
 						<span>{{ 'main.CONTACT.PRIVACY.3' | translate }}</span>
 					</p>
-					<p class="red-small-text">{{ 'main.CONTACT.PRIVACY_REQ' | translate }}</p>
+					<p class="accept-privacy">
+						<span
+							class="red-small-text"
+							[ngStyle]="{
+								display: isFormValid
+									? 'none'
+									: isFormPartiallyValid && isSendBtnHovered
+									? 'block'
+									: 'none'
+							}"
+						>
+							{{ 'main.CONTACT.PRIVACY_REQ' | translate }}
+						</span>
+					</p>
 				</div>
 			</div>
 			<div class="send-btn-container">
@@ -112,6 +125,7 @@
 					type="submit"
 					[ngClass]="isFormValid ? 'btn btn-purple' : 'btn-grey'"
 					[disabled]="!isFormValid"
+					(mouseenter)="isSendBtnHovered = true"
 				>
 					{{ 'main.CONTACT.BTN' | translate }}
 				</button>
