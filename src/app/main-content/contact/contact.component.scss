@@ -1,6 +1,9 @@
 @import './../../../assets/css/variables.scss';
 @import './../../../assets/css/mixins.scss';
 
+$textarea-height: 144px;
+$inputs-gap: 32px;
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -13,17 +16,22 @@
 	border: 0;
 }
 
+.contact {
+	@include flex($dir: column, $gap: $inputs-gap);
+}
 .my-details-text {
 	@include text-style(500, 20px, $green-color);
 }
 
 //      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
-.inputs-flex {
-	@include flex($jc: space-between, $gap: 24px);
+.inputs-flex,
+.text-flex {
+	@include flex($jc: space-between, $gap: $inputs-gap);
 	width: 100%;
 
 	& > div:first-child {
 		flex: 1 1 45%; /* Der erste div (mit den Inputs) bekommt 45% der Breite */
+		@include flex($jc: space-between, $dir: column, $gap: $inputs-gap);
 	}
 
 	& > div:last-child {
@@ -31,7 +39,13 @@
 	}
 }
 
-input {
+.inputs-flex > div:first-child,
+textarea {
+	height: $textarea-height;
+}
+
+input.name,
+input.email {
 	// flex-basis: 40%;
 	width: 100%;
 	// max-width: 507px;
@@ -40,8 +54,6 @@ input {
 
 textarea {
 	width: 100%;
-	height: 144px;
-
 	overflow-wrap: break-word; /* Textumbruch bei langen Wörtern */
 	resize: none; /* Entfernt die Ecklinien zum Vergrößern */
 	overflow: hidden; /* Verhindert die Anzeige des Scrollbalkens */
@@ -55,7 +67,8 @@ textarea {
 	}
 }
 
-input,
+input.name,
+input.email,
 textarea {
 	padding: 12px 18px;
 	background-color: transparent;
@@ -111,49 +124,78 @@ input:-webkit-autofill:active {
 .textarea-bg {
 	box-shadow: 0 0 0 74px $bg-color inset;
 }
-// input:-webkit-autofill,
-// textarea:-webkit-autofill {
-// 	background-color: transparent !important;
-// 	background: transparent;
-// 	appearance: none !important; /* Entfernt das Standard-Autofill-Erscheinungsbild */
 
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+	background-color: transparent !important;
+	background: transparent;
+	appearance: none !important; /* Entfernt das Standard-Autofill-Erscheinungsbild */
+
+	border: 2px solid $green-color; /* Border in Grün */
+	@include text-style(400, 18px, $green-color);
+}
+
+// input[type='checkbox'] {
+// 	-webkit-appearance: none;
+// 	-moz-appearance: none;
+// 	appearance: none;
+// 	background-color: transparent;
 // 	border: 2px solid $green-color; /* Border in Grün */
-// 	@include text-style(400, 18px, $green-color);
+// 	width: 20px;
+// 	height: 20px;
+// 	position: relative;
+// 	cursor: pointer;
+// 	transition: all 0.3s ease;
+
+// 	/* Hover Effekt */
+// 	&:hover {
+// 		border-color: $green-color;
+// 	}
+
+// 	/* Wenn angekreuzt, Häkchen färben */
+// 	&:checked {
+// 		background-color: $green-color;
+// 		border-color: $green-color;
+// 	}
+
+// 	/* Färbt das Häkchen selbst (nur sichtbar, wenn angekreuzt) */
+// 	&:checked::after {
+// 		content: '';
+// 		position: absolute;
+// 		top: 3px;
+// 		left: 3px;
+// 		width: 12px;
+// 		height: 12px;
+// 		background-color: $red-color; /* Rotes Häkchen */
+// 		clip-path: polygon(0% 0%, 40% 60%, 100% 20%, 60% 40%, 20% 80%); /* Häkchen-Form */
+// 	}
 // }
 
-input[type='checkbox'] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-color: transparent;
-	border: 2px solid $green-color; /* Border in Grün */
-	width: 20px;
-	height: 20px;
-	position: relative;
-	cursor: pointer;
-	transition: all 0.3s ease;
+.privacy-and-btn-container {
+	padding-top: $inputs-gap;
+	@include flex($dir: column);
 
-	/* Hover Effekt */
-	&:hover {
-		border-color: $green-color;
+	.privacy-checkbox-container
+	// .send-btn-container
+	{
+		@include flex();
+		// width: 100%;
 	}
 
-	/* Wenn angekreuzt, Häkchen färben */
-	&:checked {
-		background-color: $green-color;
-		border-color: $green-color;
+	.send-btn-container {
+		@include flex($jc: flex-end);
+		// width: 100%;
+		// align-self: flex-end;
 	}
+}
 
-	/* Färbt das Häkchen selbst (nur sichtbar, wenn angekreuzt) */
-	&:checked::after {
-		content: '';
-		position: absolute;
-		top: 3px;
-		left: 3px;
-		width: 12px;
-		height: 12px;
-		background-color: $red-color; /* Rotes Häkchen */
-		clip-path: polygon(0% 0%, 40% 60%, 100% 20%, 60% 40%, 20% 80%); /* Häkchen-Form */
+.checkbox-container {
+	width: 32px;
+	height: 32px;
+}
+.privacy-text-container {
+	p {
+		line-height: 28px;
 	}
 }
 
@@ -164,7 +206,7 @@ input[type='checkbox'] {
 	}
 
 	a {
-		@include text-style(400, 14px, $red-color);
+		// @include text-style(400, 14px, $red-color);
 		@include transition();
 
 		&:hover {
@@ -189,26 +231,31 @@ input[type='checkbox'] {
 	// .contact {
 	// 	@include flex($jc: center, $dir: column);
 	// }
-	.text-flex {
-		@include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
-		width: 100%;
-		> * {
-			width: 80%;
-		}
-	}
+	// .text-flex {
+	// 	@include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
+	// 	width: 100%;
+	// 	> * {
+	// 		width: 80%;
+	// 	}
+	// }
+}
 
-	.inputs-flex {
-		@include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
+@media (max-width: 960px) {
+	.inputs-flex,
+	.text-flex,
+	.privacy-and-btn-container {
+		@include flex($jc: center, $ai: center, $dir: column, $gap: $inputs-gap);
 		width: 100%;
 
 		& > div {
-			flex: unset;
 			width: 80%;
+			// gap: 40px;
 			//
 			// flex: 1 1 80%;
 			// flex: unset; /* Entfernt die vorherige flex-Einstellung, sodass sie keine Wirkung mehr hat */
 			// max-width: 637px;
 		}
+
 		// & > div:first-child {
 		// 	flex: 1 1 80%; /* Der erste div (mit den Inputs) bekommt 45% der Breite */
 		// }
@@ -217,16 +264,28 @@ input[type='checkbox'] {
 		// 	flex: 1 1 80%; /* Der zweite div (mit der Textarea) bekommt 55% der Breite */
 		// }
 	}
-}
 
-@media (max-width: 1200px) {
+	.privacy-and-btn-container {
+		gap: 16px; // Hier das kleinere gap setzen
+	}
+
+	.inputs-flex,
+	.text-flex {
+		& > div:first-child,
+		> div:last-child {
+			flex: unset;
+		}
+	}
 }
 
 @media (max-width: 896px) {
+	.my-details {
+		display: none;
+	}
 	.my-details-mobile {
 		@include flex($ai: center, $dir: column, $gap: 36px);
-		padding-bottom: 48px;
-		padding-top: 88px;
+		padding-bottom: 40px;
+		padding-top: 48px;
 	}
 
 	.social-media-container-mobile {
@@ -235,6 +294,13 @@ input[type='checkbox'] {
 }
 
 @media (max-width: 768px) {
+	.inputs-flex,
+	.text-flex,
+	.privacy-and-btn-container {
+		& > div {
+			width: 90%;
+		}
+	}
 	.my-details-text {
 		font-size: 19px;
 		font-weight: 700;
@@ -245,16 +311,41 @@ input[type='checkbox'] {
 		font-size: 17px;
 	}
 
-	.privacy-text {
+	.privacy-text-container {
+		p {
+			line-height: 24px;
+		}
 		span:first-child,
 		span:last-child,
-		a {
+		a,
+		p {
 			font-size: 13px;
 		}
 	}
 }
 
+@media (max-width: 640px) {
+	.inputs-flex,
+	.text-flex,
+	.privacy-and-btn-container {
+		& > div {
+			width: 100%;
+		}
+	}
+}
+
 @media (max-width: 560px) {
+	.text-flex > div,
+	.privacy-text-container > p {
+		text-align: center;
+	}
+
+	.privacy-and-btn-container {
+		.send-btn-container {
+			justify-content: center;
+		}
+	}
+
 	.my-details-text {
 		font-size: 18px;
 	}
@@ -264,10 +355,14 @@ input[type='checkbox'] {
 		font-size: 16px;
 	}
 
-	.privacy-text {
+	.privacy-text-container {
+		p {
+			line-height: 20px;
+		}
 		span:first-child,
 		span:last-child,
-		a {
+		a,
+		p {
 			font-size: 12px;
 		}
 	}

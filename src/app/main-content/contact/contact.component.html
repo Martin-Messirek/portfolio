@@ -1,8 +1,9 @@
+<h2>{{ 'main.CONTACT.HEADER' | translate }}</h2>
 <div class="contact">
-	<h2>{{ 'main.CONTACT.HEADER' | translate }}</h2>
+	<!-- <h2>{{ 'main.CONTACT.HEADER' | translate }}</h2> -->
 	<div class="text">
 		<div class="text-flex">
-			<p class="green-regular-text">{{ 'main.CONTACT.TEXT' | translate }}</p>
+			<div class="green-regular-text">{{ 'main.CONTACT.TEXT' | translate }}</div>
 			<!-- <p>{{ 'main.CONTACT.CONTACT_ME' | translate }}</p> -->
 			<div class="my-details">
 				<p>
@@ -28,6 +29,7 @@
 			<div>
 				<label for="name" class="sr-only">{{ 'main.CONTACT.NAME' | translate }}</label>
 				<input
+					class="name"
 					[(ngModel)]="contactData.name"
 					[ngClass]="{
 						'input-bg': isNameFilled,
@@ -47,6 +49,7 @@
 
 				<label for="email" class="sr-only">{{ 'main.CONTACT.MAIL' | translate }}</label>
 				<input
+					class="email"
 					[(ngModel)]="contactData.email"
 					[ngClass]="{
 						'input-bg': isEmailFilled,
@@ -67,6 +70,7 @@
 			<div>
 				<label for="message" class="sr-only">{{ 'main.CONTACT.MSG' | translate }}</label>
 				<textarea
+					class="message"
 					[(ngModel)]="contactData.message"
 					[ngClass]="{
 						'textarea-bg': isTextareaFilled,
@@ -85,25 +89,34 @@
 			</div>
 		</div>
 
-		<div>
-			<div>
-				<input type="checkbox" id="privacy" name="privacy" [(ngModel)]="isPrivacyChecked" />
-				<label for="privacy">{{ 'main.CONTACT.PRIVACY' | translate }}</label>
+		<div class="privacy-and-btn-container">
+			<div class="privacy-checkbox-container">
+				<div class="checkbox-container">
+					<input type="checkbox" id="privacy" name="privacy" [(ngModel)]="isPrivacyChecked" />
+					<label for="privacy" class="sr-only"></label>
+				</div>
+				<div class="privacy-text-container">
+					<p class="privacy-text">
+						<span>{{ 'main.CONTACT.PRIVACY.1' | translate }}&nbsp;</span>
+						<span>
+							<a class="red-small-text" href="">{{ 'main.CONTACT.PRIVACY.2' | translate }}&nbsp;</a>
+						</span>
+						<span>{{ 'main.CONTACT.PRIVACY.3' | translate }}</span>
+					</p>
+					<p class="red-small-text">{{ 'main.CONTACT.PRIVACY_REQ' | translate }}</p>
+				</div>
 			</div>
-
-			<p class="privacy-text">
-				<span>{{ 'main.CONTACT.PRIVACY.1' | translate }}&nbsp;</span>
-				<span>
-					<a href="">{{ 'main.CONTACT.PRIVACY.2' | translate }}&nbsp;</a>
-				</span>
-				<span>{{ 'main.CONTACT.PRIVACY.3' | translate }}</span>
-			</p>
-			<p>{{ 'main.CONTACT.PRIVACY_REQ' | translate }}</p>
+			<div class="send-btn-container">
+				<button
+					class="send-btn"
+					type="submit"
+					[ngClass]="isFormValid ? 'btn btn-purple' : 'btn-grey'"
+					[disabled]="!isFormValid"
+				>
+					{{ 'main.CONTACT.BTN' | translate }}
+				</button>
+			</div>
 		</div>
-
-		<button type="submit" [ngClass]="isFormValid ? 'btn btn-purple' : 'btn-grey'" [disabled]="!isFormValid">
-			{{ 'main.CONTACT.BTN' | translate }}
-		</button>
 	</form>
 
 	<div class="my-details-mobile">
