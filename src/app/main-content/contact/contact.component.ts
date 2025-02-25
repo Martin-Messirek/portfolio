@@ -84,7 +84,7 @@ export class ContactComponent {
 	}
 
 	get isFormValid(): boolean {
-		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked; // SPÄTER !!!
+		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked;
 	}
 
 	onSubmit() {

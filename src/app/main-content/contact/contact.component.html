@@ -27,54 +27,62 @@
 	<form (ngSubmit)="onSubmit()">
 		<div class="inputs-flex">
 			<div>
-				<label for="name" class="sr-only">{{ 'main.CONTACT.NAME' | translate }}</label>
-				<input
-					class="name"
-					[(ngModel)]="contactData.name"
-					[ngClass]="{
-						'input-bg': isNameFilled,
-						'error-placeholder': wasNameFocused && contactData.name.trim().length === 0
-					}"
-					type="text"
-					id="name"
-					name="name"
-					(blur)="onBlur('name')"
-					[placeholder]="
-						wasNameFocused && contactData.name.trim().length === 0
-							? ('main.CONTACT.NAME_REQ' | translate)
-							: ('main.CONTACT.NAME' | translate)
-					"
-					required
-				/>
-
-				<label for="email" class="sr-only">{{ 'main.CONTACT.MAIL' | translate }}</label>
-				<input
-					class="email"
-					[(ngModel)]="contactData.email"
-					[ngClass]="{
-						'input-bg': isEmailFilled,
-						'error-placeholder': wasEmailFocused && contactData.email.trim().length === 0
-					}"
-					type="email"
-					id="email"
-					name="email"
-					(blur)="onBlur('email')"
-					[placeholder]="
-						wasEmailFocused && contactData.email.trim().length === 0
-							? ('main.CONTACT.EMAIL_REQ' | translate)
-							: ('main.CONTACT.MAIL' | translate)
-					"
-					required
-				/>
+				<div class="input-wrapper">
+					<label for="name" class="sr-only">{{ 'main.CONTACT.NAME' | translate }}</label>
+					<input
+						class="name"
+						[(ngModel)]="contactData.name"
+						[ngClass]="{
+							'input-bg valid-input': isNameFilled,
+							'error-placeholder': wasNameFocused && contactData.name.trim().length === 0,
+							'invalid-input': wasNameFocused && !isNameFilled
+						}"
+						type="text"
+						id="name"
+						name="name"
+						(blur)="onBlur('name')"
+						[placeholder]="
+							wasNameFocused && contactData.name.trim().length === 0
+								? ('main.CONTACT.NAME_REQ' | translate)
+								: ('main.CONTACT.NAME' | translate)
+						"
+						required
+					/>
+					<div class="validation-icon"></div>
+				</div>
+				<div class="input-wrapper">
+					<label for="email" class="sr-only">{{ 'main.CONTACT.MAIL' | translate }}</label>
+					<input
+						class="email"
+						[(ngModel)]="contactData.email"
+						[ngClass]="{
+							'input-bg valid-input': isEmailFilled,
+							'error-placeholder': wasEmailFocused && contactData.email.trim().length === 0,
+							'invalid-input': wasEmailFocused && !isEmailFilled
+						}"
+						type="email"
+						id="email"
+						name="email"
+						(blur)="onBlur('email')"
+						[placeholder]="
+							wasEmailFocused && contactData.email.trim().length === 0
+								? ('main.CONTACT.EMAIL_REQ' | translate)
+								: ('main.CONTACT.MAIL' | translate)
+						"
+						required
+					/>
+					<div class="validation-icon"></div>
+				</div>
 			</div>
-			<div>
+			<div class="input-wrapper">
 				<label for="message" class="sr-only">{{ 'main.CONTACT.MSG' | translate }}</label>
 				<textarea
 					class="message"
 					[(ngModel)]="contactData.message"
 					[ngClass]="{
-						'textarea-bg': isTextareaFilled,
-						'error-placeholder': wasMessageFocused && contactData.message.trim().length === 0
+						'textarea-bg valid-input': isTextareaFilled,
+						'error-placeholder': wasMessageFocused && contactData.message.trim().length === 0,
+						'invalid-input': wasMessageFocused && !isTextareaFilled
 					}"
 					id="message"
 					name="message"
@@ -86,6 +94,7 @@
 					"
 					required
 				></textarea>
+				<div class="validation-icon"></div>
 			</div>
 		</div>
 
@@ -107,11 +116,7 @@
 						<span
 							class="red-small-text"
 							[ngStyle]="{
-								display: isFormValid
-									? 'none'
-									: isFormPartiallyValid && isSendBtnHovered
-									? 'block'
-									: 'none'
+								display: isPrivacyChecked ? 'none' : isSendBtnHovered ? 'block' : 'none'
 							}"
 						>
 							{{ 'main.CONTACT.PRIVACY_REQ' | translate }}
@@ -125,7 +130,7 @@
 					type="submit"
 					[ngClass]="isFormValid ? 'btn btn-purple' : 'btn-grey'"
 					[disabled]="!isFormValid"
-					(mouseenter)="isSendBtnHovered = true"
+					(mouseenter)="isSendBtnHovered = isFormPartiallyValid && (isSendBtnHovered = true)"
 				>
 					{{ 'main.CONTACT.BTN' | translate }}
 				</button>

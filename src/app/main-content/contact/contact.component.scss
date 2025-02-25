@@ -70,7 +70,7 @@ textarea {
 input.name,
 input.email,
 textarea {
-	padding: 12px 18px;
+	padding: 12px 40px 12px 18px;
 	background-color: transparent;
 	background: transparent;
 	border: 2px solid $green-color; /* Border in Grün */
@@ -111,7 +111,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	// -webkit-box-shadow: 0 0 0 30px rgba(20, 29, 47, 1) inset !important;
 	// -webkit-box-shadow: 0 0 0 28px $bg-color inset !important;
-	-webkit-box-shadow: 0 0 0 28px $bg-color inset !important;
+	// -webkit-box-shadow: 0 0 0 28px $bg-color inset !important;
 	-webkit-text-fill-color: $green-color !important;
 }
 
@@ -133,6 +133,40 @@ textarea:-webkit-autofill {
 
 	border: 2px solid $green-color; /* Border in Grün */
 	@include text-style(400, 18px, $green-color);
+}
+
+.input-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.validation-icon {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 24px;
+	height: 24px;
+	display: none; // Standardmäßig ausblenden
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+textarea + .validation-icon {
+	top: 10px; // In der rechten oberen Ecke der Textarea
+	transform: none; // Kein vertikales Zentrieren nötig
+}
+
+input.valid-input + .validation-icon,
+textarea.valid-input + .validation-icon {
+	display: block;
+	background-image: url('./../../../assets/icons/icons/done.png');
+}
+
+input.invalid-input + .validation-icon,
+textarea.invalid-input + .validation-icon {
+	display: block;
+	background-image: url('./../../../assets/icons/icons/error.png');
 }
 
 // input[type='checkbox'] {
