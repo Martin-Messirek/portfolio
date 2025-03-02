@@ -1,4 +1,15 @@
+@import '../../../assets/css/variables.scss';
+@import '../../../assets/css/mixins.scss';
+
 section {
+	@include flex($jc: center);
+}
+
+.container {
+	width: 100%;
+	max-width: 1188px;
+}
+.project {
 	// padding-bottom: 112px;
 }
 

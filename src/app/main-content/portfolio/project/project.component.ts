@@ -16,4 +16,5 @@ export class ProjectComponent {
 	@Input() liveLink!: string;
 	@Input() githubLink!: string;
 	@Input() imageSrc!: string;
+	@Input() reverseRow: boolean = false;
 }

@@ -1,14 +1,17 @@
 <div id="portfolio" class="component-gap"></div>
 <section>
-	<h2>{{ 'main.PORTFOLIO' | translate }}</h2>
-	<div *ngFor="let project of projects" class="project">
-		<app-project
-			[TITLE]="project.TITLE"
-			[TECHNOLOGIES]="project.TECHNOLOGIES"
-			[DESCRIPTION]="project.DESCRIPTION"
-			[liveLink]="project.liveLink"
-			[githubLink]="project.githubLink"
-			[imageSrc]="project.imageSrc"
-		></app-project>
+	<div class="container">
+		<h2>{{ 'main.PORTFOLIO' | translate }}</h2>
+		<div *ngFor="let project of projects; let i = index" class="project">
+			<app-project
+				[TITLE]="project.TITLE"
+				[TECHNOLOGIES]="project.TECHNOLOGIES"
+				[DESCRIPTION]="project.DESCRIPTION"
+				[liveLink]="project.liveLink"
+				[githubLink]="project.githubLink"
+				[imageSrc]="project.imageSrc"
+				[reverseRow]="i % 2 === 0"
+			></app-project>
+		</div>
 	</div>
 </section>

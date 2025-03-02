@@ -30,12 +30,13 @@ img {
 	background-color: $green-color;
 }
 
-.skill-logo p {
+.skill-logo p,
+.pop-up-static {
 	text-align: center;
 }
 
 .appHoverImage {
-	@include flex($ai: center, $gap: 38px); // 120 minus halbe pop-up-Breite plus halbe skill-logo-Breite
+	@include flex($ai: center, $gap: 48px);
 	position: relative;
 }
 
@@ -46,6 +47,16 @@ img {
 	visibility: hidden;
 	opacity: 0;
 	@include transition();
+}
+
+.pop-up-static-container {
+	@include flex($jc: center);
+}
+
+.pop-up-static {
+	display: none;
+	width: 338px;
+	max-width: 75vw;
 }
 
 // .pop-up.visible {
@@ -113,13 +124,18 @@ img {
 		height: 50px;
 	}
 
-	.skill-logo-title {
+	.skill-logo-title,
+	.continuous-learning {
 		display: none;
 	}
 
 	.continuous-learning {
 		font-size: 17px;
 		font-weight: 400;
+	}
+
+	.pop-up-static {
+		display: block;
 	}
 }
 

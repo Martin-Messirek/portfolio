@@ -336,7 +336,8 @@ textarea.invalid-input + .validation-icon {
 		width: 100%;
 
 		& > div {
-			width: 80%;
+			width: 100%;
+			max-width: 588px;
 			// gap: 40px;
 			//
 			// flex: 1 1 80%;
@@ -386,7 +387,7 @@ textarea.invalid-input + .validation-icon {
 	.text-flex,
 	.privacy-and-btn-container {
 		& > div {
-			width: 90%;
+			max-width: 588px;
 		}
 	}
 	.my-details-text {

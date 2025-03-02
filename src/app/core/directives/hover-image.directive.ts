@@ -38,7 +38,7 @@ export class HoverImageDirective {
 		// @HostListener('mouseenter') onHover() {
 		// 	// Überprüfen, ob der Mauszeiger das .continuous-learning-Element berührt
 		if (this.el.nativeElement.querySelector('.continuous-learning')) {
-			if (this.hoverText) {
+			if (window.innerWidth > 768 && this.hoverText) {
 				this.renderer.setStyle(this.hoverText, 'display', 'block');
 
 				setTimeout(() => {
@@ -57,7 +57,7 @@ export class HoverImageDirective {
 		// **Geänderte Zeile:** Prüft, ob die Maus wirklich das `.hover` verlässt
 		if (this.hoverElement && !this.hoverElement.contains(event.relatedTarget as Node)) {
 			// @HostListener('mouseleave') onLeave() {
-			if (this.hoverText) {
+			if (window.innerWidth > 768 && this.hoverText) {
 				this.renderer.setStyle(this.hoverText, 'visibility', 'hidden'); // Text ausblenden
 				this.renderer.setStyle(this.hoverText, 'opacity', '0');
 				setTimeout(() => {
