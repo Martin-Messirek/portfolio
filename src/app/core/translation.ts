@@ -72,7 +72,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 					'Jump, run and throw game based on an object-oriented approach. Help Pepe find coins and Tabasco salsa to fight against the crazy hen.',
 				liveLink: 'https://example.com/el-pollo-loco',
 				githubLink: 'https://github.com/yourrepo/el-pollo-loco',
-				imageSrc: 'assets/images/el-pollo-loco.png',
+				imageSrc: './../../../assets/images/projects/pollo-loco.png',
 			},
 			{
 				TITLE: 'Join',
@@ -81,7 +81,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 					'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
 				liveLink: 'https://example.com/join',
 				githubLink: 'https://github.com/yourrepo/join',
-				imageSrc: 'assets/images/join.png',
+				imageSrc: './../../../assets/images/projects/join.png',
 			},
 			{
 				TITLE: 'Pokemon',
@@ -97,7 +97,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				DESCRIPTION: 'A bubble shooter game with interactive mechanics and engaging animations.',
 				liveLink: 'https://example.com/da-bubble',
 				githubLink: 'https://github.com/yourrepo/da-bubble',
-				imageSrc: 'assets/images/da-bubble.png',
+				imageSrc: './../../../assets/images/projects/under-construction.jpg',
 			},
 		],
 		shared: {
@@ -266,7 +266,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 					'Ein Action-Spiel, das auf objektorientierter Programmierung basiert. Pepe sammelt Münzen und Tabasco-Flaschen, um gegen das verrückte Riesenhuhn antreten zu können.',
 				liveLink: 'https://example.com/el-pollo-loco',
 				githubLink: 'https://github.com/yourrepo/el-pollo-loco',
-				imageSrc: 'assets/images/el-pollo-loco.png',
+				imageSrc: './../../../assets/images/projects/pollo-loco.png',
 			},
 			{
 				TITLE: 'Join',
@@ -275,7 +275,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 					'Ein Taskmanager, der vom Kanban-System inspiriert ist: Tasks werden erstellt, mithilfe von Drag-and-Drop organisiert, in Kategorien eingeteilt und Nutzern zugewiesen.',
 				liveLink: 'https://example.com/join',
 				githubLink: 'https://github.com/yourrepo/join',
-				imageSrc: 'assets/images/join.png',
+				imageSrc: './../../../assets/images/projects/join.png',
 			},
 			{
 				TITLE: 'Pokemon',
@@ -283,7 +283,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				DESCRIPTION: ' Eine Pokedex-Anwendung, die Pokemon-Daten in Echtzeit von einer API abruft.',
 				liveLink: 'https://example.com/pokemon',
 				githubLink: 'https://github.com/yourrepo/pokemon',
-				imageSrc: 'assets/images/pokemon.png',
+				imageSrc: './../../../assets/images/projects/pokedex.png',
 			},
 			{
 				TITLE: 'DA Bubble – Current Project',
@@ -292,7 +292,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 					'Ein fesselndes Bubble-Shooter-Spiel, das interaktive Mechaniken mit ansprechenden Animationen kombiniert.',
 				liveLink: 'https://example.com/da-bubble',
 				githubLink: 'https://github.com/yourrepo/da-bubble',
-				imageSrc: 'assets/images/da-bubble.png',
+				imageSrc: './../../../assets/images/projects/under-construction.jpg',
 			},
 		],
 		shared: {
