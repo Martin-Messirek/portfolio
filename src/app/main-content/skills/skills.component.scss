@@ -9,7 +9,7 @@
 .skills {
 	@include flex($gap: 120px);
 	flex-wrap: wrap;
-	padding-bottom: 112px;
+	// padding-bottom: 112px;
 }
 //      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
 .skill-logo {

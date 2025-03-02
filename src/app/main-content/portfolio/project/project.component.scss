@@ -40,10 +40,11 @@
 	// }
 }
 
-.image {
+img {
 	width: 588px;
 	height: 371px;
-	background-color: $bg-color-bright;
+	// background-color: $bg-color-bright;
+	object-fit: cover;
 }
 
 .mobile-buttons {

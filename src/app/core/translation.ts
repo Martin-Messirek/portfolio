@@ -89,7 +89,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				DESCRIPTION: 'A Pokedex application that fetches real-time Pokemon data from an API.',
 				liveLink: 'https://example.com/pokemon',
 				githubLink: 'https://github.com/yourrepo/pokemon',
-				imageSrc: 'assets/images/pokemon.png',
+				imageSrc: './../../../assets/images/projects/pokedex.png',
 			},
 			{
 				TITLE: 'DA Bubble – Current Project',
