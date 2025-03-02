@@ -1,16 +1,28 @@
 <header>
 	<div class="menu-and-lang-btn-container">
 		<div class="menu">
-			<p class="logo">
-				<span>{{ 'shared.HEADER.LOGO' | translate }}</span>
-			</p>
+			<a [routerLink]="['/']" fragment="top">
+				<p class="logo">
+					<!-- <span>{{ 'shared.HEADER.LOGO' | translate }}</span> -->
+
+					<span>{{ 'shared.HEADER.LOGO' | translate }}</span>
+				</p>
+			</a>
+
 			<nav>
 				<ul>
-					<li>{{ 'shared.HEADER.NAV.ABOUT' | translate }}</li>
-					<li>{{ 'shared.HEADER.NAV.SKILLS' | translate }}</li>
-					<li>{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</li>
-					<li>{{ 'shared.HEADER.NAV.CONTACT' | translate }}</li>
-					<!-- <li>{{ '' | translate }}</li> -->
+					<li>
+						<a href="#about">{{ 'shared.HEADER.NAV.ABOUT' | translate }}</a>
+					</li>
+					<li>
+						<a href="#skills">{{ 'shared.HEADER.NAV.SKILLS' | translate }}</a>
+					</li>
+					<li>
+						<a href="#portfolio">{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</a>
+					</li>
+					<li>
+						<a href="#contact">{{ 'shared.HEADER.NAV.CONTACT' | translate }}</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -47,10 +59,26 @@
 
 	<div class="mobile-menu">
 		<ul (click)="$event.stopPropagation()">
-			<li>{{ 'shared.HEADER.NAV.ABOUT' | translate }}</li>
-			<li>{{ 'shared.HEADER.NAV.SKILLS' | translate }}</li>
-			<li>{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</li>
-			<li>{{ 'shared.HEADER.NAV.CONTACT' | translate }}</li>
+			<li>
+				<a href="#about" (click)="toggleMenu()">
+					{{ 'shared.HEADER.NAV.ABOUT' | translate }}
+				</a>
+			</li>
+			<li>
+				<a a href="#skills" (click)="toggleMenu()">
+					{{ 'shared.HEADER.NAV.SKILLS' | translate }}
+				</a>
+			</li>
+			<li>
+				<a href="#portfolio" (click)="toggleMenu()">
+					{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}
+				</a>
+			</li>
+			<li>
+				<a a href="#contact" (click)="toggleMenu()">
+					{{ 'shared.HEADER.NAV.CONTACT' | translate }}
+				</a>
+			</li>
 			<li>
 				<button
 					class="language-button"

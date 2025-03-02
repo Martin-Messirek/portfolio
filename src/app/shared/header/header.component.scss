@@ -92,8 +92,6 @@ header {
 .logo {
 	line-height: 64px;
 	width: 64px;
-	color: $red-color;
-	font-size: 48px;
 	border-radius: 50%;
 	background: radial-gradient(at 35% 25%, white, $bg-color, $bg-color-light);
 	@include flex($jc: center, $ai: center);
@@ -101,6 +99,8 @@ header {
 	@include transition();
 	span {
 		text-shadow: 1px 0px 1px black;
+		color: $red-color;
+		font-size: 48px;
 	}
 	&:hover {
 		filter: brightness(1.1);
@@ -120,7 +120,7 @@ nav ul {
 	}
 }
 
-li {
+li a {
 	// width: clamp(110px, 7vw, 110px);
 
 	// text-align: center;

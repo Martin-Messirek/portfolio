@@ -78,6 +78,7 @@
 @media (max-width: 2000px) {
 	.atf-container {
 		padding-top: 0;
+		padding-bottom: 112px;
 		// min-height: 100vh;
 	}
 
@@ -98,7 +99,8 @@
 
 @media (max-width: 1600px) {
 	.atf-container {
-		padding-bottom: 112px;
+		// padding-bottom: 112px;
+		padding-bottom: 24px;
 	}
 	.atf-content {
 		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 48px);
@@ -116,19 +118,31 @@
 	.arrow-container {
 		display: none;
 	}
+
+	.atf-img img {
+		width: 66vw;
+		height: 69vw;
+		max-width: 462px;
+		max-height: 483px;
+	}
 }
 
 @media (max-width: 1200px) {
 	.atf-container {
 		// m*in-height: 100vh;
 		justify-content: flex-start;
-		padding-top: 21vw; // Ändern, Fixgröße
+		// padding-top: 21vw; // Ändern, Fixgröße
+		// padding-top: 112px;
+		padding-top: 160px;
+		// padding-bottom: 24px;
 	}
 
-	.atf-img img {
-		width: 60vw;
-		height: 66vw;
-	}
+	// .atf-img img {
+	// 	width: 66vw;
+	// 	height: 69vw;
+	// 	max-width: 660px;
+	// 	max-height: 690px;
+	// }
 
 	.links {
 		display: none;
@@ -138,6 +152,6 @@
 @media (max-width: 768px) {
 	.atf-container {
 		height: clamp(450px, 100dvh, 1000px);
-		padding-top: 160px;
+		// padding-top: 160px;
 	}
 }

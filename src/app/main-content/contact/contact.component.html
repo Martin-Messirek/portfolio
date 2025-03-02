@@ -1,3 +1,4 @@
+<div id="contact" class="component-gap"></div>
 <h2>{{ 'main.CONTACT.HEADER' | translate }}</h2>
 <div class="contact">
 	<!-- <h2>{{ 'main.CONTACT.HEADER' | translate }}</h2> -->
@@ -24,7 +25,7 @@
 		</div>
 	</div>
 
-	<form (ngSubmit)="onSubmit()">
+	<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 		<div class="inputs-flex">
 			<div>
 				<div class="input-wrapper">
@@ -137,7 +138,10 @@
 			</div>
 		</div>
 	</form>
-
+	<a [routerLink]="['/']" fragment="top" class="green-regular-text">
+		<img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" />
+		PFEIL NACH OBEN
+	</a>
 	<div class="my-details-mobile">
 		<p>
 			<a class="my-details-text hover" href="mailto:{{ 'main.CONTACT.MY_EMAIL.ADDRESS' | translate }}">

@@ -2,7 +2,10 @@
 	<div class="content-wrapper">
 		<div class="footer-personal">
 			<div class="logo-container">
-				<img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" />
+				<a [routerLink]="['/']">
+					<img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" />
+				</a>
+				<!-- <img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" /> -->
 				<p class="logo-text">{{ 'shared.FOOTER.LOGO_TEXT' | translate }}</p>
 			</div>
 
@@ -14,8 +17,8 @@
 			</div>
 		</div>
 		<div class="footer-legal">
-			<a class="red-small-text" href="/legal">{{ 'shared.FOOTER.LEGAL' | translate }}</a>
-			<a class="red-small-text" href="/privacy">{{ 'shared.FOOTER.PRIVACY' | translate }}</a>
+			<a class="red-small-text" [routerLink]="['/legal']">{{ 'shared.FOOTER.LEGAL' | translate }}</a>
+			<a class="red-small-text" [routerLink]="['/privacy']">{{ 'shared.FOOTER.PRIVACY' | translate }}</a>
 		</div>
 		<div class="signature">
 			<img src="./../../../assets/icons/icons/signature.png" alt="" />

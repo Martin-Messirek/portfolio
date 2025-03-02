@@ -84,6 +84,12 @@ button {
 	// }
 }
 
+@media (max-width: 1200px) {
+	.intro {
+		font-size: 40px;
+	}
+}
+
 @media (max-width: 768px) {
 	.portrait {
 		display: none;

@@ -2,11 +2,12 @@ import { Component, Renderer2 } from '@angular/core';
 import { TranslationService } from '../../core/services/translation.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
 	selector: 'app-header',
 	standalone: true,
-	imports: [TranslatePipe, CommonModule],
+	imports: [TranslatePipe, CommonModule, RouterModule],
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss',
 })

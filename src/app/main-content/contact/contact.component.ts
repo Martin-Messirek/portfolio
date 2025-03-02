@@ -1,16 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-contact',
 	standalone: true,
-	imports: [TranslatePipe, CommonModule, FormsModule],
+	imports: [TranslatePipe, CommonModule, FormsModule, RouterModule],
 	templateUrl: './contact.component.html',
 	styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+	http = inject(HttpClient);
+
 	wasNameFocused: boolean = false;
 	wasEmailFocused: boolean = false;
 	wasMessageFocused: boolean = false;
@@ -87,8 +91,37 @@ export class ContactComponent {
 		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked;
 	}
 
-	onSubmit() {
+	mailTest = true; // auf true setzen wenn auf server
+
+	post = {
+		endPoint: 'https://deineDomain.de/sendMail.php', // funktioniert im loca lHost nicht
+		body: (payload: any) => JSON.stringify(payload),
+		options: {
+			headers: {
+				'Content-Type': 'text/plain',
+				responseType: 'text',
+			},
+		},
+	};
+
+	onSubmit(ngForm: NgForm) {
 		console.log('Angular Form Submit funktioniert');
 		console.log('Formulardaten gesendet:', this.contactData);
+
+		if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+			// !this.mailTest und else if rausnehmen wenn auf server, ist nur Test
+			this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
+				next: (response) => {
+					ngForm.resetForm();
+				},
+				error: (error) => {
+					console.error(error);
+				},
+				complete: () => console.info('send post complete'),
+			});
+		} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+			// Testmodus
+			ngForm.resetForm();
+		}
 	}
 }
