@@ -6,6 +6,11 @@
 	@include text-style(700, 18px, $green-color); // --
 	// @include transition();
 }
+
+// .skills-container {
+// 	@include flex($jc: center);
+// }
+
 .skills {
 	@include flex($gap: 120px);
 	flex-wrap: wrap;
@@ -25,18 +30,19 @@ img {
 	background-color: $green-color;
 }
 
-p {
+.skill-logo p {
 	text-align: center;
 }
 
 .appHoverImage {
 	@include flex($ai: center, $gap: 38px); // 120 minus halbe pop-up-Breite plus halbe skill-logo-Breite
+	position: relative;
 }
 
 .pop-up {
 	display: none;
 	max-width: 252px;
-	text-align: center;
+	// text-align: center;
 	visibility: hidden;
 	opacity: 0;
 	@include transition();
@@ -52,18 +58,53 @@ p {
 // 	@include text-style(700, 18px, $green-color); // logo and pop up text 400 16
 // }
 
-@media (max-width: 960px) {
+@media (max-width: 1600px) {
+	.skills {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr); // Standardmäßig 5 Spalten
+		gap: clamp(30px, 5vw, 120px);
+		// gap: 8vw;
+		justify-content: flex-start; // Startet links, keine Zentrierung
+		justify-items: center;
+		// justify-content: center;
+	}
+
+	.pop-up {
+		// width: 180px;
+		position: absolute;
+		left: min(25vw, 160px);
+		// left: 120px;
+	}
+}
+
+@media (max-width: 1200px) {
 	h2 {
 		text-align: center;
 	}
 
 	.skills {
-		justify-content: center;
+		// justify-content: center;
 	}
 }
+
+@media (max-width: 896px) {
+	.skills {
+		grid-template-columns: repeat(4, 1fr); // 4 Spalten
+	}
+}
+// @media (max-width: 960px) {
+// 	h2 {
+// 		text-align: center;
+// 	}
+
+// 	.skills {
+// 		justify-content: center;
+// 	}
+// }
 @media (max-width: 768px) {
 	.skills {
-		gap: 80px;
+		grid-template-columns: repeat(3, 1fr);
+		// gap: 80px;
 	}
 	//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
 
@@ -84,7 +125,7 @@ p {
 
 @media (max-width: 580px) {
 	.skills {
-		gap: 50px;
+		// gap: 50px;
 	}
 
 	img {
