@@ -14,6 +14,8 @@
 .skills {
 	@include flex($gap: 120px);
 	flex-wrap: wrap;
+	transform: translateX(-7.5px);
+	// padding-left: -7.5px;
 	// padding-bottom: 112px;
 }
 //      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
@@ -76,7 +78,8 @@ img {
 		gap: clamp(30px, 5vw, 120px);
 		// gap: 8vw;
 		justify-content: flex-start; // Startet links, keine Zentrierung
-		justify-items: center;
+		justify-items: start;
+		transform: translateX(0);
 		// justify-content: center;
 	}
 
@@ -101,6 +104,7 @@ img {
 @media (max-width: 896px) {
 	.skills {
 		grid-template-columns: repeat(4, 1fr); // 4 Spalten
+		justify-items: center;
 	}
 }
 // @media (max-width: 960px) {
@@ -118,6 +122,10 @@ img {
 		// gap: 80px;
 	}
 	//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
+	.skill-logo {
+		width: 50px;
+		height: 80px;
+	}
 
 	img {
 		width: 50px;
@@ -155,8 +163,8 @@ img {
 }
 
 @media (max-width: 480px) {
-	.skills {
-		gap: 15px;
-	}
+	// .skills {
+	// 	gap: 15px;
+	// }
 	//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
 }

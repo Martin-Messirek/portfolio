@@ -2,24 +2,27 @@
 <div class="about-me">
 	<img class="portrait" src="../../../assets/images/portraits/portrait-2.png" alt="" />
 	<div class="text">
-		<h2 class="align-right">{{ 'main.ABOUT_ME.TITLE' | translate }}</h2>
-		<p class="align-right description">{{ 'main.ABOUT_ME.DESCRIPTION' | translate }}</p>
+		<h2>{{ 'main.ABOUT_ME.TITLE' | translate }}</h2>
+		<p class="description">{{ 'main.ABOUT_ME.DESCRIPTION' | translate }}</p>
 
-		<div class="flex-end">
+		<div class="flex-style">
 			<div class="grid-container">
+				<div class="arrow-5-1-container mobile-view">
+					<img class="arrow-5-1-mobile" src="../../../assets/icons/icons/arrow-5-1.png" alt="" />
+				</div>
 				<div class="grid-item">
 					<p class="intro">{{ 'main.ABOUT_ME.INTRO' | translate }}</p>
 				</div>
 				<div class="grid-item">
 					<div class="flex-container">
 						<img src="../../../assets/icons/icons/ubication.png" alt="Location" />
-						<div class="green-regular-text">
+						<div class="green-regular-text inline-text">
 							<p>{{ 'main.ABOUT_ME.LOCATION.1' | translate }}</p>
 							<p>{{ 'main.ABOUT_ME.LOCATION.2' | translate }}</p>
 						</div>
 					</div>
-					<img class="arrow-down" src="../../../assets/icons/icons/arrow-5.png" alt="" />
-					<div class="flex-container">
+					<img class="arrow-5-1" src="../../../assets/icons/icons/arrow-5-1.png" alt="" />
+					<div class="flex-container desktop-view">
 						<img src="../../../assets/icons/icons/remote-work.png" alt="Remote Work" />
 						<div class="green-regular-text">
 							<p>{{ 'main.ABOUT_ME.REMOTE.1' | translate }}</p>
@@ -30,20 +33,38 @@
 				<div class="grid-item">
 					<div class="flex-container">
 						<img src="../../../assets/icons/icons/relocate.png" alt="Relocation" />
-						<div class="green-regular-text">
+						<div class="green-regular-text inline-text">
 							<p>{{ 'main.ABOUT_ME.RELOCATE.1' | translate }}</p>
 							<p>{{ 'main.ABOUT_ME.RELOCATE.2' | translate }}</p>
 						</div>
 					</div>
-					<div class="arrow-container">
-						<img class="arrow-up" src="../../../assets/icons/icons/arrow-4.png" alt="" />
-						<img class="arrow-twisted" src="../../../assets/icons/icons/arrow-1.png" alt="" />
+					<div class="arrow-container desktop-view">
+						<img class="arrow-4" src="../../../assets/icons/icons/arrow-4.png" alt="" />
+						<img class="arrow-1" src="../../../assets/icons/icons/arrow-1.png" alt="" />
 					</div>
+				</div>
+				<div class="mobile-remote mobile-view">
+					<div class="flex-container">
+						<img
+							src="../../../assets/icons/icons/remote-work.png"
+							class="mobile-remote-img"
+							alt="Remote Work"
+						/>
+						<div class="green-regular-text inline-text">
+							<p>{{ 'main.ABOUT_ME.REMOTE.1' | translate }}</p>
+							<p>{{ 'main.ABOUT_ME.REMOTE.2' | translate }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="arrow-5-2-container mobile-view">
+					<img class="arrow-5-2" src="../../../assets/icons/icons/arrow-5-2.png" alt="" />
 				</div>
 			</div>
 		</div>
-		<div class="flex-end">
-			<button class="btn btn-green">{{ 'main.ABOUT_ME.CONTACT' | translate }}</button>
+		<div class="btn-container">
+			<a href="#contact" class="btn btn-green">
+				{{ 'main.ABOUT_ME.CONTACT' | translate }}
+			</a>
 		</div>
 	</div>
 </div>

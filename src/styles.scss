@@ -130,9 +130,9 @@ a {
 	@include text-style(500, 18px, $grey-color);
 }
 
-.align-right {
-	text-align: right;
-}
+// .align-right {
+// 	text-align: right;
+// }
 
 @media (max-width: 1200px) {
 	h1 {

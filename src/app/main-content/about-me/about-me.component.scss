@@ -16,14 +16,16 @@
 
 .description {
 	min-height: 112px;
-	// padding-top: 16px;
+	text-align: right; // padding-top: 16px;
 	@include text-style(400, 16px, $green-color);
 }
 
 .grid-container {
 	max-width: 640px;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 1.2fr 1fr 1fr;
+
+	// grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
 	padding: 48px 0 36px; //##################################################################################################
 	// padding top verringern bei großem Bildschirm
@@ -40,7 +42,7 @@
 	}
 }
 
-.grid-item:last-child {
+.grid-item:nth-child(4) {
 	@include flex($jc: flex-end, $dir: column, $gap: 24px);
 }
 
@@ -49,15 +51,26 @@
 }
 
 .arrow {
-	&-down {
+	&-5-1,
+	&-5-1-mobile {
 		width: 23px;
 		height: 56px;
 	}
-	&-up {
+
+	&-5-2 {
+		width: 23px;
+		height: 41px;
+	}
+
+	&-5-1-mobile,
+	&-5-2 {
+		display: none;
+	}
+	&-4 {
 		width: 35px;
 		height: 44px;
 	}
-	&-twisted {
+	&-1 {
 		width: 36px;
 		height: 60px;
 	}
@@ -68,8 +81,14 @@
 	@include flex($jc: space-between);
 }
 
-.flex-end {
+.flex-style,
+.btn-container,
+h2 {
 	@include flex($jc: flex-end);
+}
+
+.mobile-view {
+	display: none;
 }
 
 button {
@@ -85,16 +104,82 @@ button {
 }
 
 @media (max-width: 1200px) {
+	.arrow {
+		&-1,
+		&-4,
+		&-5-1 {
+			display: none;
+		}
+
+		&-5-2,
+		&-5-1-mobile {
+			display: block;
+		}
+	}
 	.intro {
 		font-size: 40px;
+		padding-right: 24px;
+	}
+
+	.description {
+		text-align: left;
+		max-width: 88vw;
+	}
+
+	.portrait,
+	.desktop-view {
+		display: none;
+	}
+
+	.mobile-view {
+		display: flex;
+	}
+
+	.inline-text {
+		@include flex($ai: center, $gap: 10px);
+		padding-top: 5px;
+		flex-wrap: nowrap;
+	}
+
+	h2 {
+		justify-content: start;
+	}
+
+	.btn-container,
+	.flex-style {
+		justify-content: center;
+	}
+
+	.grid-container {
+		@include flex($ai: center, $dir: column, $gap: 24px);
+		width: 86vw;
+	}
+
+	.grid-item,
+	.grid-item:nth-child(4),
+	.mobile-remote {
+		@include flex($ai: center, $gap: 24px);
+	}
+
+	.flex-container {
+		align-items: center;
+	}
+
+	.mobile-remote-img {
+		padding-bottom: 5px;
+	}
+
+	.arrow-5-1-container,
+	.arrow-5-2-container {
+		width: 100%;
+	}
+
+	.arrow-5-2-container {
+		@include flex($jc: flex-end);
 	}
 }
 
 @media (max-width: 768px) {
-	.portrait {
-		display: none;
-	}
-
 	.intro {
 		font-size: 28px;
 	}
@@ -109,4 +194,8 @@ button {
 	.intro {
 		font-size: 18px;
 	}
+
+	// .grid-container {
+	// 	max-width: 88vw;
+	// }
 }
