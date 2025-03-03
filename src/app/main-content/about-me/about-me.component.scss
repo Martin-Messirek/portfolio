@@ -38,7 +38,7 @@
 .grid-item {
 	@include flex($dir: column, $gap: 24px);
 	img {
-		cursor: pointer;
+		// cursor: pointer;
 	}
 }
 
@@ -58,8 +58,8 @@
 	}
 
 	&-5-2 {
-		width: 23px;
-		height: 41px;
+		width: 26px;
+		height: 47px;
 	}
 
 	&-5-1-mobile,
@@ -103,6 +103,45 @@ button {
 	// }
 }
 
+.dynamic-ubication {
+	@include flex($dir: column);
+}
+
+.icon-container-located {
+	position: relative;
+	width: 35px;
+	height: 57px;
+	// height: 122px;
+	img {
+		position: absolute;
+		@include transition();
+		bottom: 0;
+		right: 0;
+	}
+}
+.icon-container-remote {
+	position: relative;
+	width: 62px;
+	height: 56px;
+	// height: 122px;
+	img {
+		position: absolute;
+		@include transition();
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.icon-container-relocate {
+	position: relative;
+	width: 38px;
+	height: 56px;
+	// height: 122px;
+	img {
+		position: absolute;
+		@include transition();
+	}
+}
 @media (max-width: 1200px) {
 	.arrow {
 		&-1,
@@ -122,6 +161,7 @@ button {
 	}
 
 	.description {
+		min-height: auto;
 		text-align: left;
 		max-width: 88vw;
 	}
@@ -151,14 +191,19 @@ button {
 	}
 
 	.grid-container {
-		@include flex($ai: center, $dir: column, $gap: 24px);
+		@include flex($ai: center, $dir: column, $gap: 0);
 		width: 86vw;
+		padding: 16px 0 0;
 	}
 
 	.grid-item,
 	.grid-item:nth-child(4),
 	.mobile-remote {
 		@include flex($ai: center, $gap: 24px);
+	}
+
+	.grid-item {
+		padding-bottom: 18px;
 	}
 
 	.flex-container {
@@ -171,7 +216,7 @@ button {
 
 	.arrow-5-1-container,
 	.arrow-5-2-container {
-		width: 100%;
+		width: 60%;
 	}
 
 	.arrow-5-2-container {
@@ -195,7 +240,19 @@ button {
 		font-size: 18px;
 	}
 
+	.arrow-5-1-container,
+	.arrow-5-2-container {
+		width: 80%;
+	}
+
 	// .grid-container {
 	// 	max-width: 88vw;
 	// }
+}
+
+@media (max-width: 400px) {
+	.arrow-5-1-container,
+	.arrow-5-2-container {
+		width: 100%;
+	}
 }

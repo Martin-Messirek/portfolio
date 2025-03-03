@@ -25,11 +25,10 @@
 	@include flex($ai: center, $dir: column, $gap: 10px);
 }
 
-img {
+.img {
 	display: block;
 	width: 60px;
 	height: 60px;
-	background-color: $green-color;
 }
 
 .skill-logo p,
@@ -52,14 +51,26 @@ img {
 }
 
 .pop-up-static-container {
-	@include flex($jc: center);
+	display: none;
 }
 
 .pop-up-static {
 	display: none;
 	width: 338px;
 	max-width: 75vw;
+	padding-bottom: 24px;
 }
+
+.arrow-6 {
+	display: none;
+	width: 12px;
+	height: 45px;
+	transform: translateY(-16px);
+}
+
+// .pop-up-static-btn {
+// 	padding-top: 18px;
+// }
 
 // .pop-up.visible {
 // 	display: block;
@@ -127,7 +138,7 @@ img {
 		height: 80px;
 	}
 
-	img {
+	.img {
 		width: 50px;
 		height: 50px;
 	}
@@ -142,7 +153,11 @@ img {
 		font-weight: 400;
 	}
 
-	.pop-up-static {
+	.pop-up-static-container {
+		@include flex($jc: center, $ai: center, $dir: column);
+	}
+	.pop-up-static,
+	.arrow-6 {
 		display: block;
 	}
 }
@@ -152,7 +167,7 @@ img {
 		// gap: 50px;
 	}
 
-	img {
+	.img {
 		width: 45px;
 		height: 45px;
 	}

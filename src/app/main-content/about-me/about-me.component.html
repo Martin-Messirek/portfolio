@@ -15,7 +15,14 @@
 				</div>
 				<div class="grid-item">
 					<div class="flex-container">
-						<img src="../../../assets/icons/icons/ubication.png" alt="Location" />
+						<div class="icon-container-located" appHoverImage>
+							<img src="../../../assets/icons/icons/ubication.png" alt="Location" />
+							<div class="dynamic-ubication">
+								<img src="../../../assets/icons/icons/ubication.png" alt="Location" />
+								<img src="../../../assets/icons/icons/ellipse.png" alt="Location" />
+							</div>
+						</div>
+
 						<div class="green-regular-text inline-text">
 							<p>{{ 'main.ABOUT_ME.LOCATION.1' | translate }}</p>
 							<p>{{ 'main.ABOUT_ME.LOCATION.2' | translate }}</p>
@@ -23,7 +30,19 @@
 					</div>
 					<img class="arrow-5-1" src="../../../assets/icons/icons/arrow-5-1.png" alt="" />
 					<div class="flex-container desktop-view">
-						<img src="../../../assets/icons/icons/remote-work.png" alt="Remote Work" />
+						<div class="icon-container-remote" appHoverImage>
+							<img
+								src="../../../assets/icons/icons/remote-work.png"
+								alt="Remote Work"
+								class="default-image remote"
+							/>
+							<img
+								src="../../../assets/icons/icons/remote-work-2.png"
+								alt="Remote Work"
+								class="hover-image remote"
+							/>
+						</div>
+						<!-- <img src="../../../assets/icons/icons/remote-work.png" alt="Remote Work" /> -->
 						<div class="green-regular-text">
 							<p>{{ 'main.ABOUT_ME.REMOTE.1' | translate }}</p>
 							<p>{{ 'main.ABOUT_ME.REMOTE.2' | translate }}</p>
@@ -32,7 +51,19 @@
 				</div>
 				<div class="grid-item">
 					<div class="flex-container">
-						<img src="../../../assets/icons/icons/relocate.png" alt="Relocation" />
+						<div class="icon-container-relocate" appHoverImage>
+							<img
+								src="../../../assets/icons/icons/relocate.png"
+								alt="Relocation"
+								class="default-image relocate"
+							/>
+							<img
+								src="../../../assets/icons/icons/relocate-2.png"
+								alt="Relocation"
+								class="hover-image relocate"
+							/>
+						</div>
+						<!-- <img src="../../../assets/icons/icons/relocate.png" alt="Relocation" /> -->
 						<div class="green-regular-text inline-text">
 							<p>{{ 'main.ABOUT_ME.RELOCATE.1' | translate }}</p>
 							<p>{{ 'main.ABOUT_ME.RELOCATE.2' | translate }}</p>
