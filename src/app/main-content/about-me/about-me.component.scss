@@ -114,7 +114,7 @@ button {
 	// height: 122px;
 	img {
 		position: absolute;
-		@include transition();
+		@include slow-transition();
 		bottom: 0;
 		right: 0;
 	}
@@ -126,7 +126,7 @@ button {
 	// height: 122px;
 	img {
 		position: absolute;
-		@include transition();
+		@include slow-transition();
 		bottom: 0;
 		right: 0;
 	}
@@ -139,7 +139,7 @@ button {
 	// height: 122px;
 	img {
 		position: absolute;
-		@include transition();
+		@include slow-transition();
 	}
 }
 @media (max-width: 1200px) {

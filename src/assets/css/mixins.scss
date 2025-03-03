@@ -18,6 +18,10 @@
 	transition: all 95ms ease-out;
 }
 
+@mixin slow-transition() {
+	transition: all 195ms ease-out;
+}
+
 @mixin text-style($weight, $size, $color) {
 	font-weight: $weight;
 	font-size: $size;
