@@ -14,7 +14,7 @@
 					<p class="intro">{{ 'main.ABOUT_ME.INTRO' | translate }}</p>
 				</div>
 				<div class="grid-item">
-					<div class="flex-container ubication-flex-container">
+					<div class="flex-container ubication-flex-container mobile-flex-container">
 						<div class="ubication-container">
 							<img class="ubication" src="../../../assets/icons/icons/ubication.png" alt="Location" />
 							<div class="icon-container-located" appHoverImage>
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 				<div class="grid-item">
-					<div class="flex-container">
+					<div class="flex-container mobile-flex-container">
 						<div class="icon-container-relocate" appHoverImage>
 							<img
 								src="../../../assets/icons/icons/relocate.png"
@@ -82,13 +82,25 @@
 					</div>
 				</div>
 				<div class="mobile-remote mobile-view">
-					<div class="flex-container">
-						<img
+					<div class="flex-container mobile-flex-container">
+						<!-- <img
 							src="../../../assets/icons/icons/remote-work.png"
 							class="mobile-remote-img"
 							alt="Remote Work"
-						/>
-						<div class="green-regular-text inline-text">
+						/> -->
+						<div class="icon-container-remote" appHoverImage>
+							<img
+								src="../../../assets/icons/icons/remote-work.png"
+								alt="Remote Work"
+								class="default-image mobile-remote-img"
+							/>
+							<img
+								src="../../../assets/icons/icons/remote-work-2.png"
+								alt="Remote Work"
+								class="hover-image mobile-remote-img"
+							/>
+						</div>
+						<div class="green-regular-text inline-text mobile-remote-text">
 							<p>{{ 'main.ABOUT_ME.REMOTE.1' | translate }}</p>
 							<p>{{ 'main.ABOUT_ME.REMOTE.2' | translate }}</p>
 						</div>

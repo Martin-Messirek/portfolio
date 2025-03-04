@@ -52,6 +52,7 @@
 
 .ubication-flex-container {
 	justify-content: center;
+	align-items: flex-end;
 }
 
 .remote-flex-container {
@@ -119,7 +120,7 @@ button {
 }
 
 .ubication {
-	transform: translateY(12px);
+	transform: translateY(4px);
 	// &:hover {
 	// 	transform: translateY(0);
 	// 	@include slow-transition();
@@ -128,10 +129,11 @@ button {
 
 .icon-container-located {
 	position: absolute;
-	position: relative;
+	// position: relative;
 	width: 34px;
 	height: 42px;
-	bottom: 30px;
+	top: 4px;
+	// bottom: 30px;
 	// height: 122px;
 	img {
 		position: absolute;
@@ -144,6 +146,7 @@ button {
 	.dummy-img {
 		width: 34px;
 		height: 42px;
+		visibility: hidden;
 	}
 
 	.hover-image {
@@ -233,8 +236,19 @@ button {
 		@include flex($ai: center, $gap: 24px);
 	}
 
+	.mobile-flex-container {
+		align-items: center;
+	}
+	// .mobile-remote-text {
+	// 	@include flex($jc: flex-end, $ai: flex-end, $gap: 24px);
+	// }
+
 	.grid-item {
 		padding-bottom: 18px;
+	}
+
+	.grid-item:nth-child(3) {
+		padding-bottom: 27px;
 	}
 
 	// .flex-container {
@@ -242,7 +256,7 @@ button {
 	// }
 
 	.mobile-remote-img {
-		padding-bottom: 5px;
+		padding-bottom: 14px;
 	}
 
 	.arrow-5-1-container,

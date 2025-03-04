@@ -81,7 +81,7 @@ export class HoverImageDirective {
 			if (ubicationImg) {
 				console.log('Gefunden! ', ubicationImg);
 
-				this.renderer.setStyle(ubicationImg, 'transform', 'translateY(0)');
+				this.renderer.setStyle(ubicationImg, 'transform', 'translateY(-8px)');
 				this.renderer.setStyle(ubicationImg, 'transition', 'transform 0.195s ease-out');
 			}
 		}
@@ -125,7 +125,7 @@ export class HoverImageDirective {
 	@HostListener('mouseleave', ['$event']) onLeave(event: MouseEvent) {
 		const ubicationImg = this.el.nativeElement.closest('.ubication-container')?.querySelector('.ubication');
 		if (ubicationImg) {
-			this.renderer.setStyle(ubicationImg, 'transform', 'translateY(12px)');
+			this.renderer.setStyle(ubicationImg, 'transform', 'translateY(4px)');
 		}
 		// **Geänderte Zeile:** Prüft, ob die Maus wirklich das `.hover` verlässt
 		if (this.hoverElement && !this.hoverElement.contains(event.relatedTarget as Node)) {
