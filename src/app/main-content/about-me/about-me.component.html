@@ -14,14 +14,21 @@
 					<p class="intro">{{ 'main.ABOUT_ME.INTRO' | translate }}</p>
 				</div>
 				<div class="grid-item">
-					<div class="flex-container">
-						<div class="icon-container-located" appHoverImage>
+					<div class="flex-container ubication-flex-container">
+						<div class="ubication-container">
+							<img class="ubication" src="../../../assets/icons/icons/ubication.png" alt="Location" />
+							<div class="icon-container-located" appHoverImage>
+								<img alt="" class="default-image dummy-img" />
+								<img class="hover-image" src="../../../assets/icons/icons/ellipse.png" alt="Location" />
+							</div>
+						</div>
+						<!-- <div class="icon-container-located" appHoverImage>
 							<img class="default-image" src="../../../assets/icons/icons/ubication.png" alt="Location" />
 							<div class="dynamic-ubication hover-image">
 								<img src="../../../assets/icons/icons/ubication.png" alt="Location" />
 								<img src="../../../assets/icons/icons/ellipse.png" alt="Location" />
 							</div>
-						</div>
+						</div> -->
 
 						<div class="green-regular-text inline-text">
 							<p>{{ 'main.ABOUT_ME.LOCATION.1' | translate }}</p>
@@ -29,7 +36,7 @@
 						</div>
 					</div>
 					<img class="arrow-5-1" src="../../../assets/icons/icons/arrow-5-1.png" alt="" />
-					<div class="flex-container desktop-view">
+					<div class="flex-container desktop-view remote-flex-container">
 						<div class="icon-container-remote" appHoverImage>
 							<img
 								src="../../../assets/icons/icons/remote-work.png"
