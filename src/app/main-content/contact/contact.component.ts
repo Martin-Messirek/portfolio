@@ -4,11 +4,12 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { HoverImageDirective } from '../../core/directives/hover-image.directive';
 
 @Component({
 	selector: 'app-contact',
 	standalone: true,
-	imports: [TranslatePipe, CommonModule, FormsModule, RouterModule],
+	imports: [TranslatePipe, CommonModule, FormsModule, RouterModule, HoverImageDirective],
 	templateUrl: './contact.component.html',
 	styleUrl: './contact.component.scss',
 })

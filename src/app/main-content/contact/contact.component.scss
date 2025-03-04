@@ -304,6 +304,32 @@ textarea.invalid-input + .validation-icon {
 	}
 }
 
+.arrow-container {
+	position: relative;
+	width: 38px;
+	height: 68px;
+	// height: 122px;
+	img {
+		position: absolute;
+		cursor: pointer;
+		@include transition();
+	}
+
+	.default-image {
+		top: 10px;
+		left: 8px;
+		width: 22px;
+		height: 50px;
+	}
+
+	.hover-image {
+		width: 38px;
+		height: 68px;
+		top: 0;
+		left: 0;
+	}
+}
+
 .my-details-mobile {
 	display: none;
 }
