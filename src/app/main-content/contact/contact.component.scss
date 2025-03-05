@@ -159,9 +159,9 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-	// -webkit-box-shadow: 0 0 0 30px rgba(20, 29, 47, 1) inset !important;
-	// -webkit-box-shadow: 0 0 0 28px $bg-color inset !important;
-	// -webkit-box-shadow: 0 0 0 28px $bg-color inset !important;
+	-webkit-box-shadow: 0 0 0 30px rgba(20, 29, 47, 1) inset !important;
+	-webkit-box-shadow: 0 0 0 28px $bg-color inset !important;
+	-webkit-box-shadow: 0 0 0 28px $bg-color inset !important;
 	-webkit-text-fill-color: $green-color !important;
 }
 
@@ -390,6 +390,22 @@ textarea.invalid-input + .validation-icon {
 
 .social-media-container-mobile {
 	display: none;
+
+	.social-media-link {
+		position: relative;
+		width: 30px;
+		height: 30px;
+
+		img {
+			position: absolute;
+			cursor: pointer;
+			@include transition();
+			left: 0;
+			bottom: 0;
+			width: 30px;
+			height: 30px;
+		}
+	}
 }
 
 @media (max-width: 1096px) {
@@ -404,9 +420,13 @@ textarea.invalid-input + .validation-icon {
 		gap: 0;
 	}
 
-	.text {
-		padding-bottom: 8px;
+	.my-details-and-arrow-up {
+		padding-bottom: $inputs-gap;
 	}
+
+	// .text {
+	// 	padding-bottom: 8px;
+	// }
 
 	.inputs-flex,
 	.text-flex,
@@ -414,7 +434,7 @@ textarea.invalid-input + .validation-icon {
 		@include flex($jc: center, $ai: center, $dir: column);
 		// @include flex($jc: center, $ai: center, $dir: column, $gap: $inputs-gap);
 		width: 100%;
-		padding-top: 24px;
+		// padding-top: 24px;
 
 		& > div {
 			width: 100%;
@@ -470,7 +490,7 @@ textarea.invalid-input + .validation-icon {
 	.my-details-mobile {
 		@include flex($ai: center, $dir: column, $gap: 10px);
 		padding-bottom: 40px;
-		padding-top: 48px;
+		padding-top: 8px;
 
 		p {
 			pointer-events: none;

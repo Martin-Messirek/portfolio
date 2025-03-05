@@ -23,6 +23,7 @@ footer {
 .logo-container {
 	@include flex($ai: center, $dir: column, $gap: 2px);
 }
+
 .logo {
 	width: 70px;
 	height: 70px;
@@ -33,6 +34,7 @@ footer {
 		filter: brightness(1.1);
 	}
 }
+
 .logo-text {
 	@include text-style(500, 12px, $red-color);
 }
@@ -64,18 +66,35 @@ footer {
 }
 
 .social-media-container {
-	img {
+	.social-media-link {
+		position: relative;
 		width: 30px;
 		height: 30px;
+
+		img {
+			position: absolute;
+			cursor: pointer;
+			@include transition();
+			left: 0;
+			bottom: 0;
+			width: 30px;
+			height: 30px;
+		}
 	}
 }
 
 .signature {
+	cursor: pointer;
 	padding-top: 36px;
 
 	img {
 		height: 12px;
 		width: 209px;
+		@include delayed-transition();
+
+		&:hover {
+			transform: scale(1.01);
+		}
 	}
 }
 

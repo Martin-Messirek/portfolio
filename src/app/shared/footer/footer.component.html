@@ -11,17 +11,50 @@
 
 			<p class="copyright">{{ 'shared.FOOTER.TEXT' | translate }}</p>
 			<div class="social-media-container">
-				<img src="./../../../assets/icons/social-media/email-button.png" alt="Email" />
-				<img src="./../../../assets/icons/social-media/github-button.png" alt="github-button" />
-				<img src="./../../../assets/icons/social-media/linkedin-button.png" alt="Linkedin" />
+				<a href="" class="social-media-link" appHoverImage>
+					<img
+						src="./../../../assets/icons/social-media/github-button.png"
+						alt="Github"
+						class="default-image"
+					/>
+					<img
+						src="./../../../assets/icons/social-media/github-button-green.png"
+						alt="Github"
+						class="hover-image"
+					/>
+				</a>
+				<a href="" class="social-media-link" appHoverImage>
+					<img
+						src="./../../../assets/icons/social-media/email-button.png"
+						alt="Email"
+						class="default-image"
+					/>
+					<img
+						src="./../../../assets/icons/social-media/email-button-green.png"
+						alt="Email"
+						class="hover-image"
+					/>
+				</a>
+				<a href="" class="social-media-link" appHoverImage>
+					<img
+						src="./../../../assets/icons/social-media/linkedin-button.png"
+						alt="Linkedin"
+						class="default-image"
+					/>
+					<img
+						src="./../../../assets/icons/social-media/linkedin-button-green.png"
+						alt="Linkedin"
+						class="hover-image"
+					/>
+				</a>
 			</div>
 		</div>
 		<div class="footer-legal">
 			<a class="red-small-text" [routerLink]="['/legal']">{{ 'shared.FOOTER.LEGAL' | translate }}</a>
 			<a class="red-small-text" [routerLink]="['/privacy']">{{ 'shared.FOOTER.PRIVACY' | translate }}</a>
 		</div>
-		<div class="signature">
-			<img src="./../../../assets/icons/icons/signature.png" alt="" />
-		</div>
+		<a class="signature" href="https://developerakademie.com/" target="_blank">
+			<img src="./../../../assets/icons/icons/signature.png" alt="Developer Akademie" />
+		</a>
 	</div>
 </footer>
