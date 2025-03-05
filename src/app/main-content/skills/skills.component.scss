@@ -15,6 +15,7 @@
 	@include flex($gap: 120px);
 	flex-wrap: wrap;
 	transform: translateX(-7.5px);
+	padding-top: 12px;
 	// padding-left: -7.5px;
 	// padding-bottom: 112px;
 }
@@ -46,7 +47,7 @@
 	@include transition();
 
 	&:hover {
-		transform: rotate(3deg) scale(1.07) translateY(6px);
+		transform: rotate(2deg) scale(1.07);
 		transform-origin: 25% bottom;
 		filter: brightness(1.3);
 	}

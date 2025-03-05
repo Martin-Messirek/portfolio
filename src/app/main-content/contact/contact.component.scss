@@ -4,6 +4,19 @@
 $textarea-height: 144px;
 $inputs-gap: 32px;
 
+.header-container {
+	@include flex($ai: center, $gap: 24px);
+}
+
+.arrow-contact-container {
+	// padding-bottom: 4px;
+}
+
+.arrow-contact {
+	width: 64px;
+	height: 30px;
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -19,8 +32,25 @@ $inputs-gap: 32px;
 .contact {
 	@include flex($dir: column, $gap: $inputs-gap);
 }
+
+.my-details {
+	@include flex($jc: space-between, $dir: column, $gap: 8px);
+	& > p {
+		@include flex($ai: center);
+	}
+}
 .my-details-text {
 	@include text-style(500, 20px, $green-color);
+}
+
+.icon-email {
+	width: 28.4px;
+	height: 30px;
+}
+
+.icon-phone {
+	width: 26px;
+	height: 31px;
 }
 
 //      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
@@ -316,7 +346,7 @@ textarea.invalid-input + .validation-icon {
 	}
 
 	.default-image {
-		top: 10px;
+		top: 6px;
 		left: 8px;
 		width: 22px;
 		height: 50px;
@@ -394,9 +424,11 @@ textarea.invalid-input + .validation-icon {
 }
 
 @media (max-width: 896px) {
+	.arrow-contact-container,
 	.my-details {
 		display: none;
 	}
+
 	.my-details-mobile {
 		@include flex($ai: center, $dir: column, $gap: 36px);
 		padding-bottom: 40px;
