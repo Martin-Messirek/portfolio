@@ -99,6 +99,11 @@ footer {
 }
 
 @media (max-width: 1200px) {
+	.content-wrapper {
+		padding-top: 32px;
+		padding-bottom: 64px;
+	}
+
 	.copyright {
 		font-size: 18px;
 	}
@@ -106,8 +111,8 @@ footer {
 
 @media (max-width: 896px) {
 	.content-wrapper {
-		padding-top: 32px;
-		padding-bottom: 64px;
+		padding-top: 24px;
+		padding-bottom: 32px;
 	}
 
 	.copyright {
@@ -143,10 +148,5 @@ footer {
 @media (max-width: 560px) {
 	.copyright {
 		font-size: 14px;
-	}
-
-	.content-wrapper {
-		padding-top: 24px;
-		padding-bottom: 32px;
 	}
 }

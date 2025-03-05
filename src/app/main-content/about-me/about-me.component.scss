@@ -227,7 +227,7 @@ button {
 	.grid-container {
 		@include flex($ai: center, $dir: column, $gap: 0);
 		width: 86vw;
-		padding: 16px 0 0;
+		padding: 24px 0 0;
 	}
 
 	.grid-item,
@@ -281,6 +281,10 @@ button {
 }
 
 @media (max-width: 560px) {
+	.grid-container {
+		padding-top: 16px;
+	}
+
 	.intro {
 		font-size: 18px;
 	}

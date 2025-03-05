@@ -8,10 +8,6 @@ $inputs-gap: 32px;
 	@include flex($ai: center, $gap: 24px);
 }
 
-.arrow-contact-container {
-	// padding-bottom: 4px;
-}
-
 .arrow-contact {
 	width: 64px;
 	height: 30px;
@@ -33,14 +29,38 @@ $inputs-gap: 32px;
 	@include flex($dir: column, $gap: $inputs-gap);
 }
 
+.my-details-and-arrow-up {
+	@include flex($jc: space-between, $ai: flex-end);
+}
+
 .my-details {
 	@include flex($jc: space-between, $dir: column, $gap: 8px);
-	& > p {
-		@include flex($ai: center);
+	& > div > div {
+		display: inline-flex;
+		align-items: center;
+		// @include flex($ai: center);
+		span {
+			padding-left: 12px;
+		}
 	}
 }
+
 .my-details-text {
 	@include text-style(500, 20px, $green-color);
+}
+
+.contact-icon-container {
+	position: relative;
+	width: 28.4px;
+	height: 31px;
+	// height: 122px;
+	img {
+		position: absolute;
+		cursor: pointer;
+		@include transition();
+		left: 0;
+		bottom: 0;
+	}
 }
 
 .icon-email {
@@ -236,6 +256,7 @@ textarea.invalid-input + .validation-icon {
 // }
 
 .checkbox-container {
+	padding-top: 11px;
 	display: flex;
 	align-items: center;
 	// justify-content: center;
@@ -296,7 +317,7 @@ textarea.invalid-input + .validation-icon {
 	.privacy-checkbox-container
 	// .send-btn-container
 	{
-		@include flex($gap: 24px);
+		@include flex($gap: 8px);
 		// width: 100%;
 	}
 
@@ -333,8 +354,11 @@ textarea.invalid-input + .validation-icon {
 		}
 	}
 }
+.arrow-up-link-mobile {
+	display: none;
+}
 
-.arrow-container {
+.arrow-up-container {
 	position: relative;
 	width: 38px;
 	height: 68px;
@@ -346,7 +370,7 @@ textarea.invalid-input + .validation-icon {
 	}
 
 	.default-image {
-		top: 6px;
+		top: 5.4px;
 		left: 8px;
 		width: 22px;
 		height: 50px;
@@ -354,7 +378,7 @@ textarea.invalid-input + .validation-icon {
 
 	.hover-image {
 		width: 38px;
-		height: 68px;
+		height: 62px;
 		top: 0;
 		left: 0;
 	}
@@ -368,28 +392,29 @@ textarea.invalid-input + .validation-icon {
 	display: none;
 }
 
-@media (max-width: 1200px) {
-	h2 {
-		text-align: center;
+@media (max-width: 1096px) {
+	.header-container {
+		justify-content: center;
 	}
-	// .contact {
-	// 	@include flex($jc: center, $dir: column);
-	// }
-	// .text-flex {
-	// 	@include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
-	// 	width: 100%;
-	// 	> * {
-	// 		width: 80%;
-	// 	}
-	// }
-}
 
-@media (max-width: 960px) {
+	.arrow-contact-container {
+		display: none;
+	}
+	.contact {
+		gap: 0;
+	}
+
+	.text {
+		padding-bottom: 8px;
+	}
+
 	.inputs-flex,
 	.text-flex,
 	.privacy-and-btn-container {
-		@include flex($jc: center, $ai: center, $dir: column, $gap: $inputs-gap);
+		@include flex($jc: center, $ai: center, $dir: column);
+		// @include flex($jc: center, $ai: center, $dir: column, $gap: $inputs-gap);
 		width: 100%;
+		padding-top: 24px;
 
 		& > div {
 			width: 100%;
@@ -410,12 +435,9 @@ textarea.invalid-input + .validation-icon {
 		// }
 	}
 
-	.privacy-and-btn-container {
-		gap: 16px; // Hier das kleinere gap setzen
-	}
-
 	.inputs-flex,
 	.text-flex {
+		gap: $inputs-gap;
 		& > div:first-child,
 		> div:last-child {
 			flex: unset;
@@ -424,15 +446,46 @@ textarea.invalid-input + .validation-icon {
 }
 
 @media (max-width: 896px) {
-	.arrow-contact-container,
-	.my-details {
+	.my-details,
+	.arrow-up-link {
 		display: none;
 	}
 
+	.privacy-and-btn-container {
+		.send-btn-container {
+			justify-content: center;
+		}
+	}
+
+	.arrow-up-link-mobile {
+		@include flex($jc: center);
+
+		& > div {
+			@include flex($jc: flex-end);
+			width: 100%;
+			max-width: 588px;
+		}
+	}
+
 	.my-details-mobile {
-		@include flex($ai: center, $dir: column, $gap: 36px);
+		@include flex($ai: center, $dir: column, $gap: 10px);
 		padding-bottom: 40px;
 		padding-top: 48px;
+
+		p {
+			pointer-events: none;
+			padding-bottom: 16px;
+
+			a:first-child {
+				@include flex($jc: center);
+				padding-bottom: 12px;
+			}
+		}
+
+		div,
+		.my-details-text {
+			pointer-events: auto;
+		}
 	}
 
 	.social-media-container-mobile {
@@ -456,6 +509,10 @@ textarea.invalid-input + .validation-icon {
 	input,
 	textarea {
 		font-size: 17px;
+	}
+
+	.checkbox-container {
+		padding-top: 4px;
 	}
 
 	.privacy-text-container {
@@ -483,16 +540,15 @@ textarea.invalid-input + .validation-icon {
 }
 
 @media (max-width: 560px) {
-	.text-flex > div,
-	.privacy-text-container > p {
+	.text-flex > div {
 		text-align: center;
 	}
 
-	.privacy-and-btn-container {
-		.send-btn-container {
-			justify-content: center;
-		}
-	}
+	// .privacy-and-btn-container {
+	// 	.send-btn-container {
+	// 		justify-content: center;
+	// 	}
+	// }
 
 	.my-details-text {
 		font-size: 18px;
@@ -501,6 +557,10 @@ textarea.invalid-input + .validation-icon {
 	input,
 	textarea {
 		font-size: 16px;
+	}
+
+	.checkbox-container {
+		padding-top: 2px;
 	}
 
 	.privacy-text-container {
