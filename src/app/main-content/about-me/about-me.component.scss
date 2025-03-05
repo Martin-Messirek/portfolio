@@ -3,12 +3,9 @@
 
 .about-me {
 	@include flex($ai: center, $gap: 6vw);
-	// padding-bottom: 112px;
 }
 
 .portrait {
-	// width: 400px;
-	// width: 300px;
 	height: 40vw;
 	max-height: 600px;
 	width: auto;
@@ -16,7 +13,7 @@
 
 .description {
 	min-height: 112px;
-	text-align: right; // padding-top: 16px;
+	text-align: right;
 	@include text-style(400, 16px, $green-color);
 }
 
@@ -24,11 +21,8 @@
 	max-width: 640px;
 	display: grid;
 	grid-template-columns: 1.1fr 1fr 1fr;
-
-	// grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
-	padding: 48px 0 36px; //##################################################################################################
-	// padding top verringern bei großem Bildschirm
+	padding: 36px 0 36px;
 }
 
 .intro {
@@ -37,9 +31,6 @@
 
 .grid-item {
 	@include flex($dir: column, $gap: 8px);
-	img {
-		// cursor: pointer;
-	}
 }
 
 .grid-item:nth-child(4) {
@@ -100,47 +91,24 @@ h2 {
 	display: none;
 }
 
-button {
-	// min-width: 169px;
-	// height: 52px;
-	// padding: 15px 30px;
-	// @include text-style(500, 18px, $bg-color);
-	// background-color: $green-color;
-	// cursor: pointer;
-	// &:hover {
-	// 	color: $red-color;
-	// }
-}
-
 .ubication-container {
-	// @include flex($ai: center, $dir: column);
-	// align-self: flex-end;
-	// justify-self: end;
 	position: relative;
 }
 
 .ubication {
 	transform: translateY(4px);
-	// &:hover {
-	// 	transform: translateY(0);
-	// 	@include slow-transition();
-	// }
 }
 
 .icon-container-located {
 	position: absolute;
-	// position: relative;
 	width: 34px;
 	height: 42px;
 	top: 4px;
-	// bottom: 30px;
-	// height: 122px;
+
 	img {
 		position: absolute;
 		@include slow-transition();
-
 		bottom: 0;
-		// right: 0;
 	}
 
 	.dummy-img {
@@ -157,7 +125,7 @@ button {
 	position: relative;
 	width: 62px;
 	height: 64px;
-	// height: 122px;
+
 	img {
 		position: absolute;
 		@include slow-transition();
@@ -170,12 +138,13 @@ button {
 	position: relative;
 	width: 38px;
 	height: 56px;
-	// height: 122px;
+
 	img {
 		position: absolute;
 		@include slow-transition();
 	}
 }
+
 @media (max-width: 1200px) {
 	.arrow {
 		&-1,
@@ -239,9 +208,6 @@ button {
 	.mobile-flex-container {
 		align-items: center;
 	}
-	// .mobile-remote-text {
-	// 	@include flex($jc: flex-end, $ai: flex-end, $gap: 24px);
-	// }
 
 	.grid-item {
 		padding-bottom: 18px;
@@ -250,10 +216,6 @@ button {
 	.grid-item:nth-child(3) {
 		padding-bottom: 27px;
 	}
-
-	// .flex-container {
-	// 	align-items: center;
-	// }
 
 	.mobile-remote-img {
 		padding-bottom: 14px;
@@ -273,11 +235,6 @@ button {
 	.intro {
 		font-size: 28px;
 	}
-
-	// button {
-	// 	font-size: 16px;
-	// 	font-weight: 400;
-	// }
 }
 
 @media (max-width: 560px) {
@@ -293,10 +250,6 @@ button {
 	.arrow-5-2-container {
 		width: 80%;
 	}
-
-	// .grid-container {
-	// 	max-width: 88vw;
-	// }
 }
 
 @media (max-width: 400px) {

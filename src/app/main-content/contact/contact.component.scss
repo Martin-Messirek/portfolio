@@ -35,10 +35,11 @@ $inputs-gap: 32px;
 
 .my-details {
 	@include flex($jc: space-between, $dir: column, $gap: 8px);
+
 	& > div > div {
 		display: inline-flex;
 		align-items: center;
-		// @include flex($ai: center);
+
 		span {
 			padding-left: 12px;
 		}
@@ -53,7 +54,7 @@ $inputs-gap: 32px;
 	position: relative;
 	width: 28.4px;
 	height: 31px;
-	// height: 122px;
+
 	img {
 		position: absolute;
 		cursor: pointer;
@@ -73,19 +74,18 @@ $inputs-gap: 32px;
 	height: 31px;
 }
 
-//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
 .inputs-flex,
 .text-flex {
 	@include flex($jc: space-between, $gap: $inputs-gap);
 	width: 100%;
 
 	& > div:first-child {
-		flex: 1 1 45%; /* Der erste div (mit den Inputs) bekommt 45% der Breite */
+		flex: 1 1 45%;
 		@include flex($jc: space-between, $dir: column, $gap: $inputs-gap);
 	}
 
 	& > div:last-child {
-		flex: 1 1 55%; /* Der zweite div (mit der Textarea) bekommt 55% der Breite */
+		flex: 1 1 55%;
 	}
 }
 
@@ -96,24 +96,20 @@ textarea {
 
 input.name,
 input.email {
-	// flex-basis: 40%;
 	width: 100%;
-	// max-width: 507px;
 	height: 56px;
 }
 
 textarea {
 	width: 100%;
-	overflow-wrap: break-word; /* Textumbruch bei langen Wörtern */
-	resize: none; /* Entfernt die Ecklinien zum Vergrößern */
-	overflow: hidden; /* Verhindert die Anzeige des Scrollbalkens */
-	// padding-right: 20px; /* Platz für den virtuellen Scrollbereich */
+	overflow-wrap: break-word;
+	resize: none;
+	overflow: hidden;
 
-	/* Optional: Bei zu viel Text wird der Inhalt dennoch verborgen, ohne dass der Scrollbalken sichtbar ist */
 	&:focus {
-		overflow: scroll; /* Ermöglicht das Scrollen des Textes, aber ohne sichtbaren Scrollbalken */
-		scrollbar-width: none; /* Entfernt den Scrollbalken für Firefox */
-		-ms-overflow-style: none; /* Entfernt den Scrollbalken für IE */
+		overflow: scroll;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
 	}
 }
 
@@ -123,7 +119,7 @@ textarea {
 	padding: 12px 40px 12px 18px;
 	background-color: transparent;
 	background: transparent;
-	border: 2px solid $green-color; /* Border in Grün */
+	border: 2px solid $green-color;
 	@include text-style(400, 18px, $green-color);
 }
 
@@ -136,15 +132,10 @@ textarea {
 	font-size: 14px;
 }
 
-/* Der zweite Platzhalter (wenn das Feld leer und nicht fokussiert ist) */
-// input:not(:focus):placeholder-shown {
-// 	color: $red-color; /* Rot für den zweiten Platzhalter */
-// }
-
 input:focus::placeholder,
 textarea:focus::placeholder {
-	opacity: 0; /* Placeholder verschwindet beim Fokussieren */
-	visibility: hidden; /* Alternativ: Sichtbarkeit auf "hidden" setzen */
+	opacity: 0;
+	visibility: hidden;
 }
 
 input:focus,
@@ -152,7 +143,6 @@ textarea:focus {
 	outline: none;
 	border-color: $green-color;
 	background: transparent;
-	// opacity: 0; /* Placeholder verschwinden lassen */
 }
 
 input:-webkit-autofill,
@@ -167,8 +157,6 @@ input:-webkit-autofill:active {
 
 .input-bg {
 	box-shadow: 0 0 0 28px $bg-color inset;
-	// background-color: red;
-	// background-color: $bg-color;
 }
 
 .textarea-bg {
@@ -179,9 +167,8 @@ input:-webkit-autofill,
 textarea:-webkit-autofill {
 	background-color: transparent !important;
 	background: transparent;
-	appearance: none !important; /* Entfernt das Standard-Autofill-Erscheinungsbild */
-
-	border: 2px solid $green-color; /* Border in Grün */
+	appearance: none !important;
+	border: 2px solid $green-color;
 	@include text-style(400, 18px, $green-color);
 }
 
@@ -197,14 +184,14 @@ textarea:-webkit-autofill {
 	transform: translateY(-50%);
 	width: 24px;
 	height: 24px;
-	display: none; // Standardmäßig ausblenden
+	display: none;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 textarea + .validation-icon {
-	top: 10px; // In der rechten oberen Ecke der Textarea
-	transform: none; // Kein vertikales Zentrieren nötig
+	top: 10px;
+	transform: none;
 }
 
 input.valid-input + .validation-icon,
@@ -219,63 +206,23 @@ textarea.invalid-input + .validation-icon {
 	background-image: url('./../../../assets/icons/icons/error.png');
 }
 
-// input[type='checkbox'] {
-// 	-webkit-appearance: none;
-// 	-moz-appearance: none;
-// 	appearance: none;
-// 	background-color: transparent;
-// 	border: 2px solid $green-color; /* Border in Grün */
-// 	width: 20px;
-// 	height: 20px;
-// 	position: relative;
-// 	cursor: pointer;
-// 	transition: all 0.3s ease;
-
-// 	/* Hover Effekt */
-// 	&:hover {
-// 		border-color: $green-color;
-// 	}
-
-// 	/* Wenn angekreuzt, Häkchen färben */
-// 	&:checked {
-// 		background-color: $green-color;
-// 		border-color: $green-color;
-// 	}
-
-// 	/* Färbt das Häkchen selbst (nur sichtbar, wenn angekreuzt) */
-// 	&:checked::after {
-// 		content: '';
-// 		position: absolute;
-// 		top: 3px;
-// 		left: 3px;
-// 		width: 12px;
-// 		height: 12px;
-// 		background-color: $red-color; /* Rotes Häkchen */
-// 		clip-path: polygon(0% 0%, 40% 60%, 100% 20%, 60% 40%, 20% 80%); /* Häkchen-Form */
-// 	}
-// }
-
 .checkbox-container {
 	padding-top: 11px;
 	display: flex;
 	align-items: center;
-	// justify-content: center;
-	// gap: 8px;
 	width: 18px;
 	height: 18px;
-	// padding-right: 16px;
 
 	input[type='checkbox'] {
-		display: none; // Versteckt die Standard-Checkbox
+		display: none;
 	}
 
 	label {
 		position: relative;
 		cursor: pointer;
 		padding-left: 30px;
-		// display: inline-flex; // Verhindert, dass das Label zusammengequetscht wird
-		align-items: center; // Zentriert den Inhalt vertikal
-		height: 18px; // Sorgt dafür, dass das Label eine Mindesthöhe hat
+		align-items: center;
+		height: 18px;
 		width: 18px;
 
 		&::before {
@@ -295,7 +242,7 @@ textarea.invalid-input + .validation-icon {
 	}
 
 	&.enabled input[type='checkbox']:checked + label::before {
-		background-color: $green-color; // Ändert die Checkbox-Farbe bei aktivem Zustand
+		background-color: $green-color;
 	}
 
 	input[type='checkbox']:checked + label::after {
@@ -314,17 +261,12 @@ textarea.invalid-input + .validation-icon {
 	padding-top: $inputs-gap;
 	@include flex($dir: column);
 
-	.privacy-checkbox-container
-	// .send-btn-container
-	{
+	.privacy-checkbox-container {
 		@include flex($gap: 8px);
-		// width: 100%;
 	}
 
 	.send-btn-container {
 		@include flex($jc: flex-end);
-		// width: 100%;
-		// align-self: flex-end;
 	}
 }
 
@@ -345,7 +287,6 @@ textarea.invalid-input + .validation-icon {
 	}
 
 	a {
-		// @include text-style(400, 14px, $red-color);
 		@include transition();
 
 		&:hover {
@@ -362,7 +303,7 @@ textarea.invalid-input + .validation-icon {
 	position: relative;
 	width: 38px;
 	height: 68px;
-	// height: 122px;
+
 	img {
 		position: absolute;
 		cursor: pointer;
@@ -405,199 +346,5 @@ textarea.invalid-input + .validation-icon {
 			width: 30px;
 			height: 30px;
 		}
-	}
-}
-
-@media (max-width: 1096px) {
-	.header-container {
-		justify-content: center;
-	}
-
-	.arrow-contact-container {
-		display: none;
-	}
-	.contact {
-		gap: 0;
-	}
-
-	.my-details-and-arrow-up {
-		padding-bottom: $inputs-gap;
-	}
-
-	// .text {
-	// 	padding-bottom: 8px;
-	// }
-
-	.inputs-flex,
-	.text-flex,
-	.privacy-and-btn-container {
-		@include flex($jc: center, $ai: center, $dir: column);
-		// @include flex($jc: center, $ai: center, $dir: column, $gap: $inputs-gap);
-		width: 100%;
-		// padding-top: 24px;
-
-		& > div {
-			width: 100%;
-			max-width: 588px;
-			// gap: 40px;
-			//
-			// flex: 1 1 80%;
-			// flex: unset; /* Entfernt die vorherige flex-Einstellung, sodass sie keine Wirkung mehr hat */
-			// max-width: 637px;
-		}
-
-		// & > div:first-child {
-		// 	flex: 1 1 80%; /* Der erste div (mit den Inputs) bekommt 45% der Breite */
-		// }
-
-		// & > div:last-child {
-		// 	flex: 1 1 80%; /* Der zweite div (mit der Textarea) bekommt 55% der Breite */
-		// }
-	}
-
-	.inputs-flex,
-	.text-flex {
-		gap: $inputs-gap;
-		& > div:first-child,
-		> div:last-child {
-			flex: unset;
-		}
-	}
-}
-
-@media (max-width: 896px) {
-	.my-details,
-	.arrow-up-link {
-		display: none;
-	}
-
-	.privacy-and-btn-container {
-		.send-btn-container {
-			justify-content: center;
-		}
-	}
-
-	.arrow-up-link-mobile {
-		@include flex($jc: center);
-
-		& > div {
-			@include flex($jc: flex-end);
-			width: 100%;
-			max-width: 588px;
-		}
-	}
-
-	.my-details-mobile {
-		@include flex($ai: center, $dir: column, $gap: 10px);
-		padding-bottom: 40px;
-		padding-top: 8px;
-
-		p {
-			pointer-events: none;
-			padding-bottom: 16px;
-
-			a:first-child {
-				@include flex($jc: center);
-				padding-bottom: 12px;
-			}
-		}
-
-		div,
-		.my-details-text {
-			pointer-events: auto;
-		}
-	}
-
-	.social-media-container-mobile {
-		@include flex($jc: center, $gap: 36px);
-	}
-}
-
-@media (max-width: 768px) {
-	.inputs-flex,
-	.text-flex,
-	.privacy-and-btn-container {
-		& > div {
-			max-width: 588px;
-		}
-	}
-	.my-details-text {
-		font-size: 19px;
-		font-weight: 700;
-	}
-
-	input,
-	textarea {
-		font-size: 17px;
-	}
-
-	.checkbox-container {
-		padding-top: 4px;
-	}
-
-	.privacy-text-container {
-		p {
-			line-height: 24px;
-		}
-		span:first-child,
-		span:last-child,
-		a,
-		p {
-			font-size: 13px;
-		}
-	}
-}
-
-@media (max-width: 640px) {
-	.inputs-flex,
-	.text-flex,
-	.privacy-and-btn-container {
-		& > div {
-			width: 100%;
-			max-width: 88vw;
-		}
-	}
-}
-
-@media (max-width: 560px) {
-	.text-flex > div {
-		text-align: center;
-	}
-
-	// .privacy-and-btn-container {
-	// 	.send-btn-container {
-	// 		justify-content: center;
-	// 	}
-	// }
-
-	.my-details-text {
-		font-size: 18px;
-	}
-
-	input,
-	textarea {
-		font-size: 16px;
-	}
-
-	.checkbox-container {
-		padding-top: 2px;
-	}
-
-	.privacy-text-container {
-		p {
-			line-height: 20px;
-		}
-		span:first-child,
-		span:last-child,
-		a,
-		p {
-			font-size: 12px;
-		}
-	}
-}
-
-@media (max-width: 320px) {
-	.my-details-text {
-		font-size: 17px;
 	}
 }

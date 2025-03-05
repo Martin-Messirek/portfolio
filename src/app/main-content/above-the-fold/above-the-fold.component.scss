@@ -3,44 +3,32 @@
 
 .vertical-text {
 	transform: rotate(270deg) translateX(-54px);
-	transform-origin: top left; /* Setzt den Ursprung der Drehung */
+	transform-origin: top left;
 
-	white-space: nowrap; /* Verhindert Zeilenumbruch */
-	display: block; /* Macht den <p>-Tag zu einem Block-Element, um die Drehung zu ermöglichen */
-	// border: 1px solid $green-color;
-	// padding: 15px 30px;
-	// @include text-style(500, 18px, $red-color); // -----
-	// cursor: pointer;
-	// @include transition();
-	// &:hover {
-	// 	color: $green-color;
-	// }
+	white-space: nowrap;
+	display: block;
 }
 
 section {
 	@include flex($jc: center, $ai: center);
-	// height: min(calc(100vh - 180px), 1400px);
-	// min-height: 680px;
 }
 
 .atf-container {
-	// height: clamp(600px, 100vh, 1800px);
 	@include flex($jc: flex-end, $dir: column);
-	// padding: 150px 0 300px;
 }
 
 .links {
 	width: calc(1390px / 2);
 	max-width: calc((100vw - 210px) / 2);
 	@include flex($jc: space-between, $ai: flex-end);
-	position: relative; /* Ermöglicht die Verwendung von top/left/right/bottom */
-	bottom: 380px; /* Verschiebt das Element 100px nach unten */
+	position: relative;
+	bottom: 380px;
 
 	.arrow-container {
 		position: relative;
 		width: 38px;
 		height: 68px;
-		// height: 122px;
+
 		img {
 			position: absolute;
 			cursor: pointer;
@@ -63,72 +51,29 @@ section {
 	}
 }
 
-// img:hover .default-image {
-// 	opacity: 0; /* Beim Hover wird das Standardbild unsichtbar */
-// }
-
-// img:hover .hover-image {
-// 	opacity: 1; /* Beim Hover wird das Hover-Bild sichtbar */
-// }
-
 .atf-content {
 	@include flex($jc: space-between, $ai: flex-end, $gap: 48px);
 }
 
 .atf-img img {
-	// width: 720px;
-	// height: 792px;
 	width: 539px;
 	height: 554px;
 	object-fit: cover;
 }
 
-@media (max-width: 2000px) {
-	.atf-container {
-		// padding-top: 0;
-		// padding-bottom: 112px;
-		// min-height: 100vh;
-	}
-
-	// .atf-img img {
-	// 	width: 720px;
-	// 	height: 792px;
-	// }
-	// .atf-img img {
-	// 	width: 40vw;
-	// 	height: 42vw;
-	// }
-
-	.links {
-		// justify-content: start;
-		// top: 20vw;
-	}
-}
-
 @media (max-width: 1600px) {
 	section {
-		// padding-top: 312px;
 		height: auto;
 		max-height: unset;
 	}
 
-	.atf-container {
-		// height: clamp(450px, 100vw, 1200px);
-		// padding-bottom: 112px;
-		// padding-bottom: 24px;
-	}
 	.atf-content {
 		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 32px);
-		// flex-flow: column-reverse;
 	}
 
 	.atf-text {
 		text-align: center;
 	}
-	// .atf-img img {
-	// 	width: 40vw;
-	// 	height: 42vw;
-	// }
 
 	.links {
 		right: 96px;
@@ -147,36 +92,7 @@ section {
 }
 
 @media (max-width: 1200px) {
-	.atf-container {
-		// m*in-height: 100vh;
-		// justify-content: flex-start;
-		// padding-top: 21vw; // Ändern, Fixgröße
-		// padding-top: 112px;
-		// padding-top: 160px;
-		// padding-bottom: 24px;
-	}
-
-	// .atf-img img {
-	// 	width: 66vw;
-	// 	height: 69vw;
-	// 	max-width: 660px;
-	// 	max-height: 690px;
-	// }
-
 	.links {
 		display: none;
-	}
-}
-
-@media (max-width: 768px) {
-	.atf-container {
-		// height: clamp(450px, 100dvh, 850px);
-		// padding-top: 160px;
-	}
-}
-@media (max-width: 560px) {
-	.atf-container {
-		// height: clamp(450px, 100dvh, 650px);
-		// padding-top: 160px;
 	}
 }

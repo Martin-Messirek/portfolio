@@ -1,27 +1,22 @@
 <div class="privacy-policy">
 	<div class="content-wrapper">
-		<!-- Überschriften -->
 		<h3>{{ 'legal.PRIVACY.TITLE' | translate }}</h3>
 		<h2>{{ 'legal.PRIVACY.CENTER_TITLE' | translate }}</h2>
 
-		<!-- Intro-Abschnitt -->
 		<div class="privacy-intro">
 			<p>{{ 'legal.PRIVACY.INTRO.DATA_COLLECTION' | translate }}</p>
 			<p>{{ 'legal.PRIVACY.INTRO.IP' | translate }}</p>
 		</div>
 
-		<!-- Datenaufbewahrung -->
 		<div class="privacy-data-storage">
 			<h5>{{ 'legal.PRIVACY.DATA_STORAGE.HEADER' | translate }}</h5>
 			<p>{{ 'legal.PRIVACY.DATA_STORAGE.TEXT' | translate }}</p>
 		</div>
 
-		<!-- Server-Log Files -->
 		<div class="privacy-server-logs">
 			<h5>{{ 'legal.PRIVACY.SERVER_LOGS.HEADER' | translate }}</h5>
 			<p>{{ 'legal.PRIVACY.SERVER_LOGS.INTRO' | translate }}</p>
 			<ul>
-				<!-- Hier wird angenommen, dass der Translate-Pipe ein Array zurückgibt -->
 				<li *ngFor="let item of 'legal.PRIVACY.SERVER_LOGS.LIST' | translate">
 					{{ item }}
 				</li>
@@ -30,12 +25,10 @@
 			<p>{{ 'legal.PRIVACY.SERVER_LOGS.CHECK' | translate }}</p>
 		</div>
 
-		<!-- Rechte der Betroffenen -->
 		<div class="privacy-rights">
 			<h5>{{ 'legal.PRIVACY.RIGHTS.HEADER' | translate }}</h5>
 			<p>{{ 'legal.PRIVACY.RIGHTS.INTRO' | translate }}</p>
 			<ul>
-				<!-- Hier wird angenommen, dass der Translate-Pipe ein Array zurückgibt -->
 				<li *ngFor="let right of 'legal.PRIVACY.RIGHTS.LIST' | translate">
 					{{ right }}
 				</li>
@@ -43,7 +36,6 @@
 			<p>{{ 'legal.PRIVACY.RIGHTS.TEXT' | translate }}</p>
 		</div>
 
-		<!-- Kontakt -->
 		<div class="privacy-contact">
 			<h5>{{ 'legal.PRIVACY.CONTACT.HEADER' | translate }}</h5>
 			<p>
@@ -58,7 +50,6 @@
 			</p>
 		</div>
 
-		<!-- Quellenangabe -->
 		<div class="privacy-source">
 			<p>
 				{{ 'legal.PRIVACY.SOURCE.HEADER' | translate }}
@@ -70,79 +61,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <h3>Erklärung zur Informationspflicht</h3>
-<br />
-<p align="center"><strong>Datenschutzerklärung</strong></p>
-<p>
-	In folgender Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen
-	unserer Webseite. Wir erheben und verarbeiten personenbezogene Daten nur auf Grundlage der gesetzlichen Bestimmungen
-	(Datenschutzgrundverordnung, Telekommunikationsgesetz 2003).
-</p>
-<p>
-	Sobald Sie als Benutzer auf unsere Webseite zugreifen oder diese besuchen wird Ihre IP-Adresse, Beginn sowie Beginn
-	und Ende der Sitzung erfasst. Dies ist technisch bedingt und stellt somit ein berechtigtes Interesse iSv Art 6 Abs 1
-	lit f DSGVO.
-</p>
-<h5>Kontakt mit uns</h5>
-<p></p>
-<p>
-	Wenn Sie uns, entweder über unser Kontaktformular auf unserer Webseite, oder per Email kontaktieren, dann werden die
-	von Ihnen an uns übermittelten Daten zwecks Bearbeitung Ihrer Anfrage oder für den Fall von weiteren Anschlussfragen
-	für sechs Monate bei uns gespeichert. Es erfolgt, ohne Ihre Einwilligung, keine Weitergabe Ihrer übermittelten
-	Daten.
-</p>
-
-<h5>Server-Log Files</h5>
-<p>
-	Diese Webseite und der damit verbundene Provider erhebt im Zuge der Webseitennutzung automatisch Informationen im
-	Rahmen sogenannter „Server-Log Files“. Dies betrifft insbesondere:
-</p>
-<ul>
-	<li>IP-Adresse oder Hostname</li>
-	<li>den verwendeten Browser</li>
-	<li>Aufenthaltsdauer auf der Webseite sowie Datum und Uhrzeit</li>
-	<li>aufgerufene Seiten der Webseite</li>
-	<li>Spracheinstellungen und Betriebssystem</li>
-	<li>„Leaving-Page“ (auf welcher URL hat der Benutzer die Webseite verlassen)</li>
-	<li>ISP (Internet Service Provider)</li>
-</ul>
-<p>
-	Diese erhobenen Informationen werden nicht personenbezogen verarbeitet oder mit personenbezogenen Daten in
-	Verbindung gebracht.
-</p>
-<p>
-	Der Webseitenbetreiber behält es sich vor, im Falle von Bekanntwerden rechtswidriger Tätigkeiten, diese Daten
-	auszuwerten oder zu überprüfen.
-</p>
-<h5>Ihre Rechte als Betroffener</h5>
-<p>Sie als Betroffener haben bezüglich Ihrer Daten, welche bei uns gespeichert sind grundsätzlich ein Recht auf:</p>
-<ul>
-	<li>Auskunft</li>
-	<li>Löschung der Daten</li>
-	<li>Berichtigung der Daten</li>
-	<li>Übertragbarkeit der Daten</li>
-	<li>Wiederruf und Widerspruch zur Datenverarbeitung</li>
-	<li>Einschränkung</li>
-</ul>
-<p>
-	Wenn sie vermuten, dass im Zuge der Verarbeitung Ihrer Daten Verstöße gegen das Datenschutzrecht passiert sind, so
-	haben Sie die Möglichkeit sich bei uns (martinmessirek&#64;hotmail.com) oder der Datenschutzbehörde zu beschweren.
-</p>
-<h5>Sie erreichen uns unter folgenden Kontaktdaten:</h5>
-<p>
-	<b>Webseitenbetreiber:</b>
-	Martin Messirek
-	<br />
-
-	<b>Email:</b>
-	martinmessirek&#64;hotmail.com
-</p>
-<p>
-	Quelle:
-	<b>
-		<a href="https://www.fairesrecht.at/kostenlos-datenschutzerklaerung-erstellen-generator.php">
-			Datenschutzgenerator Österreich DSGVO
-		</a>
-	</b>
-</p> -->

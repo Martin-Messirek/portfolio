@@ -5,13 +5,10 @@
 	padding-bottom: 48px;
 	@include flex($jc: flex-end, $gap: 48px);
 	text-align: right;
-
-	// justify-self: left;
 }
 
 .reverse-row {
 	flex-direction: row-reverse;
-	// justify-self: right;
 	text-align: left;
 }
 
@@ -19,7 +16,6 @@
 	width: 498px;
 }
 .technologies {
-	// padding-bottom: 24px;
 	@include text-style(400, 18px, $green-color);
 }
 
@@ -29,42 +25,17 @@
 
 .buttons {
 	@include flex($gap: 24px);
-	// button {
-	// 	border: 1px solid $green-color;
-	// 	text-decoration: none;
-	// }
-	// button:first-child {
-	// 	@include text-style(500, 18px, $red-color); // Stil für den ersten Button (Live Test)
-	// 	&:hover {
-	// 		color: $green-color;
-	// 	}
-	// }
-
-	// button:last-child {
-	// 	@include text-style(500, 18px, $bg-color); // Stil für den zweiten Button (GitHub)
-	// 	background-color: $green-color;
-	// 	&:hover {
-	// 		color: $red-color;
-	// 	}
-	// }
 }
 
 img {
 	width: 588px;
 	height: 371px;
-	// background-color: $bg-color-bright;
 	object-fit: cover;
 }
 
 .mobile-buttons {
 	display: none;
 }
-
-// @media (max-width: 1600px) {
-// 	.text-container {
-// 		max-width: 498px;
-// 	}
-// }
 
 @media (max-width: 1400px) {
 	.project-container {
@@ -75,15 +46,9 @@ img {
 
 	.text-container {
 		@include flex($jc: center, $ai: center, $dir: column, $gap: 0px);
-
 		width: 100%;
 		max-width: 588px;
 	}
-
-	// img {
-	// 	max-width: 75vw;
-	// 	height: auto;
-	// }
 
 	.buttons {
 		display: none;
@@ -119,12 +84,6 @@ img {
 	.buttons {
 		display: none;
 	}
-
-	// img {
-	// 	width: 100%;
-	// 	max-width: ;
-	// 	height: auto;
-	// }
 
 	.mobile-buttons {
 		@include flex($jc: center, $ai: center, $gap: 14px);

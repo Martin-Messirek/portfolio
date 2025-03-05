@@ -19,17 +19,14 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 	constructor(private translateService: TranslateService) {}
 
 	ngOnInit(): void {
-		// Projekte initial laden
 		this.loadProjects();
 
-		// Bei Sprachwechsel die Projekte neu laden
 		this.langChangeSubscription = this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.loadProjects();
 		});
 	}
 
 	private loadProjects(): void {
-		// Hier wird das "projects"-Objekt aus den Übersetzungsdaten synchron abgerufen
 		this.projects = this.translateService.instant('projects');
 	}
 

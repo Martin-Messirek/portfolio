@@ -11,7 +11,7 @@ import { HoverImageDirective } from '../../core/directives/hover-image.directive
 	standalone: true,
 	imports: [TranslatePipe, CommonModule, FormsModule, RouterModule, HoverImageDirective],
 	templateUrl: './contact.component.html',
-	styleUrl: './contact.component.scss',
+	styleUrls: ['./contact.component.scss', './contact.responsive.scss'],
 })
 export class ContactComponent {
 	http = inject(HttpClient);
@@ -27,21 +27,6 @@ export class ContactComponent {
 		if (field === 'message') this.wasMessageFocused = true;
 	}
 
-	// wasFocused: boolean = false;
-
-	// onBlur() {
-	// 	this.wasFocused = true;
-	// }
-	// isFocused: boolean = true;
-
-	// onFocus() {
-	// 	this.isFocused = true;
-	// }
-
-	// onBlur() {
-	// 	this.isFocused = false;
-	// }
-
 	contactData = {
 		name: '',
 		email: '',
@@ -50,28 +35,21 @@ export class ContactComponent {
 
 	private _isPrivacyChecked: boolean = false;
 
-	// Getter für Privacy-Checkbox
 	get isPrivacyChecked(): boolean {
 		return this._isPrivacyChecked;
 	}
 
-	// Setter für Privacy-Checkbox
 	set isPrivacyChecked(value: boolean) {
 		this._isPrivacyChecked = value;
 	}
 
-	// Der Getter gibt den aktuellen Wert zurück.
-	// Der Setter aktualisiert den Wert, wenn sich der Status der Checkbox ändert.
-
-	// Überprüft, ob das Name-Feld nicht leer ist
 	get isNameFilled(): boolean {
 		return this.contactData.name.trim().length > 2 && this.contactData.name.trim().length <= 30;
 	}
 
-	// Überprüft, ob das Email-Feld nicht leer ist
 	get isEmailFilled(): boolean {
 		const email = this.contactData.email.trim();
-		if (email.length === 0) return false; // Falls leer, direkt false zurückgeben
+		if (email.length === 0) return false;
 
 		const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/;
 		return emailRegEx.test(email) && email.length <= 50;
@@ -79,7 +57,7 @@ export class ContactComponent {
 
 	get isTextareaFilled(): boolean {
 		const message = this.contactData.message.trim();
-		if (message.length === 0) return false; // Falls leer, direkt false zurückgeben
+		if (message.length === 0) return false;
 
 		return message.length >= 5 && message.length <= 500;
 	}
@@ -92,10 +70,10 @@ export class ContactComponent {
 		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked;
 	}
 
-	mailTest = true; // auf true setzen wenn auf server
+	mailTest = true; // auf true setzen wenn auf server !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	post = {
-		endPoint: 'https://deineDomain.de/sendMail.php', // funktioniert im loca lHost nicht
+		endPoint: 'https://deineDomain.de/sendMail.php', // funktioniert im loca lHost nicht !!!!!!!!!!!!!!!!!!!
 		body: (payload: any) => JSON.stringify(payload),
 		options: {
 			headers: {
@@ -110,7 +88,7 @@ export class ContactComponent {
 		console.log('Formulardaten gesendet:', this.contactData);
 
 		if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-			// !this.mailTest und else if rausnehmen wenn auf server, ist nur Test
+			// !this.mailTest und else if rausnehmen wenn auf server, ist nur Test !!!!!!!!!!!!!!!!!!
 			this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
 				next: (response) => {
 					ngForm.resetForm();
@@ -121,7 +99,7 @@ export class ContactComponent {
 				complete: () => console.info('send post complete'),
 			});
 		} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-			// Testmodus
+			// Testmodus !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			ngForm.resetForm();
 		}
 	}

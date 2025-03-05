@@ -1,0 +1,174 @@
+@import './../../../assets/css/variables.scss';
+@import './../../../assets/css/mixins.scss';
+
+$textarea-height: 144px;
+$inputs-gap: 32px;
+
+@media (max-width: 1096px) {
+	.header-container {
+		justify-content: center;
+	}
+
+	.arrow-contact-container {
+		display: none;
+	}
+	.contact {
+		gap: 0;
+	}
+
+	.my-details-and-arrow-up {
+		padding-bottom: $inputs-gap;
+	}
+
+	.inputs-flex,
+	.text-flex,
+	.privacy-and-btn-container {
+		@include flex($jc: center, $ai: center, $dir: column);
+		width: 100%;
+
+		& > div {
+			width: 100%;
+			max-width: 588px;
+		}
+	}
+
+	.inputs-flex,
+	.text-flex {
+		gap: $inputs-gap;
+		& > div:first-child,
+		> div:last-child {
+			flex: unset;
+		}
+	}
+}
+
+@media (max-width: 896px) {
+	.my-details,
+	.arrow-up-link {
+		display: none;
+	}
+
+	.privacy-and-btn-container {
+		.send-btn-container {
+			justify-content: center;
+		}
+	}
+
+	.arrow-up-link-mobile {
+		@include flex($jc: center);
+
+		& > div {
+			@include flex($jc: flex-end);
+			width: 100%;
+			max-width: 588px;
+		}
+	}
+
+	.my-details-mobile {
+		@include flex($ai: center, $dir: column, $gap: 10px);
+		padding-bottom: 40px;
+		padding-top: 8px;
+
+		p {
+			pointer-events: none;
+			padding-bottom: 16px;
+
+			a:first-child {
+				@include flex($jc: center);
+				padding-bottom: 12px;
+			}
+		}
+
+		div,
+		.my-details-text {
+			pointer-events: auto;
+		}
+	}
+
+	.social-media-container-mobile {
+		@include flex($jc: center, $gap: 36px);
+	}
+}
+
+@media (max-width: 768px) {
+	.inputs-flex,
+	.text-flex,
+	.privacy-and-btn-container {
+		& > div {
+			max-width: 588px;
+		}
+	}
+	.my-details-text {
+		font-size: 19px;
+		font-weight: 700;
+	}
+
+	input,
+	textarea {
+		font-size: 17px;
+	}
+
+	.checkbox-container {
+		padding-top: 4px;
+	}
+
+	.privacy-text-container {
+		p {
+			line-height: 24px;
+		}
+		span:first-child,
+		span:last-child,
+		a,
+		p {
+			font-size: 13px;
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.inputs-flex,
+	.text-flex,
+	.privacy-and-btn-container {
+		& > div {
+			width: 100%;
+			max-width: 88vw;
+		}
+	}
+}
+
+@media (max-width: 560px) {
+	.text-flex > div {
+		text-align: center;
+	}
+
+	.my-details-text {
+		font-size: 18px;
+	}
+
+	input,
+	textarea {
+		font-size: 16px;
+	}
+
+	.checkbox-container {
+		padding-top: 2px;
+	}
+
+	.privacy-text-container {
+		p {
+			line-height: 20px;
+		}
+		span:first-child,
+		span:last-child,
+		a,
+		p {
+			font-size: 12px;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.my-details-text {
+		font-size: 17px;
+	}
+}

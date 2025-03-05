@@ -3,23 +3,16 @@
 
 .skill-logo-title,
 .continuous-learning {
-	@include text-style(700, 18px, $green-color); // --
-	// @include transition();
+	@include text-style(700, 18px, $green-color);
 }
-
-// .skills-container {
-// 	@include flex($jc: center);
-// }
 
 .skills {
 	@include flex($gap: 120px);
 	flex-wrap: wrap;
 	transform: translateX(-7.5px);
 	padding-top: 12px;
-	// padding-left: -7.5px;
-	// padding-bottom: 112px;
 }
-//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
+
 .skill-logo {
 	width: 88px;
 	height: 125px;
@@ -31,7 +24,6 @@
 	display: block;
 	width: 60px;
 	height: 60px;
-	// transition: transform 120ms ease-in 475ms;
 }
 
 .img {
@@ -39,7 +31,6 @@
 
 	&:hover {
 		transform: translateY(-10px);
-		// filter: brightness(1.55);
 	}
 }
 
@@ -66,7 +57,6 @@
 .pop-up {
 	display: none;
 	max-width: 252px;
-	// text-align: center;
 	visibility: hidden;
 	opacity: 0;
 	@include delayed-transition();
@@ -90,37 +80,20 @@
 	transform: translateY(-16px);
 }
 
-// .pop-up-static-btn {
-// 	padding-top: 18px;
-// }
-
-// .pop-up.visible {
-// 	display: block;
-// 	visibility: visible;
-// 	opacity: 1;
-// }
-
-// p {
-// 	@include text-style(700, 18px, $green-color); // logo and pop up text 400 16
-// }
-
 @media (max-width: 1600px) {
 	.skills {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr); // Standardmäßig 5 Spalten
+		grid-template-columns: repeat(5, 1fr);
 		gap: clamp(30px, 5vw, 120px);
-		// gap: 8vw;
-		justify-content: flex-start; // Startet links, keine Zentrierung
+
+		justify-content: flex-start;
 		justify-items: start;
 		transform: translateX(0);
-		// justify-content: center;
 	}
 
 	.pop-up {
-		// width: 180px;
 		position: absolute;
 		left: min(25vw, 160px);
-		// left: 120px;
 	}
 }
 
@@ -132,26 +105,17 @@
 
 @media (max-width: 896px) {
 	.skills {
-		grid-template-columns: repeat(4, 1fr); // 4 Spalten
+		grid-template-columns: repeat(4, 1fr);
 		justify-items: center;
 	}
 }
-// @media (max-width: 960px) {
-// 	h2 {
-// 		text-align: center;
-// 	}
 
-// 	.skills {
-// 		justify-content: center;
-// 	}
-// }
 @media (max-width: 768px) {
 	.skills {
 		grid-template-columns: repeat(3, 1fr);
 		padding-bottom: 12px;
-		// gap: 80px;
 	}
-	//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
+
 	.skill-logo {
 		width: 50px;
 		height: 80px;
@@ -182,10 +146,6 @@
 }
 
 @media (max-width: 580px) {
-	.skills {
-		// gap: 50px;
-	}
-
 	.img {
 		width: 45px;
 		height: 45px;
@@ -194,11 +154,4 @@
 	.continuous-learning {
 		font-size: 16px;
 	}
-}
-
-@media (max-width: 480px) {
-	// .skills {
-	// 	gap: 15px;
-	// }
-	//      @include flex($jc: center, $ai: center, $dir: column, $gap: 14px);
 }
