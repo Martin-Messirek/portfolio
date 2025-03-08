@@ -44,20 +44,22 @@ export class ContactComponent {
 	}
 
 	get isNameFilled(): boolean {
-		return this.contactData.name.trim().length > 2 && this.contactData.name.trim().length <= 30;
+		const name = this.contactData.name?.trim();
+		if (!name || name.length === 0) return false;
+		return name.length > 2 && name.length <= 30;
 	}
 
 	get isEmailFilled(): boolean {
-		const email = this.contactData.email.trim();
-		if (email.length === 0) return false;
+		const email = this.contactData.email?.trim();
+		if (!email || email.length === 0) return false;
 
 		const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/;
 		return emailRegEx.test(email) && email.length <= 50;
 	}
 
 	get isTextareaFilled(): boolean {
-		const message = this.contactData.message.trim();
-		if (message.length === 0) return false;
+		const message = this.contactData.message?.trim();
+		if (!message || message.length === 0) return false;
 
 		return message.length >= 5 && message.length <= 500;
 	}
@@ -70,10 +72,10 @@ export class ContactComponent {
 		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked;
 	}
 
-	mailTest = true; // auf true setzen wenn auf server !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	mailTest = false; // auf false setzen wenn auf server !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	post = {
-		endPoint: 'https://deineDomain.de/sendMail.php', // funktioniert im loca lHost nicht !!!!!!!!!!!!!!!!!!!
+		endPoint: 'https://martinmessirek.at/sendMail.php', // funktioniert im loca lHost nicht !!!!!!!!!!!!!!!!!!!
 		body: (payload: any) => JSON.stringify(payload),
 		options: {
 			headers: {
@@ -84,8 +86,8 @@ export class ContactComponent {
 	};
 
 	onSubmit(ngForm: NgForm) {
-		console.log('Angular Form Submit funktioniert');
-		console.log('Formulardaten gesendet:', this.contactData);
+		// console.log('Angular Form Submit funktioniert');
+		// console.log('Formulardaten gesendet:', this.contactData);
 
 		if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
 			// !this.mailTest und else if rausnehmen wenn auf server, ist nur Test !!!!!!!!!!!!!!!!!!
@@ -99,6 +101,8 @@ export class ContactComponent {
 				complete: () => console.info('send post complete'),
 			});
 		} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+			console.log('Angular Form Submit funktioniert');
+			console.log('Formulardaten gesendet:', this.contactData);
 			// Testmodus !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			ngForm.resetForm();
 		}

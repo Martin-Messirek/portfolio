@@ -43,6 +43,18 @@ body {
 	background-color: $bg-color;
 }
 
+/* Firefox */
+html {
+	scrollbar-width: thin; /* 'auto' or 'thin' */
+	scrollbar-color: rgba($bg-color-bright, 0.4) $bg-color; /* thumb and track colors */
+}
+
+/* Optional for better cross-browser compatibility */
+body {
+	scrollbar-width: thin; /* 'auto' or 'thin' */
+	scrollbar-color: rgba($bg-color-bright, 0.4) $bg-color; /* thumb and track colors */
+}
+
 h1 {
 	@include text-style(700, 82px, $green-color);
 }

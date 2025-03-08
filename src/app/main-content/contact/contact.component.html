@@ -87,7 +87,7 @@
 						[(ngModel)]="contactData.name"
 						[ngClass]="{
 							'input-bg valid-input': isNameFilled,
-							'error-placeholder': wasNameFocused && contactData.name.trim().length === 0,
+							'error-placeholder': wasNameFocused && !isNameFilled,
 							'invalid-input': wasNameFocused && !isNameFilled
 						}"
 						type="text"
@@ -95,7 +95,7 @@
 						name="name"
 						(blur)="onBlur('name')"
 						[placeholder]="
-							wasNameFocused && contactData.name.trim().length === 0
+							wasNameFocused && !isNameFilled
 								? ('main.CONTACT.NAME_REQ' | translate)
 								: ('main.CONTACT.NAME' | translate)
 						"
@@ -110,7 +110,7 @@
 						[(ngModel)]="contactData.email"
 						[ngClass]="{
 							'input-bg valid-input': isEmailFilled,
-							'error-placeholder': wasEmailFocused && contactData.email.trim().length === 0,
+							'error-placeholder': wasEmailFocused && !isEmailFilled,
 							'invalid-input': wasEmailFocused && !isEmailFilled
 						}"
 						type="email"
@@ -118,7 +118,7 @@
 						name="email"
 						(blur)="onBlur('email')"
 						[placeholder]="
-							wasEmailFocused && contactData.email.trim().length === 0
+							wasEmailFocused && !isEmailFilled
 								? ('main.CONTACT.EMAIL_REQ' | translate)
 								: ('main.CONTACT.MAIL' | translate)
 						"
@@ -134,14 +134,14 @@
 					[(ngModel)]="contactData.message"
 					[ngClass]="{
 						'textarea-bg valid-input': isTextareaFilled,
-						'error-placeholder': wasMessageFocused && contactData.message.trim().length === 0,
+						'error-placeholder': wasMessageFocused && !isTextareaFilled,
 						'invalid-input': wasMessageFocused && !isTextareaFilled
 					}"
 					id="message"
 					name="message"
 					(blur)="onBlur('message')"
 					[placeholder]="
-						wasMessageFocused && contactData.message.trim().length === 0
+						wasMessageFocused && !isTextareaFilled
 							? ('main.CONTACT.MSG_REQ' | translate)
 							: ('main.CONTACT.MSG' | translate)
 					"

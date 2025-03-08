@@ -37,11 +37,12 @@
 								},
 								{
 									"type": "anyComponentStyle",
-									"maximumWarning": "2kb",
-									"maximumError": "4kb"
+									"maximumWarning": "6kb",
+									"maximumError": "6kb"
 								}
 							],
-							"outputHashing": "all"
+							"outputHashing": "all",
+							"sourceMap": false
 						},
 						"development": {
 							"optimization": false,
