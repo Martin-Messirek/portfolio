@@ -9,6 +9,12 @@
 	height: 40vw;
 	max-height: 600px;
 	width: auto;
+	transform: rotateY(90deg);
+}
+
+.flip-animation {
+	transform: rotateY(0deg);
+	transition: transform 1.8s ease-out;
 }
 
 .description {

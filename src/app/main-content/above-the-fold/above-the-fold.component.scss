@@ -137,14 +137,14 @@ h1 {
 		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 32px);
 	}
 
-	.atf-text {
-		// text-align: center;
-		// margin: auto;
-		// display: flex;
-		// justify-content: center; // Horizontal zentrieren
-		// align-items: center; // Vertikal zentrieren, falls nötig
-		// width: 100%; // Falls es nicht automatisch die ganze Breite nimmt
-	}
+	// .atf-text {
+	// text-align: center;
+	// margin: auto;
+	// display: flex;
+	// justify-content: center; // Horizontal zentrieren
+	// align-items: center; // Vertikal zentrieren, falls nötig
+	// width: 100%; // Falls es nicht automatisch die ganze Breite nimmt
+	// }
 
 	.typing-animation {
 		text-align: center;
