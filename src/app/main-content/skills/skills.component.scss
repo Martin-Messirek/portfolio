@@ -17,6 +17,7 @@
 	width: 88px;
 	height: 125px;
 	@include flex($ai: center, $dir: column, $gap: 10px);
+	opacity: 0;
 }
 
 .img,
@@ -78,6 +79,36 @@
 	width: 12px;
 	height: 45px;
 	transform: translateY(-16px);
+}
+
+@keyframes slideInLeft {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.slide-in-left {
+	animation: slideInLeft 1s ease-out forwards;
+}
+
+@keyframes slideInBottom {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.slide-in-bottom {
+	animation: slideInBottom 1s ease-out forwards;
 }
 
 @media (max-width: 1600px) {

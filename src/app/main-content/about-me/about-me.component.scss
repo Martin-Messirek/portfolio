@@ -17,6 +17,32 @@
 	transition: transform 1.8s ease-out;
 }
 
+// .text-animation {
+// 	transform: rotateY(0deg);
+// 	transition: transform 1.8s ease-out;
+// }
+
+/* Standard Slide-In Animation */
+@keyframes fadeRight {
+	0% {
+		transform: translateX(10%); /* Start außerhalb des Bildschirms */
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0); /* Endposition im sichtbaren Bereich */
+		opacity: 1;
+	}
+}
+
+.fade-right {
+	animation: fadeRight 0.9s ease-in-out forwards; /* Dauer der Animation */
+}
+
+.text {
+	opacity: 0;
+	// transform: rotateY(90deg);
+}
+
 .description {
 	min-height: 112px;
 	text-align: right;
