@@ -55,15 +55,6 @@ body {
 	scrollbar-color: rgba($bg-color-bright, 0.4) $bg-color; /* thumb and track colors */
 }
 
-h1 {
-	@include text-style(700, 82px, $green-color);
-}
-
-.job-title {
-	@include text-style(500, 54px, $green-color);
-	text-transform: uppercase;
-}
-
 h2 {
 	padding-bottom: 20px;
 	@include text-style(500, 54px, $red-color);
@@ -129,11 +120,6 @@ a {
 }
 
 @media (max-width: 1200px) {
-	h1 {
-		font-size: 72px;
-	}
-
-	.job-title,
 	h2 {
 		font-size: 48px;
 	}
@@ -144,14 +130,6 @@ a {
 }
 
 @media (max-width: 768px) {
-	h1 {
-		font-size: 56px;
-	}
-
-	.job-title {
-		font-size: 36px;
-	}
-
 	h2 {
 		font-size: 36px;
 	}
@@ -181,15 +159,6 @@ a {
 	}
 }
 @media (max-width: 560px) {
-	h1 {
-		font-size: 40px;
-	}
-
-	.job-title {
-		font-size: 24px;
-		font-weight: 700;
-	}
-
 	h2 {
 		font-size: 32px;
 		font-weight: 700;

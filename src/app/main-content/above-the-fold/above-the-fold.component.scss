@@ -1,20 +1,16 @@
 @import './../../../assets/css/variables.scss';
 @import './../../../assets/css/mixins.scss';
 
-.vertical-text {
-	transform: rotate(270deg) translateX(-54px);
-	transform-origin: top left;
-
-	white-space: nowrap;
-	display: block;
-}
-
 section {
 	@include flex($jc: center, $ai: center);
 }
 
 .atf-container {
 	@include flex($jc: flex-end, $dir: column);
+}
+
+.atf-content {
+	@include flex($jc: space-between, $ai: flex-end, $gap: 48px);
 }
 
 .links {
@@ -51,15 +47,85 @@ section {
 	}
 }
 
-.atf-content {
-	@include flex($jc: space-between, $ai: flex-end, $gap: 48px);
+.vertical-text {
+	transform: rotate(270deg) translateX(-54px);
+	transform-origin: top left;
+
+	white-space: nowrap;
+	display: block;
 }
 
 .atf-img img {
 	width: 539px;
-	height: 554px;
+	// height: 554px;
+	height: 680px;
+	padding-top: 80px;
 	object-fit: cover;
 }
+
+h1 {
+	@include text-style(700, 82px, $green-color);
+	animation: typing-h1 1s steps(10, end) forwards;
+}
+
+.job-title {
+	@include text-style(500, 54px, $green-color);
+	text-transform: uppercase;
+	animation: typing 0.5s steps(10, end) forwards;
+}
+
+.typing-animation {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	// animation: typing 7.5s steps(17, end) forwards;
+}
+
+@keyframes typing {
+	from {
+		max-width: 0;
+	}
+	to {
+		max-width: 100%;
+	}
+}
+
+@keyframes typing-h1 {
+	0% {
+		max-width: 0;
+		opacity: 0; // Unsichtbar zu Beginn
+	}
+	50% {
+		max-width: 0;
+		opacity: 0; // Immer noch unsichtbar in der Mitte
+	}
+	51% {
+		opacity: 1; // Plötzlich sichtbar
+	}
+	100% {
+		max-width: 100%;
+		opacity: 1; // Sichtbar am Ende
+	}
+}
+
+// .fade-in {
+// 	animation: fade-in 0.8s forwards;
+// }
+
+// @keyframes fade-in {
+// 	0% {
+// 		opacity: 0;
+// 		visibility: hidden;
+// 	}
+// 	50% {
+// 		opacity: 0;
+// 		visibility: hidden;
+// 	}
+// 	100% {
+// 		opacity: 1;
+// 		visibility: visible;
+// 	}
+// }
 
 @media (max-width: 1600px) {
 	section {
@@ -72,7 +138,17 @@ section {
 	}
 
 	.atf-text {
+		// text-align: center;
+		// margin: auto;
+		// display: flex;
+		// justify-content: center; // Horizontal zentrieren
+		// align-items: center; // Vertikal zentrieren, falls nötig
+		// width: 100%; // Falls es nicht automatisch die ganze Breite nimmt
+	}
+
+	.typing-animation {
 		text-align: center;
+		margin: auto;
 	}
 
 	.links {
@@ -88,11 +164,63 @@ section {
 		height: 69vw;
 		max-width: min(539px, 100vh);
 		max-height: min(554px, 105vh);
+		padding-top: 0;
+	}
+}
+
+@media (min-width: 1201px) {
+	.atf-text {
+		width: 677px;
 	}
 }
 
 @media (max-width: 1200px) {
 	.links {
 		display: none;
+	}
+
+	h1 {
+		font-size: 72px;
+	}
+
+	.job-title {
+		font-size: 48px;
+	}
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 56px;
+	}
+
+	.job-title {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 560px) {
+	h1 {
+		font-size: 40px;
+	}
+
+	.job-title {
+		font-size: 24px;
+		font-weight: 700;
+	}
+}
+
+@media (max-width: 400px) {
+	h1 {
+		font-size: 32px;
+	}
+
+	.job-title {
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 340px) {
+	h1 {
+		font-size: 28px;
 	}
 }

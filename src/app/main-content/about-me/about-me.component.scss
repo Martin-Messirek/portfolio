@@ -195,7 +195,8 @@ h2 {
 
 	.grid-container {
 		@include flex($ai: center, $dir: column, $gap: 0);
-		width: 86vw;
+		width: 80vw;
+		// width: 86vw;
 		padding: 24px 0 0;
 	}
 
