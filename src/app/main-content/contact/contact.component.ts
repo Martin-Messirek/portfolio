@@ -5,11 +5,12 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { HoverImageDirective } from '../../core/directives/hover-image.directive';
+import { ScrollAnimateDirective } from '../../core/directives/scroll-animate.directive';
 
 @Component({
 	selector: 'app-contact',
 	standalone: true,
-	imports: [TranslatePipe, CommonModule, FormsModule, RouterModule, HoverImageDirective],
+	imports: [TranslatePipe, CommonModule, FormsModule, RouterModule, HoverImageDirective, ScrollAnimateDirective],
 	templateUrl: './contact.component.html',
 	styleUrls: ['./contact.component.scss', './contact.responsive.scss'],
 })

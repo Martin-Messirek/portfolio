@@ -97,7 +97,7 @@
 }
 
 .slide-in-left {
-	animation: slideInLeft 1s ease-out forwards;
+	animation: slideInLeft 1s ease-out 0.4s forwards;
 }
 
 @keyframes slideInBottom {
@@ -112,7 +112,7 @@
 }
 
 .slide-in-bottom {
-	animation: slideInBottom 1s ease-out forwards;
+	animation: slideInBottom 1s ease-out 0.4s forwards;
 }
 // }
 

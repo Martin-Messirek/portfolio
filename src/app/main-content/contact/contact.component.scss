@@ -27,6 +27,22 @@ $inputs-gap: 32px;
 
 .contact {
 	@include flex($dir: column, $gap: $inputs-gap);
+	opacity: 0;
+}
+
+@keyframes fadeLeft {
+	0% {
+		transform: translateX(-15%) translateY(20%); /* Start außerhalb des Bildschirms */
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0) translateY(0); /* Endposition im sichtbaren Bereich */
+		opacity: 1;
+	}
+}
+
+.fade-left {
+	animation: fadeLeft 1s ease-in-out forwards; /* Dauer der Animation */
 }
 
 .my-details-and-arrow-up {
