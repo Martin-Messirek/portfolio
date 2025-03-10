@@ -9,7 +9,13 @@
 		</div>
 	</div>
 	<div class="image">
-		<img [src]="imageSrc" alt="{{ TITLE }} Screenshot" appScrollAnimate="flip-animation" />
+		<img
+			[ngClass]="[reverseRow ? 'move-from-left' : 'move-from-right']"
+			[src]="imageSrc"
+			alt="{{ TITLE }} Screenshot"
+			appScrollAnimate="slide-in-animation"
+			[rootMargin]="'-200px'"
+		/>
 	</div>
 	<div class="mobile-buttons">
 		<a [href]="githubLink" target="_blank" class="btn btn-purple">GitHub</a>

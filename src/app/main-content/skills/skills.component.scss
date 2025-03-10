@@ -17,7 +17,6 @@
 	width: 88px;
 	height: 125px;
 	@include flex($ai: center, $dir: column, $gap: 10px);
-	opacity: 0;
 }
 
 .img,
@@ -81,6 +80,11 @@
 	transform: translateY(-16px);
 }
 
+// @media (min-width: 1800px) {
+.skill-logo {
+	opacity: 0;
+}
+
 @keyframes slideInLeft {
 	0% {
 		transform: translateX(-100%);
@@ -110,6 +114,7 @@
 .slide-in-bottom {
 	animation: slideInBottom 1s ease-out forwards;
 }
+// }
 
 @media (max-width: 1600px) {
 	.skills {

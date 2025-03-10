@@ -32,14 +32,25 @@ img {
 	height: 371px;
 	object-fit: cover;
 	// transform: rotateX(90deg);
-	transform: scale(0);
+	// transform: scale(0);
 }
 
-.flip-animation {
+.move-from-left {
+	transform: translateX(-100%);
+	opacity: 0;
+}
+
+.move-from-right {
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+.slide-in-animation {
 	// transform-origin: bottom;
 	// transform: rotateX(0deg);
-	transform: scale(1);
-	transition: transform 0.8s ease-out;
+	transform: translateX(0%);
+	opacity: 1;
+	transition: transform 1.2s ease-out, opacity 0.8s ease-out;
 }
 
 .mobile-buttons {
