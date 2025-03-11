@@ -25,10 +25,8 @@ export class ContactComponent {
 	isSendBtnHovered: boolean = false;
 
 	successMessageVisible: boolean = false;
-
-	// constructor() {
-	// 	this.scrollService.disableScroll();
-	// }
+	submittingMessage: boolean = false;
+	messageFailed: boolean = false;
 
 	onBlur(field: string) {
 		if (field === 'name') this.wasNameFocused = true;
@@ -81,13 +79,27 @@ export class ContactComponent {
 		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked;
 	}
 
-	showSuccessMessage() {
-		this.successMessageVisible = true;
+	showMessageSubmissionScreen() {
+		this.submittingMessage = true;
 		this.scrollService.disableScroll();
+	}
+
+	showSuccessMessage() {
+		this.submittingMessage = false;
+		this.successMessageVisible = true;
 		setTimeout(() => {
 			this.successMessageVisible = false;
 			this.scrollService.enableScroll();
 		}, 5000);
+	}
+
+	showFailureMessage() {
+		this.submittingMessage = false;
+		this.messageFailed = true;
+		setTimeout(() => {
+			this.messageFailed = false;
+			this.scrollService.enableScroll();
+		}, 335000);
 	}
 
 	clearUserActivity() {
@@ -113,8 +125,11 @@ export class ContactComponent {
 		},
 	};
 
+	mailTest = true;
+
 	onSubmit(ngForm: NgForm) {
-		if (ngForm.submitted && ngForm.form.valid) {
+		this.showMessageSubmissionScreen();
+		if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
 			this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
 				next: (response) => {
 					this.showSuccessMessage();
@@ -122,9 +137,16 @@ export class ContactComponent {
 				},
 				error: (error) => {
 					console.error(error);
+					this.showFailureMessage();
 				},
 				complete: () => console.info('Send post complete'),
 			});
+		} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+			setTimeout(() => {
+				// this.showSuccessMessage();
+				this.showFailureMessage();
+				this.clearForm(ngForm);
+			}, 3000);
 		}
 	}
 }

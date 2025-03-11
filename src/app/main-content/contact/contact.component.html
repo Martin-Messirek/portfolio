@@ -239,8 +239,10 @@
 		</a>
 	</div>
 </div>
-<div *ngIf="successMessageVisible" class="overlay">
+<div *ngIf="submittingMessage || successMessageVisible || messageFailed" class="overlay">
 	<div class="success-message">
-		<h3>{{ 'main.MAIL_RECEIVED.MSG' | translate }}</h3>
+		<h3 *ngIf="submittingMessage">{{ 'main.MAIL_RECEIVED.SENDING_MESSAGE' | translate }}</h3>
+		<h3 *ngIf="successMessageVisible">{{ 'main.MAIL_RECEIVED.MSG' | translate }}</h3>
+		<h3 *ngIf="messageFailed" class="message-failed">{{ 'main.MAIL_RECEIVED.MESSAGE_FAILED' | translate }}</h3>
 	</div>
 </div>
