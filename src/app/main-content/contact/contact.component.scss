@@ -341,6 +341,10 @@ textarea.invalid-input + .validation-icon {
 	h3 {
 		padding-bottom: 0;
 	}
+
+	h3.message-failed {
+		color: $error-color;
+	}
 }
 
 .arrow-up-link-mobile {

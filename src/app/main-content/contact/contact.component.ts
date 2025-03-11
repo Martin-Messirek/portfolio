@@ -25,6 +25,8 @@ export class ContactComponent {
 	isSendBtnHovered: boolean = false;
 
 	successMessageVisible: boolean = false;
+	submittingMessage: boolean = false;
+	messageFailed: boolean = false;
 
 	// constructor() {
 	// 	this.scrollService.disableScroll();
@@ -81,13 +83,27 @@ export class ContactComponent {
 		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked;
 	}
 
-	showSuccessMessage() {
-		this.successMessageVisible = true;
+	showMessageSubmissionScreen() {
+		this.submittingMessage = true;
 		this.scrollService.disableScroll();
+	}
+
+	showSuccessMessage() {
+		this.submittingMessage = false;
+		this.successMessageVisible = true;
 		setTimeout(() => {
 			this.successMessageVisible = false;
 			this.scrollService.enableScroll();
-		}, 5000);
+		}, 6000);
+	}
+
+	showFailureMessage() {
+		this.submittingMessage = false;
+		this.messageFailed = true;
+		setTimeout(() => {
+			this.messageFailed = false;
+			this.scrollService.enableScroll();
+		}, 6000);
 	}
 
 	clearUserActivity() {
@@ -114,6 +130,7 @@ export class ContactComponent {
 	};
 
 	onSubmit(ngForm: NgForm) {
+		this.showMessageSubmissionScreen();
 		if (ngForm.submitted && ngForm.form.valid) {
 			this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
 				next: (response) => {
@@ -122,6 +139,7 @@ export class ContactComponent {
 				},
 				error: (error) => {
 					console.error(error);
+					this.showFailureMessage();
 				},
 				complete: () => console.info('Send post complete'),
 			});

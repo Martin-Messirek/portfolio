@@ -54,8 +54,9 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				BTN: 'Send Message',
 			},
 			MAIL_RECEIVED: {
+				SENDING_MESSAGE: 'Sending message...',
 				MSG: 'Thank you for your message! We will get back to you soon.',
-				TEXT: '',
+				MESSAGE_FAILED: 'Failed to send the message. Please try again.',
 			},
 			REFERENCES: [
 				{ NAME: 'John Doe', TEXT: 'John is a fantastic collaborator and a skilled developer.' },
@@ -247,8 +248,9 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				BTN: 'Nachricht senden',
 			},
 			MAIL_RECEIVED: {
+				SENDING_MESSAGE: 'Nachricht wird gesendet...',
 				MSG: 'Danke für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.',
-				TEXT: '',
+				MESSAGE_FAILED: 'Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.',
 			},
 			REFERENCES: [
 				{ NAME: 'John Doe', TEXT: 'John is a fantastic collaborator and a skilled developer.' },
