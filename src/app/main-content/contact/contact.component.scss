@@ -311,6 +311,38 @@ textarea.invalid-input + .validation-icon {
 		}
 	}
 }
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	min-height: 100vh;
+	backdrop-filter: blur(1px);
+	background-color: rgba($bg-color-bright, 0.3);
+	border-radius: 15px;
+	@include flex($jc: center, $ai: center);
+	overflow-y: auto;
+	@include transition();
+	z-index: 10;
+}
+
+.success-message {
+	@include flex($jc: center, $ai: center);
+	background-color: rgba($bg-color, 0.9);
+	border-radius: 5px;
+	width: 60%;
+	height: 40%;
+	text-align: center;
+	padding: 10%;
+
+	h3 {
+		padding-bottom: 0;
+	}
+}
+
 .arrow-up-link-mobile {
 	display: none;
 }

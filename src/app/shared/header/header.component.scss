@@ -3,7 +3,6 @@
 
 header {
 	@include flex($jc: center, $ai: center);
-	// display: none;
 	position: fixed;
 	width: 100%;
 	background: linear-gradient(
@@ -24,35 +23,25 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	background: linear-gradient(150deg, $bg-color 25%, $bg-color-mobile);
-	// backdrop-filter: blur(0px); // Anfangszustand (kein Blur)
-	// z-index: 9;
 	@include flex($jc: center, $ai: flex-start);
 	overflow-y: auto;
-	// transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
 	@include transition();
 	transform: translateX(100%);
-	opacity: 0; // Unsichtbar beim Start
+	opacity: 0;
 }
 
-// body.no-scroll {
-// 	overflow: hidden;
-// 	//   height: 100vh; // Verhindert Sprünge bei mobilem Scrollen
-// }
-
 .overlay.open {
-	// Klasse, die mit Angulars [class.open] verknüpft ist
-	// @include flex($jc: center, $ai: flex-start);
 	z-index: 9;
-	opacity: 1; // Voll sichtbar
-	// backdrop-filter: blur(10px); // Weicher Blur-Effekt
+	opacity: 1;
 	transform: translateX(0);
 }
 
 .menu-and-lang-btn-container {
-	//////////////////////////////////
 	padding: 18px 35px;
 	width: calc(100vw - 280px);
 	max-width: 1320px;
@@ -66,24 +55,6 @@ header {
 		width: calc(100vw - 14vw);
 	}
 }
-// .content-wrapper {
-// 	max-width: 1600px;
-// 	padding: 0px 105px 65px;
-// }
-
-// @media (max-width: 1400px) {
-// 	.content-wrapper {
-// 		padding-left: 7vw;
-// 		padding-right: 7vw;
-// 	}
-// }
-
-// @media (max-width: 768px) {
-// 	.content-wrapper {
-// 		padding-left: 6vw;
-// 		padding-right: 6vw;
-// 	}
-// }
 
 .menu {
 	@include flex($ai: center);
@@ -121,22 +92,13 @@ nav ul {
 }
 
 li a {
-	// width: clamp(110px, 7vw, 110px);
-
-	// text-align: center;
-	@include text-style(500, 22px, $red-color); // 500 18
+	@include text-style(500, 22px, $red-color);
 	cursor: pointer;
 	@include transition();
 	&:hover {
 		color: $green-color;
 	}
 }
-
-// .lang-btn-container button {
-// 	background: none;
-// 	outline: none;
-// 	border: none;
-// }
 
 .language-button {
 	background: none;
@@ -161,10 +123,10 @@ li a {
 
 .close-btn-container {
 	position: absolute;
-	top: 24px;
+	top: 18px;
 	right: calc(35px + 7vw);
 	z-index: 10;
-	height: 64px;
+	height: 56px;
 	@include flex($ai: center);
 }
 
@@ -196,7 +158,7 @@ li a {
 }
 
 .mobile-menu {
-	padding-top: 104px;
+	padding: 104px 0;
 
 	ul {
 		padding: 0;

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { HoverImageDirective } from '../../core/directives/hover-image.directive';
 import { ScrollAnimateDirective } from '../../core/directives/scroll-animate.directive';
+import { ScrollService } from '../../core/services/scroll.service';
 
 @Component({
 	selector: 'app-contact',
@@ -15,12 +16,19 @@ import { ScrollAnimateDirective } from '../../core/directives/scroll-animate.dir
 	styleUrls: ['./contact.component.scss', './contact.responsive.scss'],
 })
 export class ContactComponent {
+	private scrollService = inject(ScrollService);
 	http = inject(HttpClient);
 
 	wasNameFocused: boolean = false;
 	wasEmailFocused: boolean = false;
 	wasMessageFocused: boolean = false;
 	isSendBtnHovered: boolean = false;
+
+	successMessageVisible: boolean = false;
+
+	// constructor() {
+	// 	this.scrollService.disableScroll();
+	// }
 
 	onBlur(field: string) {
 		if (field === 'name') this.wasNameFocused = true;
@@ -73,10 +81,29 @@ export class ContactComponent {
 		return this.isNameFilled && this.isEmailFilled && this.isTextareaFilled && this.isPrivacyChecked;
 	}
 
-	mailTest = false; // auf false setzen wenn auf server !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	showSuccessMessage() {
+		this.successMessageVisible = true;
+		this.scrollService.disableScroll();
+		setTimeout(() => {
+			this.successMessageVisible = false;
+			this.scrollService.enableScroll();
+		}, 5000);
+	}
+
+	clearUserActivity() {
+		this.wasNameFocused = false;
+		this.wasEmailFocused = false;
+		this.wasMessageFocused = false;
+		this.isSendBtnHovered = false;
+	}
+
+	clearForm(ngForm: NgForm) {
+		ngForm.resetForm();
+		this.clearUserActivity();
+	}
 
 	post = {
-		endPoint: 'https://martinmessirek.at/sendMail.php', // funktioniert im loca lHost nicht !!!!!!!!!!!!!!!!!!!
+		endPoint: 'https://martinmessirek.at/sendMail.php',
 		body: (payload: any) => JSON.stringify(payload),
 		options: {
 			headers: {
@@ -87,25 +114,17 @@ export class ContactComponent {
 	};
 
 	onSubmit(ngForm: NgForm) {
-		// console.log('Angular Form Submit funktioniert');
-		// console.log('Formulardaten gesendet:', this.contactData);
-
-		if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-			// !this.mailTest und else if rausnehmen wenn auf server, ist nur Test !!!!!!!!!!!!!!!!!!
+		if (ngForm.submitted && ngForm.form.valid) {
 			this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
 				next: (response) => {
-					ngForm.resetForm();
+					this.showSuccessMessage();
+					this.clearForm(ngForm);
 				},
 				error: (error) => {
 					console.error(error);
 				},
-				complete: () => console.info('send post complete'),
+				complete: () => console.info('Send post complete'),
 			});
-		} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-			console.log('Angular Form Submit funktioniert');
-			console.log('Formulardaten gesendet:', this.contactData);
-			// Testmodus !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			ngForm.resetForm();
 		}
 	}
 }

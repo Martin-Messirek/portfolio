@@ -87,8 +87,7 @@
 						[(ngModel)]="contactData.name"
 						[ngClass]="{
 							'input-bg valid-input': isNameFilled,
-							'error-placeholder': wasNameFocused && !isNameFilled,
-							'invalid-input': wasNameFocused && !isNameFilled
+							'error-placeholder invalid-input': wasNameFocused && !isNameFilled
 						}"
 						type="text"
 						id="name"
@@ -110,8 +109,7 @@
 						[(ngModel)]="contactData.email"
 						[ngClass]="{
 							'input-bg valid-input': isEmailFilled,
-							'error-placeholder': wasEmailFocused && !isEmailFilled,
-							'invalid-input': wasEmailFocused && !isEmailFilled
+							'error-placeholder invalid-input': wasEmailFocused && !isEmailFilled
 						}"
 						type="email"
 						id="email"
@@ -134,8 +132,7 @@
 					[(ngModel)]="contactData.message"
 					[ngClass]="{
 						'textarea-bg valid-input': isTextareaFilled,
-						'error-placeholder': wasMessageFocused && !isTextareaFilled,
-						'invalid-input': wasMessageFocused && !isTextareaFilled
+						'error-placeholder invalid-input': wasMessageFocused && !isTextareaFilled
 					}"
 					id="message"
 					name="message"
@@ -240,5 +237,10 @@
 				class="hover-image"
 			/>
 		</a>
+	</div>
+</div>
+<div *ngIf="successMessageVisible" class="overlay">
+	<div class="success-message">
+		<h3>{{ 'main.MAIL_RECEIVED.MSG' | translate }}</h3>
 	</div>
 </div>
