@@ -99,7 +99,7 @@ export class ContactComponent {
 		setTimeout(() => {
 			this.messageFailed = false;
 			this.scrollService.enableScroll();
-		}, 335000);
+		}, 5000);
 	}
 
 	clearUserActivity() {
@@ -129,24 +129,26 @@ export class ContactComponent {
 
 	onSubmit(ngForm: NgForm) {
 		this.showMessageSubmissionScreen();
-		if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-			this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
-				next: (response) => {
+		if (ngForm.submitted && ngForm.form.valid) {
+			this.showMessageSubmissionScreen();
+			if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+				this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
+					next: (response) => {
+						this.showSuccessMessage();
+						this.clearForm(ngForm);
+					},
+					error: (error) => {
+						console.error(error);
+					},
+					complete: () => console.info('Send post complete'),
+				});
+			} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+				setTimeout(() => {
 					this.showSuccessMessage();
+					// this.showFailureMessage();
 					this.clearForm(ngForm);
-				},
-				error: (error) => {
-					console.error(error);
-					this.showFailureMessage();
-				},
-				complete: () => console.info('Send post complete'),
-			});
-		} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-			setTimeout(() => {
-				// this.showSuccessMessage();
-				this.showFailureMessage();
-				this.clearForm(ngForm);
-			}, 3000);
+				}, 3000);
+			}
 		}
 	}
 }

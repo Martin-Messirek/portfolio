@@ -6,7 +6,65 @@
 	color: $white-color;
 }
 
+a {
+	color: $red-color;
+}
+
+div,
+h2,
+h4 {
+	padding-bottom: 28px;
+}
+
+h5 {
+	padding-bottom: 18px;
+	padding-top: 12px;
+	font-size: 20px;
+}
+
 .content-wrapper {
 	max-width: 1600px;
 	padding: 120px 105px 65px;
+}
+
+@media (max-width: 1400px) {
+	.content-wrapper {
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+}
+
+@media (max-width: 768px) {
+	h5 {
+		font-size: 18px;
+	}
+
+	.content-wrapper {
+		padding-left: 6vw;
+		padding-right: 6vw;
+
+		h2 {
+			font-size: 28px;
+		}
+	}
+}
+
+@media (max-width: 560px) {
+	.content-wrapper {
+		h2 {
+			font-size: 28px;
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.content-wrapper {
+		h2 {
+			font-size: 22px;
+		}
+
+		h3 {
+			font-size: 20px;
+		}
+	}
 }
