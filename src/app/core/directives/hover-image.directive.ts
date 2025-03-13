@@ -44,18 +44,26 @@ export class HoverImageDirective {
 	ngOnInit() {
 		const images = this.el.nativeElement.querySelectorAll('img');
 		if (images.length === 2) {
-			this.defaultImage = images[0];
-			this.hoverImage = images[1];
-			this.renderer.setStyle(this.hoverImage, 'opacity', '0');
+			this.setupImageElements(images);
 		}
 
 		const textElements = this.el.nativeElement.querySelectorAll('p.pop-up');
 		if (textElements.length === 1) {
-			this.hoverText = textElements[0];
-			this.renderer.setStyle(this.hoverText, 'visibility', 'hidden');
+			this.setupTextElement(textElements);
 		}
 
 		this.hoverElement = this.el.nativeElement.querySelector('.hover');
+	}
+
+	setupImageElements(images: NodeListOf<HTMLImageElement>): void {
+		this.defaultImage = images[0];
+		this.hoverImage = images[1];
+		this.renderer.setStyle(this.hoverImage, 'opacity', '0');
+	}
+
+	setupTextElement(textElements: NodeListOf<HTMLElement>): void {
+		this.hoverText = textElements[0];
+		this.renderer.setStyle(this.hoverText, 'visibility', 'hidden');
 	}
 
 	/**
@@ -72,28 +80,38 @@ export class HoverImageDirective {
 	 */
 	@HostListener('mouseenter', ['$event']) onHover(event: MouseEvent) {
 		if ((event.target as HTMLElement).classList.contains('icon-container-located')) {
-			const ubicationImg = this.el.nativeElement.closest('.ubication-container')?.querySelector('.ubication');
-
-			if (ubicationImg) {
-				this.renderer.setStyle(ubicationImg, 'transform', 'translateY(-8px)');
-				this.renderer.setStyle(ubicationImg, 'transition', 'transform 0.195s ease-out');
-			}
+			this.handleUbicationImageHover();
 		}
 
 		if (this.el.nativeElement.querySelector('.continuous-learning')) {
 			if (window.innerWidth > 768 && this.hoverText) {
-				this.renderer.setStyle(this.hoverText, 'display', 'block');
-
-				setTimeout(() => {
-					this.renderer.setStyle(this.hoverText, 'visibility', 'visible');
-					this.renderer.setStyle(this.hoverText, 'opacity', '1');
-				}, 100);
+				this.handleHoverTextDisplay();
 			}
 		}
 		if (this.defaultImage && this.hoverImage) {
-			this.renderer.setStyle(this.defaultImage, 'opacity', '0');
-			this.renderer.setStyle(this.hoverImage, 'opacity', '1');
+			this.handleHoverImageDisplay();
 		}
+	}
+
+	handleUbicationImageHover(): void {
+		const ubicationImg = this.el.nativeElement.closest('.ubication-container')?.querySelector('.ubication');
+		if (ubicationImg) {
+			this.renderer.setStyle(ubicationImg, 'transform', 'translateY(-8px)');
+			this.renderer.setStyle(ubicationImg, 'transition', 'transform 0.195s ease-out');
+		}
+	}
+
+	handleHoverTextDisplay(): void {
+		this.renderer.setStyle(this.hoverText, 'display', 'block');
+		setTimeout(() => {
+			this.renderer.setStyle(this.hoverText, 'visibility', 'visible');
+			this.renderer.setStyle(this.hoverText, 'opacity', '1');
+		}, 100);
+	}
+
+	handleHoverImageDisplay(): void {
+		this.renderer.setStyle(this.defaultImage, 'opacity', '0');
+		this.renderer.setStyle(this.hoverImage, 'opacity', '1');
 	}
 
 	/**
@@ -112,23 +130,34 @@ export class HoverImageDirective {
 	 * 3. The defaultImage is made visible again and the hoverImage is hidden.
 	 */
 	@HostListener('mouseleave', ['$event']) onLeave(event: MouseEvent) {
+		this.handleUbicationImageReset();
+		if (this.hoverElement && !this.hoverElement.contains(event.relatedTarget as Node)) {
+			if (window.innerWidth > 768 && this.hoverText) {
+				this.handleHoverTextHide();
+			}
+		}
+		if (this.defaultImage && this.hoverImage) {
+			this.handleHoverImageReset();
+		}
+	}
+
+	handleUbicationImageReset(): void {
 		const ubicationImg = this.el.nativeElement.closest('.ubication-container')?.querySelector('.ubication');
 		if (ubicationImg) {
 			this.renderer.setStyle(ubicationImg, 'transform', 'translateY(4px)');
 		}
+	}
 
-		if (this.hoverElement && !this.hoverElement.contains(event.relatedTarget as Node)) {
-			if (window.innerWidth > 768 && this.hoverText) {
-				this.renderer.setStyle(this.hoverText, 'visibility', 'hidden');
-				this.renderer.setStyle(this.hoverText, 'opacity', '0');
-				setTimeout(() => {
-					this.renderer.setStyle(this.hoverText, 'display', 'none');
-				}, 100);
-			}
-		}
-		if (this.defaultImage && this.hoverImage) {
-			this.renderer.setStyle(this.defaultImage, 'opacity', '1');
-			this.renderer.setStyle(this.hoverImage, 'opacity', '0');
-		}
+	handleHoverTextHide(): void {
+		this.renderer.setStyle(this.hoverText, 'visibility', 'hidden');
+		this.renderer.setStyle(this.hoverText, 'opacity', '0');
+		setTimeout(() => {
+			this.renderer.setStyle(this.hoverText, 'display', 'none');
+		}, 100);
+	}
+
+	handleHoverImageReset(): void {
+		this.renderer.setStyle(this.defaultImage, 'opacity', '1');
+		this.renderer.setStyle(this.hoverImage, 'opacity', '0');
 	}
 }

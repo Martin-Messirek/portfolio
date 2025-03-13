@@ -22,17 +22,43 @@ html {
 
 body {
 	background: linear-gradient(150deg, $bg-color 25%, $bg-color-light 50%, $bg-color 100%);
+	overflow-x: hidden;
 }
 
 body.no-scroll {
 	overflow: hidden;
-	// height: 100%;
 }
 
-// html.no-scroll {
-// 	overflow: hidden;
-// 	height: 100%;
-// }
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $bg-color-bright;
+	z-index: 11;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.spinner {
+	border: 8px solid $white-color;
+	border-top: 8px solid $bg-color;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 
 [data-browser='webkit'] ::-webkit-scrollbar {
 	width: 5px;
@@ -60,7 +86,7 @@ body.no-scroll {
 }
 
 h2 {
-	padding-bottom: 20px;
+	padding-bottom: 28px;
 	@include text-style(500, 54px, $red-color);
 }
 
@@ -124,6 +150,12 @@ a {
 	@include text-style(500, 18px, $grey-color);
 }
 
+@media (max-width: 1600px) {
+	h2 {
+		padding-bottom: 24px;
+	}
+}
+
 @media (max-width: 1200px) {
 	h2 {
 		font-size: 48px;
@@ -137,6 +169,7 @@ a {
 @media (max-width: 768px) {
 	h2 {
 		font-size: 36px;
+		padding-bottom: 20px;
 	}
 
 	h3 {

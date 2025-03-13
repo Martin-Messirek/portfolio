@@ -43,8 +43,11 @@ $inputs-gap: 32px;
 }
 
 @media (max-width: 896px) {
-	.my-details,
-	.arrow-up-link {
+	.text {
+		padding-bottom: $inputs-gap;
+	}
+
+	.my-details-and-arrow-up {
 		display: none;
 	}
 

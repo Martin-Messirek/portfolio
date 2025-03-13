@@ -129,26 +129,33 @@ export class ContactComponent {
 
 	onSubmit(ngForm: NgForm) {
 		this.showMessageSubmissionScreen();
-		if (ngForm.submitted && ngForm.form.valid) {
-			this.showMessageSubmissionScreen();
-			if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-				this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
-					next: (response) => {
-						this.showSuccessMessage();
-						this.clearForm(ngForm);
-					},
-					error: (error) => {
-						console.error(error);
-					},
-					complete: () => console.info('Send post complete'),
-				});
-			} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-				setTimeout(() => {
-					this.showSuccessMessage();
-					// this.showFailureMessage();
-					this.clearForm(ngForm);
-				}, 3000);
-			}
+
+		if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+			this.handleSubmission(ngForm);
+		} else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+			this.mailTestSubmission(ngForm);
 		}
+	}
+
+	handleSubmission(ngForm: NgForm): void {
+		this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
+			next: () => {
+				this.showSuccessMessage();
+				this.clearForm(ngForm);
+			},
+			error: (error) => {
+				console.error('Error sending message:', error);
+				this.showFailureMessage();
+			},
+			complete: () => console.info('Send post complete'),
+		});
+	}
+
+	mailTestSubmission(ngForm: NgForm): void {
+		setTimeout(() => {
+			this.showSuccessMessage();
+			this.showFailureMessage();
+			this.clearForm(ngForm);
+		}, 3000);
 	}
 }

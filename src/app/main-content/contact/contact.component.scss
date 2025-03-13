@@ -32,17 +32,17 @@ $inputs-gap: 32px;
 
 @keyframes fadeLeft {
 	0% {
-		transform: translateX(-15%) translateY(20%); /* Start außerhalb des Bildschirms */
+		transform: translateX(-15%) translateY(20%);
 		opacity: 0;
 	}
 	100% {
-		transform: translateX(0) translateY(0); /* Endposition im sichtbaren Bereich */
+		transform: translateX(0) translateY(0);
 		opacity: 1;
 	}
 }
 
 .fade-left {
-	animation: fadeLeft 1s ease-in-out forwards; /* Dauer der Animation */
+	animation: fadeLeft 1s ease-in-out forwards;
 }
 
 .my-details-and-arrow-up {
