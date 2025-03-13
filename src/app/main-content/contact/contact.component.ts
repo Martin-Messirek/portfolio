@@ -125,7 +125,7 @@ export class ContactComponent {
 		},
 	};
 
-	mailTest = true;
+	mailTest = false;
 
 	onSubmit(ngForm: NgForm) {
 		this.showMessageSubmissionScreen();

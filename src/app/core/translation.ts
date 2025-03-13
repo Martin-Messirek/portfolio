@@ -70,7 +70,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TECHNOLOGIES: 'JavaScript | HTML | CSS',
 				DESCRIPTION:
 					'Jump, run and throw game based on an object-oriented approach. Help Pepe find coins and Tabasco salsa to fight against the crazy hen.',
-				liveLink: 'https://martinmessirek.at/pollo-loco',
+				liveLink: 'https://martinmessirek.at/pollo-loco-final',
 				githubLink: 'https://github.com/Martin-Messirek/pollo-loco',
 				imageSrc: './../../../assets/images/projects/pollo-loco.png',
 			},
@@ -79,7 +79,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TECHNOLOGIES: 'JavaScript | HTML | CSS | Firebase',
 				DESCRIPTION:
 					'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-				liveLink: 'https://martinmessirek.at/join',
+				liveLink: 'https://martinmessirek.at/join-final',
 				githubLink: 'https://github.com/Martin-Messirek/join-final',
 				imageSrc: './../../../assets/images/projects/join.png',
 			},
@@ -87,7 +87,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TITLE: 'Pokemon',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS  | API',
 				DESCRIPTION: 'A Pokedex application that fetches real-time Pokemon data from an API.',
-				liveLink: 'https://martinmessirek.at/pokedex',
+				liveLink: 'https://martinmessirek.at/pokemon',
 				githubLink: 'https://github.com/Martin-Messirek/pokedex',
 				imageSrc: './../../../assets/images/projects/pokedex.png',
 			},
@@ -264,7 +264,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TECHNOLOGIES: 'JavaScript | HTML | CSS',
 				DESCRIPTION:
 					'Ein Action-Spiel, das auf objektorientierter Programmierung basiert. Pepe sammelt Münzen und Tabasco-Flaschen, um gegen das verrückte Riesenhuhn antreten zu können.',
-				liveLink: 'https://martinmessirek.at/pollo-loco',
+				liveLink: 'https://martinmessirek.at/pollo-loco-final',
 				githubLink: 'https://github.com/Martin-Messirek/pollo-loco',
 				imageSrc: './../../../assets/images/projects/pollo-loco.png',
 			},
@@ -273,7 +273,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TECHNOLOGIES: 'JavaScript | HTML | CSS | Firebase',
 				DESCRIPTION:
 					'Ein Taskmanager, der vom Kanban-System inspiriert ist: Tasks werden erstellt, mithilfe von Drag-and-Drop organisiert, in Kategorien eingeteilt und Nutzern zugewiesen.',
-				liveLink: 'https://martinmessirek.at/join',
+				liveLink: 'https://martinmessirek.at/join-final',
 				githubLink: 'https://github.com/Martin-Messirek/join-final',
 				imageSrc: './../../../assets/images/projects/join.png',
 			},
@@ -281,7 +281,7 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				TITLE: 'Pokemon',
 				TECHNOLOGIES: 'JavaScript | HTML | CSS  | API',
 				DESCRIPTION: ' Eine Pokedex-Anwendung, die Pokemon-Daten in Echtzeit von einer API abruft.',
-				liveLink: 'https://martinmessirek.at/pokedex',
+				liveLink: 'https://martinmessirek.at/pokemon',
 				githubLink: 'https://github.com/Martin-Messirek/pokedex',
 				imageSrc: './../../../assets/images/projects/pokedex.png',
 			},
