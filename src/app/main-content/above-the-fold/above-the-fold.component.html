@@ -6,8 +6,13 @@
 				<div class="job-title typing-animation">{{ 'main.ABOVE_THE_FOLD.TITLE' | translate }}</div>
 				<h1 class="typing-animation">{{ 'main.ABOVE_THE_FOLD.NAME' | translate }}</h1>
 			</div>
-			<div class="atf-img">
-				<img src="../../../assets/images/portraits/portrait-1.png" alt="" />
+			<!-- <div class="atf-img">
+				<img [src]="imageUrl" alt="" />
+				<img src="../../../assets/images/portraits/portrait-3.png" alt="" />
+			</div> -->
+			<div appResizeImage class="atf-img">
+				<img src="../../../assets/images/portraits/portrait-3.png" alt="Default Image" />
+				<img src="../../../assets/images/portraits/portrait-4.png" alt="Resize Image" />
 			</div>
 		</div>
 		<div class="links">
