@@ -27,6 +27,10 @@ export class HoverImageDirective {
 	private hoverImage: HTMLElement | null = null;
 	private hoverText: HTMLElement | null = null;
 	private hoverElement: HTMLElement | null = null;
+	// private isMouseLeaving: boolean = true;
+	// private resetUbicationTimeout: any;
+	// private resetTextTimeout: any;
+	// private resetImageTimeout: any;
 
 	constructor(private el: ElementRef, private renderer: Renderer2) {}
 
@@ -59,11 +63,18 @@ export class HoverImageDirective {
 		this.defaultImage = images[0];
 		this.hoverImage = images[1];
 		this.renderer.setStyle(this.hoverImage, 'opacity', '0');
+		// this.renderer.setStyle(this.defaultImage, 'user-select', 'none');
+		// this.renderer.setStyle(this.hoverImage, 'user-select', 'none');
 	}
 
 	setupTextElement(textElements: NodeListOf<HTMLElement>): void {
 		this.hoverText = textElements[0];
 		this.renderer.setStyle(this.hoverText, 'visibility', 'hidden');
+	}
+
+	@HostListener('contextmenu', ['$event'])
+	onRightClick(event: MouseEvent): void {
+		event.preventDefault();
 	}
 
 	/**
@@ -78,19 +89,50 @@ export class HoverImageDirective {
 	 *    the hoverText is made visible.
 	 * 3. The defaultImage is hidden (opacity set to 0) and the hoverImage is shown (opacity set to 1).
 	 */
-	@HostListener('mouseenter', ['$event']) onHover(event: MouseEvent) {
+	@HostListener('pointerenter', ['$event'])
+	onPointerEnter(event: PointerEvent) {
+		// if (event.pointerType === 'mouse') {
+		// @HostListener('mouseenter', ['$event']) onHover(event: MouseEvent) {
 		if ((event.target as HTMLElement).classList.contains('icon-container-located')) {
+			// this.isMouseLeaving = false;
 			this.handleUbicationImageHover();
+			// clearTimeout(this.resetUbicationTimeout);
+			// this.resetUbicationTimeout = setTimeout(() => {
+			// 	if (!this.isMouseLeaving) {
+			// 		this.handleUbicationImageReset();
+			// 	}
+			// }, 255);
 		}
 
 		if (this.el.nativeElement.querySelector('.continuous-learning')) {
 			if (window.innerWidth > 768 && this.hoverText) {
+				// this.isMouseLeaving = false;
 				this.handleHoverTextDisplay();
+				// clearTimeout(this.resetTextTimeout);
+				// this.resetTextTimeout = setTimeout(() => {
+				// 	if (!this.isMouseLeaving) {
+				// 		this.handleHoverTextHide();
+				// 	}
+				// }, 2000);
 			}
 		}
 		if (this.defaultImage && this.hoverImage) {
+			// this.isMouseLeaving = false;
 			this.handleHoverImageDisplay();
+			// clearTimeout(this.resetImageTimeout);
+			// this.resetImageTimeout = setTimeout(() => {
+			// 	if (!this.isMouseLeaving) {
+			// 		this.handleHoverImageReset();
+			// 	}
+			// }, 255);
 		}
+
+		// if (event.pointerType === 'touch') {
+		// 	setTimeout(() => {
+		// 		this.handleUbicationImageReset();
+		// 		this.handleHoverImageReset();
+		// 	}, 640);
+		// }
 	}
 
 	handleUbicationImageHover(): void {
@@ -129,19 +171,40 @@ export class HoverImageDirective {
 	 *    and if the window width is greater than 768px, the hoverText is hidden.
 	 * 3. The defaultImage is made visible again and the hoverImage is hidden.
 	 */
-	@HostListener('mouseleave', ['$event']) onLeave(event: MouseEvent) {
-		this.handleUbicationImageReset();
-		if (this.hoverElement && !this.hoverElement.contains(event.relatedTarget as Node)) {
-			if (window.innerWidth > 768 && this.hoverText) {
-				this.handleHoverTextHide();
+	// @HostListener('mouseleave', ['$event']) onLeave(event: MouseEvent) {
+	@HostListener('pointerleave', ['$event'])
+	onPointerLeave(event: PointerEvent) {
+		if (event.pointerType === 'touch') {
+			this.handleTouchEvents();
+		} else {
+			this.handleImages();
+			if (this.hoverElement && !this.hoverElement.contains(event.relatedTarget as Node)) {
+				if (window.innerWidth > 768 && this.hoverText) {
+					this.handleHoverTextHide();
+				}
 			}
 		}
+	}
+
+	handleTouchEvents() {
+		setTimeout(() => {
+			this.handleImages();
+		}, 360);
+		setTimeout(() => {
+			this.handleHoverTextHide();
+		}, 1200);
+	}
+
+	handleImages() {
+		this.handleUbicationImageReset();
 		if (this.defaultImage && this.hoverImage) {
 			this.handleHoverImageReset();
 		}
 	}
 
 	handleUbicationImageReset(): void {
+		// this.isMouseLeaving = true;
+		// clearTimeout(this.resetUbicationTimeout);
 		const ubicationImg = this.el.nativeElement.closest('.ubication-container')?.querySelector('.ubication');
 		if (ubicationImg) {
 			this.renderer.setStyle(ubicationImg, 'transform', 'translateY(4px)');
@@ -149,6 +212,8 @@ export class HoverImageDirective {
 	}
 
 	handleHoverTextHide(): void {
+		// this.isMouseLeaving = true;
+		// clearTimeout(this.resetTextTimeout);
 		this.renderer.setStyle(this.hoverText, 'visibility', 'hidden');
 		this.renderer.setStyle(this.hoverText, 'opacity', '0');
 		setTimeout(() => {
@@ -157,6 +222,8 @@ export class HoverImageDirective {
 	}
 
 	handleHoverImageReset(): void {
+		// this.isMouseLeaving = true;
+		// clearTimeout(this.resetImageTimeout);
 		this.renderer.setStyle(this.defaultImage, 'opacity', '1');
 		this.renderer.setStyle(this.hoverImage, 'opacity', '0');
 	}

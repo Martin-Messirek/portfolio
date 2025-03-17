@@ -5,23 +5,23 @@
 				<p class="logo">
 					<!-- <span>{{ 'shared.HEADER.LOGO' | translate }}</span> -->
 
-					<span>{{ 'shared.HEADER.LOGO' | translate }}</span>
+					<span appTimedHover>{{ 'shared.HEADER.LOGO' | translate }}</span>
 				</p>
 			</a>
 
 			<nav>
 				<ul>
 					<li>
-						<a href="#about">{{ 'shared.HEADER.NAV.ABOUT' | translate }}</a>
+						<a href="#about" appTimedHover>{{ 'shared.HEADER.NAV.ABOUT' | translate }}</a>
 					</li>
 					<li>
-						<a href="#skills">{{ 'shared.HEADER.NAV.SKILLS' | translate }}</a>
+						<a href="#skills" appTimedHover>{{ 'shared.HEADER.NAV.SKILLS' | translate }}</a>
 					</li>
 					<li>
-						<a href="#portfolio">{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</a>
+						<a href="#portfolio" appTimedHover>{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}</a>
 					</li>
 					<li>
-						<a href="#contact">{{ 'shared.HEADER.NAV.CONTACT' | translate }}</a>
+						<a href="#contact" appTimedHover>{{ 'shared.HEADER.NAV.CONTACT' | translate }}</a>
 					</li>
 				</ul>
 			</nav>
@@ -60,22 +60,22 @@
 	<div class="mobile-menu">
 		<ul (click)="$event.stopPropagation()">
 			<li>
-				<a href="#about" (click)="toggleMenu()">
+				<a href="#about" (click)="toggleMenu()" appTimedHover>
 					{{ 'shared.HEADER.NAV.ABOUT' | translate }}
 				</a>
 			</li>
 			<li>
-				<a a href="#skills" (click)="toggleMenu()">
+				<a a href="#skills" (click)="toggleMenu()" appTimedHover>
 					{{ 'shared.HEADER.NAV.SKILLS' | translate }}
 				</a>
 			</li>
 			<li>
-				<a href="#portfolio" (click)="toggleMenu()">
+				<a href="#portfolio" (click)="toggleMenu()" appTimedHover>
 					{{ 'shared.HEADER.NAV.PORTFOLIO' | translate }}
 				</a>
 			</li>
 			<li>
-				<a a href="#contact" (click)="toggleMenu()">
+				<a a href="#contact" (click)="toggleMenu()" appTimedHover>
 					{{ 'shared.HEADER.NAV.CONTACT' | translate }}
 				</a>
 			</li>

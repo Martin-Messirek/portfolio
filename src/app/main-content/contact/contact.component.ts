@@ -7,11 +7,20 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { HoverImageDirective } from '../../core/directives/hover-image.directive';
 import { ScrollAnimateDirective } from '../../core/directives/scroll-animate.directive';
 import { ScrollService } from '../../core/services/scroll.service';
+import { TimedHoverDirective } from '../../core/directives/timed-hover.directive';
 
 @Component({
 	selector: 'app-contact',
 	standalone: true,
-	imports: [TranslatePipe, CommonModule, FormsModule, RouterModule, HoverImageDirective, ScrollAnimateDirective],
+	imports: [
+		TranslatePipe,
+		CommonModule,
+		FormsModule,
+		RouterModule,
+		HoverImageDirective,
+		ScrollAnimateDirective,
+		TimedHoverDirective,
+	],
 	templateUrl: './contact.component.html',
 	styleUrls: ['./contact.component.scss', './contact.responsive.scss'],
 })

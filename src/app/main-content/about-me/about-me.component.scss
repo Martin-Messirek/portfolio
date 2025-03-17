@@ -15,7 +15,7 @@
 
 .flip-animation {
 	transform: rotateY(0deg);
-	transition: transform 0.9s ease-in-out 0.2s;
+	transition: transform 0.5s ease-in-out 0.1s;
 }
 
 // .text-animation {
@@ -36,7 +36,7 @@
 }
 
 .fade-right {
-	animation: fadeRight 0.9s ease-in-out forwards; /* Dauer der Animation */
+	animation: fadeRight 0.5s ease-in-out 0.1s forwards; /* Dauer der Animation */
 }
 
 .text {
@@ -290,5 +290,10 @@ h2 {
 	.arrow-5-1-container,
 	.arrow-5-2-container {
 		width: 100%;
+	}
+
+	.inline-text {
+		flex-direction: column;
+		gap: 0;
 	}
 }

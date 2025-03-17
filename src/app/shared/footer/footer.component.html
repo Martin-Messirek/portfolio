@@ -3,7 +3,7 @@
 		<div class="footer-personal">
 			<div class="logo-container">
 				<a [routerLink]="['/']">
-					<img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" />
+					<img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" appTimedHover />
 				</a>
 				<!-- <img class="logo" src="./../../../assets/icons/icons/initials-logo.png" alt="" /> -->
 				<p class="logo-text">{{ 'shared.FOOTER.LOGO_TEXT' | translate }}</p>
@@ -55,11 +55,15 @@
 			</div>
 		</div>
 		<div class="footer-legal">
-			<a class="red-small-text" [routerLink]="['/legal']">{{ 'shared.FOOTER.LEGAL' | translate }}</a>
-			<a class="red-small-text" [routerLink]="['/privacy']">{{ 'shared.FOOTER.PRIVACY' | translate }}</a>
+			<a class="red-small-text" [routerLink]="['/legal']" appTimedHover>
+				{{ 'shared.FOOTER.LEGAL' | translate }}
+			</a>
+			<a class="red-small-text" [routerLink]="['/privacy']" appTimedHover>
+				{{ 'shared.FOOTER.PRIVACY' | translate }}
+			</a>
 		</div>
 		<a class="signature" href="https://developerakademie.com/" target="_blank">
-			<img src="./../../../assets/icons/icons/signature.png" alt="Developer Akademie" />
+			<img src="./../../../assets/icons/icons/signature.png" alt="Developer Akademie" appTimedHover />
 		</a>
 	</div>
 </footer>

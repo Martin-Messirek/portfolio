@@ -105,12 +105,15 @@ h3 {
 
 a {
 	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
 }
+
 .btn {
 	border: 1px solid $green-color;
 	padding: 15px 30px;
 	cursor: pointer;
 	@include transition();
+	-webkit-tap-highlight-color: transparent;
 }
 
 .btn-green {
@@ -139,7 +142,7 @@ a {
 	&:active {
 		border-color: $red-color;
 		color: $red-color;
-		background-color: $bg-color;
+		// background-color: $bg-color;
 	}
 }
 

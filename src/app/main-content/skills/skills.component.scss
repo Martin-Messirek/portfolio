@@ -80,7 +80,6 @@
 	transform: translateY(-16px);
 }
 
-// @media (min-width: 1800px) {
 .skill-logo {
 	opacity: 0;
 }
@@ -97,7 +96,7 @@
 }
 
 .slide-in-left {
-	animation: slideInLeft 1s ease-out 0.4s forwards;
+	animation: slideInLeft 0.5s ease-out 0.4s forwards;
 }
 
 @keyframes slideInBottom {
@@ -114,7 +113,6 @@
 .slide-in-bottom {
 	animation: slideInBottom 1s ease-out 0.4s forwards;
 }
-// }
 
 @media (max-width: 1600px) {
 	.skills {

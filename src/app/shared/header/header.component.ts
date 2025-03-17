@@ -4,11 +4,12 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ScrollService } from '../../core/services/scroll.service';
+import { TimedHoverDirective } from '../../core/directives/timed-hover.directive';
 
 @Component({
 	selector: 'app-header',
 	standalone: true,
-	imports: [TranslatePipe, CommonModule, RouterModule],
+	imports: [TranslatePipe, CommonModule, RouterModule, TimedHoverDirective],
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss',
 })
