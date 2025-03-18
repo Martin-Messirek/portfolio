@@ -35,6 +35,10 @@ footer {
 	}
 }
 
+.logo-container .logo.hover-inactive {
+	filter: brightness(1);
+}
+
 .logo-text {
 	@include text-style(500, 12px, $red-color);
 }
@@ -58,6 +62,11 @@ footer {
 			font-weight: 600;
 		}
 	}
+}
+
+.content-wrapper .footer-legal a.hover-inactive {
+	color: $red-color;
+	font-weight: 400;
 }
 
 .copyright {

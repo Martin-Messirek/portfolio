@@ -44,6 +44,11 @@
 	}
 }
 
+.skill-logo .img.hover-inactive,
+.skill-logo .learning-img.hover-inactive {
+	transform: translateY(0);
+}
+
 .skill-logo p,
 .pop-up-static {
 	text-align: center;

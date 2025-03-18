@@ -312,6 +312,11 @@ textarea.invalid-input + .validation-icon {
 	}
 }
 
+.privacy-text-container .privacy-text a.hover-inactive {
+	font-weight: normal;
+	filter: brightness(1);
+}
+
 .overlay {
 	position: fixed;
 	top: 0;

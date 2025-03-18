@@ -131,6 +131,12 @@ a {
 	}
 }
 
+.btn.btn-green.hover-inactive {
+	color: $green-color;
+	font-weight: 500;
+	filter: none;
+}
+
 .btn-purple {
 	background-color: transparent;
 	@include text-style(500, 18px, $red-color);
@@ -144,6 +150,11 @@ a {
 		color: $red-color;
 		// background-color: $bg-color;
 	}
+}
+
+.btn.btn-purple.hover-inactive {
+	color: $red-color;
+	border-color: $green-color;
 }
 
 .btn-grey {

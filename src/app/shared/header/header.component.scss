@@ -78,6 +78,10 @@ header {
 	}
 }
 
+.menu .logo.hover-inactive {
+	filter: none;
+}
+
 ul {
 	list-style: none;
 }
@@ -98,6 +102,10 @@ li a {
 	&:hover {
 		color: $green-color;
 	}
+}
+
+ul li a.hover-inactive {
+	color: $red-color;
 }
 
 .language-button {
