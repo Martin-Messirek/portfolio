@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
@@ -16,6 +16,13 @@ export class AppComponent implements AfterViewInit {
 		const preloader = document.getElementById('preloader');
 		if (preloader) {
 			preloader.style.display = 'none';
+		}
+	}
+
+	@HostListener('contextmenu', ['$event'])
+	onPointerDown(event: PointerEvent): void {
+		if (event.pointerType === 'touch' || event.pointerType === 'pen') {
+			event.preventDefault();
 		}
 	}
 }

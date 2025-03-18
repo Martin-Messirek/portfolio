@@ -36,7 +36,7 @@ footer {
 }
 
 .logo-container .logo.hover-inactive {
-	filter: brightness(1);
+	filter: none;
 }
 
 .logo-text {
@@ -105,6 +105,10 @@ footer {
 			transform: translateY(-2px);
 		}
 	}
+}
+
+.content-wrapper .signature img.hover-inactive {
+	transform: translateY(0);
 }
 
 @media (max-width: 960px) {

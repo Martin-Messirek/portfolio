@@ -141,11 +141,13 @@ ul li a.hover-inactive {
 .mobile-menu-btn {
 	width: 32px;
 	height: 28px;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .close-btn {
 	width: 35px;
 	height: 32px;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .mobile-menu-btn-container {

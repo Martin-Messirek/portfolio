@@ -231,6 +231,7 @@ textarea.invalid-input + .validation-icon {
 
 	input[type='checkbox'] {
 		display: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	label {
@@ -240,6 +241,7 @@ textarea.invalid-input + .validation-icon {
 		align-items: center;
 		height: 18px;
 		width: 18px;
+		-webkit-tap-highlight-color: transparent;
 
 		&::before {
 			content: '';

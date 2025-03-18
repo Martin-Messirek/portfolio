@@ -148,7 +148,6 @@ a {
 	&:active {
 		border-color: $red-color;
 		color: $red-color;
-		// background-color: $bg-color;
 	}
 }
 
@@ -237,5 +236,12 @@ a {
 	.btn-purple,
 	.btn-grey {
 		font-size: 16px;
+	}
+}
+
+@media (max-width: 360px) {
+	h2 {
+		font-size: 26px;
+		font-weight: 700;
 	}
 }
