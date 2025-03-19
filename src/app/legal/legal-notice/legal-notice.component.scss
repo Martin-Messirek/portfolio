@@ -2,6 +2,7 @@
 @import '../../../assets/css/variables.scss';
 
 .legal-page {
+	min-height: calc(100vh - 420px);
 	@include flex(center, normal, row, 0);
 	color: $white-color;
 }

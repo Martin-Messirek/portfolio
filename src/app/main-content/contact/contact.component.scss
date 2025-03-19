@@ -186,6 +186,7 @@ textarea:-webkit-autofill {
 	appearance: none !important;
 	border: 2px solid $green-color;
 	@include text-style(400, 18px, $green-color);
+	caret-color: $green-color !important;
 }
 
 .input-wrapper {

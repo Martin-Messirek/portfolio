@@ -1,13 +1,13 @@
 @import '../../../assets/css/variables.scss';
 @import '../../../assets/css/mixins.scss';
 
-section {
-	@include flex($jc: center);
-}
+// section {
+// 	@include flex($jc: center);
+// }
 
 .container {
 	width: 100%;
-	max-width: 1188px;
+	// max-width: 1188px;
 }
 
 h2 {

@@ -92,11 +92,11 @@ footer {
 
 .signature {
 	cursor: pointer;
-	padding-top: 36px;
+	margin-top: 36px;
 
 	img {
-		height: 12px;
-		width: 209px;
+		height: 16px;
+		width: 292px;
 		@include delayed-transition();
 
 		&:hover {
@@ -168,5 +168,10 @@ footer {
 @media (max-width: 560px) {
 	.copyright {
 		font-size: 14px;
+	}
+
+	.signature img {
+		height: 12px;
+		width: 209px;
 	}
 }

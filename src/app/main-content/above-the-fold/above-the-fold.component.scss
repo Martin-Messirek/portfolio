@@ -2,7 +2,7 @@
 @import './../../../assets/css/mixins.scss';
 
 section {
-	@include flex($jc: center, $ai: center);
+	// @include flex($jc: center, $ai: center);
 }
 
 .atf-container {
@@ -94,13 +94,13 @@ h1 {
 }
 
 @media (max-width: 1600px) {
-	section {
-		height: auto;
-		max-height: unset;
-	}
+	// section {
+	// 	height: auto;
+	// 	max-height: unset;
+	// }
 
 	.atf-content {
-		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 32px);
+		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 56px);
 	}
 
 	.typing-animation {
@@ -108,9 +108,9 @@ h1 {
 		margin: auto;
 	}
 
-	.links {
-		right: 96px;
-	}
+	// .links {
+	// 	right: 96px;
+	// }
 
 	.arrow-container {
 		display: none;
@@ -126,6 +126,11 @@ h1 {
 }
 
 @media (min-width: 1201px) {
+	.atf-container {
+		@include flex($jc: flex-end, $dir: column);
+		min-height: calc(100vh - $header-height);
+	}
+
 	.atf-text {
 		width: 677px;
 	}
@@ -147,6 +152,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
+	.atf-content {
+		gap: 32px;
+	}
+
 	h1 {
 		font-size: 56px;
 		height: 58px;

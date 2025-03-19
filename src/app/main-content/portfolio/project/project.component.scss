@@ -3,7 +3,7 @@
 
 .project-container {
 	padding-bottom: 48px;
-	@include flex($jc: flex-end, $gap: 48px);
+	@include flex($jc: space-between, $gap: 88px);
 	text-align: right;
 	overflow-x: hidden;
 }
@@ -14,8 +14,9 @@
 }
 
 .text-container {
-	width: 498px;
+	width: 700px;
 }
+
 .technologies {
 	@include text-style(400, 18px, $green-color);
 }
@@ -26,6 +27,10 @@
 
 .buttons {
 	@include flex($gap: 24px);
+}
+
+.buttons-right {
+	@include flex($jc: flex-end, $gap: 24px);
 }
 
 img {
@@ -54,6 +59,26 @@ img {
 	display: none;
 }
 
+@media (max-width: 2000px) {
+	.project-container {
+		justify-content: flex-end;
+	}
+
+	.text-container {
+		width: 600px;
+	}
+}
+
+@media (max-width: 1600px) {
+	.project-container {
+		gap: 48px;
+	}
+
+	.text-container {
+		width: 500px;
+	}
+}
+
 @media (max-width: 1400px) {
 	.project-container {
 		flex-direction: column;
@@ -67,7 +92,8 @@ img {
 		max-width: 588px;
 	}
 
-	.buttons {
+	.buttons,
+	.buttons-right {
 		display: none;
 	}
 

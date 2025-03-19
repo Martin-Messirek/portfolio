@@ -61,18 +61,18 @@ body.no-scroll {
 }
 
 [data-browser='webkit'] ::-webkit-scrollbar {
-	width: 5px;
+	width: 6px;
 }
 
 [data-browser='webkit'] ::-webkit-scrollbar-thumb {
-	background-color: var(--scrollbar-thumb, rgba($bg-color-bright, 0.4));
+	background-color: var(--scrollbar-thumb, rgba($bg-color-bright, 0.8));
 	border-radius: 5px;
 	@include transition();
 	cursor: var(--scrollbar-cursor, pointer);
 }
 
 [data-browser='webkit'] ::-webkit-scrollbar-thumb:hover {
-	background: var(--scrollbar-thumb-hover, rgba($bg-color-bright, 0.8));
+	background: var(--scrollbar-thumb-hover, rgba($bg-color-bright, 1));
 }
 
 [data-browser='webkit'] ::-webkit-scrollbar-track {
@@ -81,7 +81,7 @@ body.no-scroll {
 
 [data-browser='firefox'] {
 	scrollbar-width: thin;
-	scrollbar-color: rgba($bg-color-bright, 0.4) $bg-color;
+	scrollbar-color: rgba($bg-color-bright, 0.8) $bg-color;
 }
 
 h2 {

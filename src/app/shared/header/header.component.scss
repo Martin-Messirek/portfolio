@@ -42,18 +42,12 @@ header {
 }
 
 .menu-and-lang-btn-container {
-	padding: 18px 35px;
-	width: calc(100vw - 280px);
-	max-width: 1320px;
+	padding: 18px 0; //35px
+	width: calc(100vw - 210px);
+	max-width: 1390px;
 }
 .menu-and-lang-btn-container {
 	@include flex($jc: space-between, $ai: center);
-}
-
-@media (max-width: 1400px) {
-	.menu-and-lang-btn-container {
-		width: calc(100vw - 14vw);
-	}
 }
 
 .menu {
@@ -204,5 +198,11 @@ ul li a.hover-inactive {
 @media (min-width: 897px) {
 	.overlay {
 		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.menu-and-lang-btn-container {
+		width: calc(100vw - 12vw);
 	}
 }

@@ -99,7 +99,7 @@ export class ContactComponent {
 		setTimeout(() => {
 			this.successMessageVisible = false;
 			this.scrollService.enableScroll();
-		}, 5000);
+		}, 3000);
 	}
 
 	showFailureMessage() {
@@ -108,7 +108,7 @@ export class ContactComponent {
 		setTimeout(() => {
 			this.messageFailed = false;
 			this.scrollService.enableScroll();
-		}, 5000);
+		}, 3000);
 	}
 
 	clearUserActivity() {

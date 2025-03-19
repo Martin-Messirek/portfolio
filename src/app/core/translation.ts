@@ -91,14 +91,14 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/Martin-Messirek/pokedex',
 				imageSrc: './../../../assets/images/projects/pokedex.png',
 			},
-			{
-				TITLE: 'DA Bubble – Current Project',
-				TECHNOLOGIES: 'Angular | Typescript | HTML | CSS | Firebase',
-				DESCRIPTION: 'A bubble shooter game with interactive mechanics and engaging animations.',
-				liveLink: 'https://martinmessirek.at/da-bubble',
-				githubLink: 'https://github.com/Martin-Messirek/da-bubble',
-				imageSrc: './../../../assets/images/projects/under-construction.jpg',
-			},
+			// {
+			// 	TITLE: 'DA Bubble – Current Project',
+			// 	TECHNOLOGIES: 'Angular | Typescript | HTML | CSS | Firebase',
+			// 	DESCRIPTION: 'A bubble shooter game with interactive mechanics and engaging animations.',
+			// 	liveLink: 'https://martinmessirek.at/da-bubble',
+			// 	githubLink: 'https://github.com/Martin-Messirek/da-bubble',
+			// 	imageSrc: './../../../assets/images/projects/under-construction.jpg',
+			// },
 		],
 		shared: {
 			HEADER: {
@@ -285,15 +285,15 @@ export const TRANSLATIONS: { [key: string]: any } = {
 				githubLink: 'https://github.com/Martin-Messirek/pokedex',
 				imageSrc: './../../../assets/images/projects/pokedex.png',
 			},
-			{
-				TITLE: 'DA Bubble – Current Project',
-				TECHNOLOGIES: 'Angular | Typescript | HTML | CSS | Firebase',
-				DESCRIPTION:
-					'Ein fesselndes Bubble-Shooter-Spiel, das interaktive Mechaniken mit ansprechenden Animationen kombiniert.',
-				liveLink: 'https://martinmessirek.at/da-bubble',
-				githubLink: 'https://github.com/Martin-Messirek/da-bubble',
-				imageSrc: './../../../assets/images/projects/under-construction.jpg',
-			},
+			// {
+			// 	TITLE: 'DA Bubble – Current Project',
+			// 	TECHNOLOGIES: 'Angular | Typescript | HTML | CSS | Firebase',
+			// 	DESCRIPTION:
+			// 		'Ein fesselndes Bubble-Shooter-Spiel, das interaktive Mechaniken mit ansprechenden Animationen kombiniert.',
+			// 	liveLink: 'https://martinmessirek.at/da-bubble',
+			// 	githubLink: 'https://github.com/Martin-Messirek/da-bubble',
+			// 	imageSrc: './../../../assets/images/projects/under-construction.jpg',
+			// },
 		],
 		shared: {
 			HEADER: {
