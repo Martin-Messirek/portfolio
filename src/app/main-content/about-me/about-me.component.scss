@@ -18,30 +18,23 @@
 	transition: transform 0.5s ease-in-out 0.1s;
 }
 
-// .text-animation {
-// 	transform: rotateY(0deg);
-// 	transition: transform 1.8s ease-out;
-// }
-
-/* Standard Slide-In Animation */
 @keyframes fadeRight {
 	0% {
-		transform: translateX(10%); /* Start außerhalb des Bildschirms */
+		transform: translateX(10%);
 		opacity: 0;
 	}
 	100% {
-		transform: translateX(0); /* Endposition im sichtbaren Bereich */
+		transform: translateX(0);
 		opacity: 1;
 	}
 }
 
 .fade-right {
-	animation: fadeRight 0.5s ease-in-out 0.1s forwards; /* Dauer der Animation */
+	animation: fadeRight 0.5s ease-in-out 0.1s forwards;
 }
 
 .text {
 	opacity: 0;
-	// transform: rotateY(90deg);
 }
 
 .description {
@@ -229,7 +222,6 @@ h2 {
 	.grid-container {
 		@include flex($ai: center, $dir: column, $gap: 0);
 		width: 80vw;
-		// width: 86vw;
 		padding: 24px 0 0;
 	}
 

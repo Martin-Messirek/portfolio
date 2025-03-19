@@ -79,7 +79,6 @@ body.no-scroll {
 	background-color: $bg-color;
 }
 
-/* Firefox */
 [data-browser='firefox'] {
 	scrollbar-width: thin;
 	scrollbar-color: rgba($bg-color-bright, 0.4) $bg-color;

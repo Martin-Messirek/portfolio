@@ -59,26 +59,19 @@ section {
 
 .atf-img img {
 	width: 539px;
-	// height: 554px;
 	height: 680px;
-	// padding-top: 80px;
 	object-fit: cover;
 	object-fit: contain;
-	// object-position: bottom;
 }
 
 h1 {
 	@include text-style(700, 82px, $green-color);
 	height: 82px;
-	// animation: typing-h1 1s steps(10, end) forwards;
-	// animation: typing 1.1s steps(10, end) forwards;
-	// animation: typing 1s steps(10, end) forwards;
 }
 
 .job-title {
 	@include text-style(500, 54px, $green-color);
 	text-transform: uppercase;
-	// animation: typing 1.1s steps(10, end) forwards;
 }
 
 .typing-animation {
@@ -100,52 +93,6 @@ h1 {
 	}
 }
 
-// @keyframes typing {
-// 	from {
-// 		max-width: 0;
-// 	}
-// 	to {
-// 		max-width: 100%;
-// 	}
-// }
-
-// @keyframes typing-h1 {
-// 	0% {
-// 		max-width: 0;
-// 		opacity: 0; // Unsichtbar zu Beginn
-// 	}
-// 	50% {
-// 		max-width: 0;
-// 		opacity: 0; // Immer noch unsichtbar in der Mitte
-// 	}
-// 	51% {
-// 		opacity: 1; // Plötzlich sichtbar
-// 	}
-// 	100% {
-// 		max-width: 100%;
-// 		opacity: 1; // Sichtbar am Ende
-// 	}
-// }
-
-// .fade-in {
-// 	animation: fade-in 0.8s forwards;
-// }
-
-// @keyframes fade-in {
-// 	0% {
-// 		opacity: 0;
-// 		visibility: hidden;
-// 	}
-// 	50% {
-// 		opacity: 0;
-// 		visibility: hidden;
-// 	}
-// 	100% {
-// 		opacity: 1;
-// 		visibility: visible;
-// 	}
-// }
-
 @media (max-width: 1600px) {
 	section {
 		height: auto;
@@ -155,15 +102,6 @@ h1 {
 	.atf-content {
 		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 32px);
 	}
-
-	// .atf-text {
-	// text-align: center;
-	// margin: auto;
-	// display: flex;
-	// justify-content: center; // Horizontal zentrieren
-	// align-items: center; // Vertikal zentrieren, falls nötig
-	// width: 100%; // Falls es nicht automatisch die ganze Breite nimmt
-	// }
 
 	.typing-animation {
 		text-align: center;
@@ -234,7 +172,6 @@ h1 {
 @media (max-width: 380px) {
 	h1 {
 		font-size: 36px;
-		// height: 34px;
 	}
 
 	.job-title {

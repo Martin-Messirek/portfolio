@@ -117,14 +117,14 @@ ul li a.hover-inactive {
 
 	&.active {
 		@include text-style(700, 18px, $green-color);
-		cursor: default; // Kein Pointer für aktive Sprache
+		cursor: default;
 	}
 
 	&:not(.active) {
 		@include text-style(700, 18px, $red-color);
 
 		&:hover {
-			color: $green-color; // Beim Hover grün färben
+			color: $green-color;
 		}
 	}
 }
@@ -156,7 +156,6 @@ ul li a.hover-inactive {
 
 .mobile-menu-btn,
 .close-btn {
-	// display: none;
 	cursor: pointer;
 	@include transition();
 
@@ -164,7 +163,6 @@ ul li a.hover-inactive {
 		transform: scale(1.1);
 		filter: brightness(1.1);
 	}
-	// padding-right: 300px;
 }
 
 .mobile-menu {
@@ -174,15 +172,7 @@ ul li a.hover-inactive {
 		padding: 0;
 		@include flex($ai: center, $dir: column, $gap: 48px);
 	}
-
-	li {
-		// padding-bottom: 48px;
-	}
 }
-
-// .mobile-menu ul {
-// 	@include flex($ai: center);
-// }
 
 @media (max-width: 1400px) {
 	.menu-and-lang-btn-container {
@@ -206,10 +196,7 @@ ul li a.hover-inactive {
 		display: none;
 	}
 
-	.mobile-menu-btn-container
-	// .mobile-menu-btn,
-	// .close-btn
-	{
+	.mobile-menu-btn-container {
 		display: block;
 	}
 }

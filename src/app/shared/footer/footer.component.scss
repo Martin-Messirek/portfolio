@@ -11,8 +11,6 @@ footer {
 	max-width: 1390px;
 	padding-top: 80px;
 	padding-bottom: 80px;
-
-	// padding: 0px 105px 65px;
 }
 
 .footer-personal {
@@ -114,19 +112,9 @@ footer {
 @media (max-width: 960px) {
 }
 
-@media (max-width: 896px) {
-}
-
-// .content-wrapper {
-// 	max-width: 1600px;
-// 	padding: 0px 105px 65px;
-// }
-
 @media (max-width: 1400px) {
 	.content-wrapper {
 		width: calc(100vw - 14vw);
-		// padding-left: 7vw;
-		// padding-right: 7vw;
 	}
 }
 
