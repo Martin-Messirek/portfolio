@@ -156,7 +156,7 @@ export class ContactComponent {
 				console.error('Error sending message:', error);
 				this.showFailureMessage();
 			},
-			complete: () => console.info('Send post complete'),
+			// complete: () => console.info('Send post complete'),
 		});
 	}
 

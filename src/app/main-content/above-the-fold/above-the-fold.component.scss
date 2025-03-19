@@ -7,6 +7,7 @@ section {
 
 .atf-container {
 	@include flex($jc: flex-end, $dir: column);
+	min-height: calc(100vh - $header-height);
 }
 
 .atf-content {
@@ -127,8 +128,8 @@ h1 {
 
 @media (min-width: 1201px) {
 	.atf-container {
-		@include flex($jc: flex-end, $dir: column);
-		min-height: calc(100vh - $header-height);
+		// @include flex($jc: flex-end, $dir: column);
+		// min-height: calc(100vh - $header-height);
 	}
 
 	.atf-text {
@@ -137,6 +138,10 @@ h1 {
 }
 
 @media (max-width: 1200px) {
+	.atf-container {
+		padding-bottom: 58px;
+	}
+
 	.links {
 		display: none;
 	}

@@ -5,7 +5,7 @@ import { appConfig } from './app/app.config';
 bootstrapApplication(AppComponent, {
 	providers: [...appConfig.providers],
 })
-	.then(() => console.log('Angular ist bereit'))
+	// .then(() => console.log('Angular ist bereit'))
 	.catch((err) => console.error(err));
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -126,7 +126,7 @@ ul li a.hover-inactive {
 .close-btn-container {
 	position: absolute;
 	top: 18px;
-	right: calc(35px + 7vw);
+	right: 7vw;
 	z-index: 10;
 	height: 56px;
 	@include flex($ai: center);
@@ -204,5 +204,9 @@ ul li a.hover-inactive {
 @media (max-width: 768px) {
 	.menu-and-lang-btn-container {
 		width: calc(100vw - 12vw);
+	}
+
+	.close-btn-container {
+		right: 6vw;
 	}
 }
