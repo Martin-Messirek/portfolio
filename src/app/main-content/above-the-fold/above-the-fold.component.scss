@@ -1,13 +1,9 @@
 @import './../../../assets/css/variables.scss';
 @import './../../../assets/css/mixins.scss';
 
-section {
-	// @include flex($jc: center, $ai: center);
-}
-
 .atf-container {
 	@include flex($jc: flex-end, $dir: column);
-	min-height: calc(100vh - $header-height);
+	min-height: calc(100vh - (2 * $header-height));
 }
 
 .atf-content {
@@ -95,11 +91,6 @@ h1 {
 }
 
 @media (max-width: 1600px) {
-	// section {
-	// 	height: auto;
-	// 	max-height: unset;
-	// }
-
 	.atf-content {
 		@include flex($jc: center, $ai: center, $dir: column-reverse, $gap: 56px);
 	}
@@ -108,10 +99,6 @@ h1 {
 		text-align: center;
 		margin: auto;
 	}
-
-	// .links {
-	// 	right: 96px;
-	// }
 
 	.arrow-container {
 		display: none;
@@ -127,11 +114,6 @@ h1 {
 }
 
 @media (min-width: 1201px) {
-	.atf-container {
-		// @include flex($jc: flex-end, $dir: column);
-		// min-height: calc(100vh - $header-height);
-	}
-
 	.atf-text {
 		width: 677px;
 	}
@@ -156,11 +138,29 @@ h1 {
 	}
 }
 
+@media (max-width: 896px) {
+	.atf-img img {
+		width: 85vw;
+		height: 104vw;
+	}
+}
+
 @media (max-width: 768px) {
 	.atf-content {
 		gap: 32px;
 	}
 
+	h1 {
+		font-size: 60px;
+		height: 64px;
+	}
+
+	.job-title {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 680px) {
 	h1 {
 		font-size: 56px;
 		height: 58px;
@@ -170,20 +170,30 @@ h1 {
 		font-size: 36px;
 	}
 }
-
 @media (max-width: 560px) {
+	h1 {
+		font-size: 48px;
+		height: 50px;
+	}
+
+	.job-title {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 488px) {
 	h1 {
 		font-size: 40px;
 		height: 42px;
 	}
 
 	.job-title {
-		font-size: 24px;
+		font-size: 28px;
 		font-weight: 700;
 	}
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
 	h1 {
 		font-size: 36px;
 	}

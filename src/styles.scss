@@ -180,12 +180,12 @@ a {
 
 @media (max-width: 768px) {
 	h2 {
-		font-size: 36px;
+		font-size: 40px;
 		padding-bottom: 20px;
 	}
 
 	h3 {
-		font-size: 28px;
+		font-size: 32px;
 		padding-bottom: 20px;
 	}
 
@@ -208,9 +208,20 @@ a {
 		font-size: 17px;
 	}
 }
+
+@media (max-width: 680px) {
+	h2 {
+		font-size: 36px;
+	}
+
+	h3 {
+		font-size: 28px;
+	}
+}
+
 @media (max-width: 560px) {
 	h2 {
-		font-size: 32px;
+		font-size: 30px;
 		font-weight: 700;
 	}
 
